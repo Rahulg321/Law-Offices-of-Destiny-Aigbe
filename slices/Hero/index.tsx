@@ -1,7 +1,6 @@
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import { Button } from "@/components/ui/button"
-
+import { Button } from "@/components/ui/button";
 
 /**
  * Props for `Hero`.
@@ -18,10 +17,8 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className=""
     >
-      <div>
-        <div className="text-green-800 mt-2">dsadsaasdasdas</div>
-      </div>
-      <Button className="">WHATS UP</Button>
+      {slice.primary.title}
+      {slice.primary.tagline}
     </section>
   );
 };

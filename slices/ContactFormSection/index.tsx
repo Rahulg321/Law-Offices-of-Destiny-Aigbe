@@ -1,3 +1,4 @@
+import ContactForm from "@/components/ContactForm";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import React from "react";
@@ -18,9 +19,18 @@ const ContactFormSection = ({
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      className=""
     >
-      Placeholder component for contact_form_section (variation:{" "}
-      {slice.variation}) Slices
+      <div className="big-container">
+        {slice.primary.heading}
+        {slice.primary.tagline}
+        <div className="grid grid-cols-2">
+          <div></div>
+          <div>
+            <ContactForm />
+          </div>
+        </div>
+      </div>
     </section>
   );
 };
