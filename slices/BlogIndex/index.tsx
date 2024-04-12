@@ -17,7 +17,7 @@ const BlogIndex = ({ slice }: BlogIndexProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className=""
+      className="block-space"
     >
       <div>
         <Suspense
