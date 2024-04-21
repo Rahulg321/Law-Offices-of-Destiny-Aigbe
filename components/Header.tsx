@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import { MdMenu, MdClose } from "react-icons/md";
 import TopBar from "./TopBar";
+import NavigationMenuHeader from "./NavigationMenuHeader";
 
 type HeaderProps = {
   classname?: string;
@@ -82,7 +83,7 @@ function NameLogo({}: {}) {
   return (
     <div className="">
       <h3>
-        <Link href="/" aria-label="Home page" className="font-bold md:text-3xl">
+        <Link href="/" aria-label="Home page" className="">
           Destiny Aigbe
         </Link>
       </h3>
@@ -94,6 +95,7 @@ function DesktopMenu() {
   const pathname = usePathname();
   return (
     <div className="hidden gap-4 md:flex">
+      {/* <NavigationMenuHeader /> */}
       {nav.map((item, index) => {
         return (
           <Link

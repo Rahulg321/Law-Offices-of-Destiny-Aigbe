@@ -123,7 +123,7 @@ export type BlogpostDocument<Lang extends string = string> =
     Lang
   >;
 
-type HomepageDocumentDataSlicesSlice = HeroSlice;
+type HomepageDocumentDataSlicesSlice = NewsletterSliceSlice | HeroSlice;
 
 /**
  * Content for homepage documents
@@ -435,6 +435,61 @@ type HeroSliceVariation = HeroSliceDefault | HeroSliceHeroWithBackground;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Primary content in *NewsletterSlice → Primary*
+ */
+export interface NewsletterSliceSliceDefaultPrimary {
+  /**
+   * Heading field in *NewsletterSlice → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: newsletter_slice.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Tagline field in *NewsletterSlice → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: newsletter_slice.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tagline: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for NewsletterSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NewsletterSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<NewsletterSliceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *NewsletterSlice*
+ */
+type NewsletterSliceSliceVariation = NewsletterSliceSliceDefault;
+
+/**
+ * NewsletterSlice Shared Slice
+ *
+ * - **API ID**: `newsletter_slice`
+ * - **Description**: NewsletterSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NewsletterSliceSlice = prismic.SharedSlice<
+  "newsletter_slice",
+  NewsletterSliceSliceVariation
+>;
+
+/**
  * Primary content in *TextBlock → Primary*
  */
 export interface TextBlockSliceDefaultPrimary {
@@ -514,6 +569,10 @@ declare module "@prismicio/client" {
       HeroSliceVariation,
       HeroSliceDefault,
       HeroSliceHeroWithBackground,
+      NewsletterSliceSlice,
+      NewsletterSliceSliceDefaultPrimary,
+      NewsletterSliceSliceVariation,
+      NewsletterSliceSliceDefault,
       TextBlockSlice,
       TextBlockSliceDefaultPrimary,
       TextBlockSliceVariation,

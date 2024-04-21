@@ -6,5 +6,6 @@ export const components = {
   blog_index: dynamic(() => import("./BlogIndex")),
   contact_form_section: dynamic(() => import("./ContactFormSection")),
   hero: dynamic(() => import("./Hero")),
+  newsletter_slice: dynamic(() => import("./NewsletterSlice")),
   text_block: dynamic(() => import("./TextBlock")),
 };
