@@ -4,6 +4,38 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+/**
+ * Content for Blog Post Category documents
+ */
+interface BlogPostCategoryDocumentData {
+  /**
+   * Category Name field in *Blog Post Category*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog_post_category.category_name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  category_name: prismic.KeyTextField;
+}
+
+/**
+ * Blog Post Category document from Prismic
+ *
+ * - **API ID**: `blog_post_category`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type BlogPostCategoryDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<BlogPostCategoryDocumentData>,
+    "blog_post_category",
+    Lang
+  >;
+
 type BlogpostDocumentDataSlicesSlice = TextBlockSlice;
 
 /**
@@ -20,6 +52,17 @@ interface BlogpostDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   title: prismic.KeyTextField;
+
+  /**
+   * Category field in *Blogpost*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogpost.category
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  category: prismic.ContentRelationshipField<"blog_post_category">;
 
   /**
    * Slice Zone field in *Blogpost*
@@ -211,6 +254,7 @@ export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
 export type AllDocumentTypes =
+  | BlogPostCategoryDocument
   | BlogpostDocument
   | HomepageDocument
   | PageDocument;
@@ -326,7 +370,7 @@ export interface HeroSliceDefaultPrimary {
 }
 
 /**
- * Default variation for Hero Slice
+ * Hero Default variation for Hero Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
@@ -339,9 +383,47 @@ export type HeroSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *Hero → Primary*
+ */
+export interface HeroSliceHeroWithBackgroundPrimary {
+  /**
+   * title field in *Hero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Tagline field in *Hero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tagline: prismic.KeyTextField;
+}
+
+/**
+ * Hero Centered variation for Hero Slice
+ *
+ * - **API ID**: `heroWithBackground`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeroSliceHeroWithBackground = prismic.SharedSliceVariation<
+  "heroWithBackground",
+  Simplify<HeroSliceHeroWithBackgroundPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *Hero*
  */
-type HeroSliceVariation = HeroSliceDefault;
+type HeroSliceVariation = HeroSliceDefault | HeroSliceHeroWithBackground;
 
 /**
  * Hero Shared Slice
@@ -407,6 +489,8 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      BlogPostCategoryDocument,
+      BlogPostCategoryDocumentData,
       BlogpostDocument,
       BlogpostDocumentData,
       BlogpostDocumentDataSlicesSlice,
@@ -426,8 +510,10 @@ declare module "@prismicio/client" {
       ContactFormSectionSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
+      HeroSliceHeroWithBackgroundPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      HeroSliceHeroWithBackground,
       TextBlockSlice,
       TextBlockSliceDefaultPrimary,
       TextBlockSliceVariation,

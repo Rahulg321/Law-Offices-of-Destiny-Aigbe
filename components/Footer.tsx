@@ -7,6 +7,7 @@ import { MdOutlinePhoneAndroid } from "react-icons/md";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
+import ThemeToggle from "./theme-button";
 
 const nav = [
   { navlink: "/", navlabel: "Home" },
@@ -18,7 +19,7 @@ const nav = [
 const Footer = () => {
   return (
     <React.Fragment>
-      <BackgroundImageText classname="min-h-[80vh]">
+      {/* <BackgroundImageText classname="min-h-[80vh]">
         <div>
           <div>
             <FaLocationDot />
@@ -44,8 +45,9 @@ const Footer = () => {
             <button>Contact Us</button>
           </div>
         </div>
-      </BackgroundImageText>
+      </BackgroundImageText> */}
       <footer>
+        <ThemeToggle />
         <div>
           <FaRegCopyright />
           <span>The Law Offices of Destiny Aigbe</span>

@@ -17,8 +17,10 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className=""
     >
-      {slice.primary.title}
-      {slice.primary.tagline}
+      <div>
+        {slice.primary.title}
+        {slice.primary.tagline}
+      </div>
     </section>
   );
 };

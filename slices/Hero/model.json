@@ -6,7 +6,32 @@
   "variations": [
     {
       "id": "default",
-      "name": "Default",
+      "name": "Hero Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "title",
+            "placeholder": ""
+          }
+        },
+        "tagline": {
+          "type": "Text",
+          "config": {
+            "label": "Tagline",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "heroWithBackground",
+      "name": "Hero Centered",
       "docURL": "...",
       "version": "initial",
       "description": "Default",

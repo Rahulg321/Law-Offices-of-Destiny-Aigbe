@@ -8,9 +8,13 @@ type BlogCardProps = {
 
 const BlogCard = ({ post }: BlogCardProps) => {
   return (
-    <Link href={`blogs/${post.uid}`} className="">
-      <h3>{post.data.title}</h3>
-    </Link>
+    <article className="p-4 text-balance">
+      <Link href={`/blogs/${post.uid}`}>
+        <span className="text-sm">Engineering</span>
+        <h3 className="mt-1 mb-2">{post.data.title}</h3>
+      </Link>
+      <span className="font-semibold">Apr. 17th 2024</span>
+    </article>
   );
 };
 

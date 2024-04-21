@@ -1,0 +1,24 @@
+{
+  "format": "custom",
+  "id": "blog_post_category",
+  "label": "Blog Post Category",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "category_name": {
+        "type": "Text",
+        "config": {
+          "label": "Category Name",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

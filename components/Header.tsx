@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import { MdMenu, MdClose } from "react-icons/md";
+import TopBar from "./TopBar";
 
 type HeaderProps = {
   classname?: string;
