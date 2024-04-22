@@ -11,6 +11,18 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "plan_info": {
+              "type": "SharedSlice"
+            },
+            "four_cards_section": {
+              "type": "SharedSlice"
+            },
+            "services": {
+              "type": "SharedSlice"
+            },
+            "featured": {
+              "type": "SharedSlice"
+            },
             "newsletter_slice": {
               "type": "SharedSlice"
             },

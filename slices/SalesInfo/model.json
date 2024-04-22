@@ -1,0 +1,18 @@
+{
+  "id": "four_cards_section",
+  "type": "SharedSlice",
+  "name": "SalesInfo",
+  "description": "FourCardsSection",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {},
+      "items": {}
+    }
+  ]
+}

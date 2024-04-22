@@ -1,6 +1,7 @@
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { Button } from "@/components/ui/button";
+import BackgroundImageText from "@/components/BackgroundImageText";
 
 /**
  * Props for `Hero`.
@@ -12,16 +13,18 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
  */
 const Hero = ({ slice }: HeroProps): JSX.Element => {
   return (
-    <section
+    <BackgroundImageText
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className=""
+      className="min-h-[80vh]"
+      childrenCSS="big-container grid grid-cols-1 lg:grid-cols-2"
+      backgroundImage={slice.primary.background_image}
     >
       <div>
-        {slice.primary.title}
-        {slice.primary.tagline}
+        <h1>{slice.primary.title}</h1>
+        <span>{slice.primary.tagline}</span>
       </div>
-    </section>
+    </BackgroundImageText>
   );
 };
 

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { montserrat, hind } from "./fonts";
+import { montserrat, hind, playfair_display, lato } from "./fonts";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";

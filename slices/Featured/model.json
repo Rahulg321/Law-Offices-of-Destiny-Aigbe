@@ -1,21 +1,21 @@
 {
-  "id": "hero",
+  "id": "featured",
   "type": "SharedSlice",
-  "name": "Hero",
-  "description": "Hero",
+  "name": "Featured",
+  "description": "Featured",
   "variations": [
     {
       "id": "default",
-      "name": "Hero Default",
+      "name": "Default",
       "docURL": "...",
       "version": "initial",
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "title": {
+        "heading": {
           "type": "Text",
           "config": {
-            "label": "title",
+            "label": "Heading",
             "placeholder": ""
           }
         },
@@ -24,14 +24,6 @@
           "config": {
             "label": "Tagline",
             "placeholder": ""
-          }
-        },
-        "background_image": {
-          "type": "Image",
-          "config": {
-            "label": "Background Image",
-            "constraint": {},
-            "thumbnails": []
           }
         }
       },

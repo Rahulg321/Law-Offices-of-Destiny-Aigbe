@@ -123,7 +123,13 @@ export type BlogpostDocument<Lang extends string = string> =
     Lang
   >;
 
-type HomepageDocumentDataSlicesSlice = NewsletterSliceSlice | HeroSlice;
+type HomepageDocumentDataSlicesSlice =
+  | PlanInfoSlice
+  | FourCardsSectionSlice
+  | ServicesSlice
+  | FeaturedSlice
+  | NewsletterSliceSlice
+  | HeroSlice;
 
 /**
  * Content for homepage documents
@@ -189,6 +195,10 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | PlanInfoSlice
+  | FourCardsSectionSlice
+  | NewsletterSliceSlice
+  | FeaturedSlice
   | TextBlockSlice
   | BlogIndexSlice
   | ContactFormSectionSlice
@@ -345,6 +355,91 @@ export type ContactFormSectionSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *Featured → Primary*
+ */
+export interface FeaturedSliceDefaultPrimary {
+  /**
+   * Heading field in *Featured → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featured.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Tagline field in *Featured → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featured.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tagline: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Featured Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeaturedSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FeaturedSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Featured*
+ */
+type FeaturedSliceVariation = FeaturedSliceDefault;
+
+/**
+ * Featured Shared Slice
+ *
+ * - **API ID**: `featured`
+ * - **Description**: Featured
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeaturedSlice = prismic.SharedSlice<
+  "featured",
+  FeaturedSliceVariation
+>;
+
+/**
+ * Default variation for SalesInfo Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FourCardsSectionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *SalesInfo*
+ */
+type FourCardsSectionSliceVariation = FourCardsSectionSliceDefault;
+
+/**
+ * SalesInfo Shared Slice
+ *
+ * - **API ID**: `four_cards_section`
+ * - **Description**: FourCardsSection
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FourCardsSectionSlice = prismic.SharedSlice<
+  "four_cards_section",
+  FourCardsSectionSliceVariation
+>;
+
+/**
  * Primary content in *Hero → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -367,6 +462,16 @@ export interface HeroSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   tagline: prismic.KeyTextField;
+
+  /**
+   * Background Image field in *Hero → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.background_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background_image: prismic.ImageField<never>;
 }
 
 /**
@@ -383,47 +488,9 @@ export type HeroSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
- * Primary content in *Hero → Primary*
- */
-export interface HeroSliceHeroWithBackgroundPrimary {
-  /**
-   * title field in *Hero → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.title
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField;
-
-  /**
-   * Tagline field in *Hero → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.tagline
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  tagline: prismic.KeyTextField;
-}
-
-/**
- * Hero Centered variation for Hero Slice
- *
- * - **API ID**: `heroWithBackground`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type HeroSliceHeroWithBackground = prismic.SharedSliceVariation<
-  "heroWithBackground",
-  Simplify<HeroSliceHeroWithBackgroundPrimary>,
-  never
->;
-
-/**
  * Slice variation for *Hero*
  */
-type HeroSliceVariation = HeroSliceDefault | HeroSliceHeroWithBackground;
+type HeroSliceVariation = HeroSliceDefault;
 
 /**
  * Hero Shared Slice
@@ -487,6 +554,106 @@ type NewsletterSliceSliceVariation = NewsletterSliceSliceDefault;
 export type NewsletterSliceSlice = prismic.SharedSlice<
   "newsletter_slice",
   NewsletterSliceSliceVariation
+>;
+
+/**
+ * Primary content in *PlanInfo → Primary*
+ */
+export interface PlanInfoSliceDefaultPrimary {
+  /**
+   * Heading field in *PlanInfo → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: plan_info.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for PlanInfo Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PlanInfoSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<PlanInfoSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *PlanInfo*
+ */
+type PlanInfoSliceVariation = PlanInfoSliceDefault;
+
+/**
+ * PlanInfo Shared Slice
+ *
+ * - **API ID**: `plan_info`
+ * - **Description**: PlanInfo
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type PlanInfoSlice = prismic.SharedSlice<
+  "plan_info",
+  PlanInfoSliceVariation
+>;
+
+/**
+ * Primary content in *Services → Primary*
+ */
+export interface ServicesSliceDefaultPrimary {
+  /**
+   * Heading field in *Services → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Tagline field in *Services → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: services.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tagline: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Services Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServicesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ServicesSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Services*
+ */
+type ServicesSliceVariation = ServicesSliceDefault;
+
+/**
+ * Services Shared Slice
+ *
+ * - **API ID**: `services`
+ * - **Description**: Services
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ServicesSlice = prismic.SharedSlice<
+  "services",
+  ServicesSliceVariation
 >;
 
 /**
@@ -563,16 +730,29 @@ declare module "@prismicio/client" {
       ContactFormSectionSliceDefaultPrimary,
       ContactFormSectionSliceVariation,
       ContactFormSectionSliceDefault,
+      FeaturedSlice,
+      FeaturedSliceDefaultPrimary,
+      FeaturedSliceVariation,
+      FeaturedSliceDefault,
+      FourCardsSectionSlice,
+      FourCardsSectionSliceVariation,
+      FourCardsSectionSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
-      HeroSliceHeroWithBackgroundPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
-      HeroSliceHeroWithBackground,
       NewsletterSliceSlice,
       NewsletterSliceSliceDefaultPrimary,
       NewsletterSliceSliceVariation,
       NewsletterSliceSliceDefault,
+      PlanInfoSlice,
+      PlanInfoSliceDefaultPrimary,
+      PlanInfoSliceVariation,
+      PlanInfoSliceDefault,
+      ServicesSlice,
+      ServicesSliceDefaultPrimary,
+      ServicesSliceVariation,
+      ServicesSliceDefault,
       TextBlockSlice,
       TextBlockSliceDefaultPrimary,
       TextBlockSliceVariation,

@@ -5,7 +5,11 @@ import dynamic from "next/dynamic";
 export const components = {
   blog_index: dynamic(() => import("./BlogIndex")),
   contact_form_section: dynamic(() => import("./ContactFormSection")),
+  featured: dynamic(() => import("./Featured")),
+  four_cards_section: dynamic(() => import("./SalesInfo")),
   hero: dynamic(() => import("./Hero")),
   newsletter_slice: dynamic(() => import("./NewsletterSlice")),
+  plan_info: dynamic(() => import("./PlanInfo")),
+  services: dynamic(() => import("./Services")),
   text_block: dynamic(() => import("./TextBlock")),
 };

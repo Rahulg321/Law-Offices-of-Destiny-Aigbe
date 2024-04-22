@@ -1,25 +1,31 @@
+import { ImageField } from "@prismicio/client";
+import { PrismicNextImage } from "@prismicio/next";
 import clsx from "clsx";
-import Image from "next/image";
 import React from "react";
 
 type BackgroundImageTextProps = {
   children?: React.ReactNode;
-  classname?: string;
+  className?: string;
+  childrenCSS?: string;
+  backgroundImage: ImageField;
 };
 
 const BackgroundImageText = ({
   children,
-  classname,
+  className,
+  childrenCSS,
+  backgroundImage,
 }: BackgroundImageTextProps) => {
   return (
     <section
-      className={clsx("relative overflow-hidden bg-slate-900", classname)}
+      className={clsx("relative overflow-hidden bg-slate-900", className)}
     >
-      <div className="absolute inset-0 z-10">{children}</div>
-      <Image
-        className="trasition absolute left-0 right-0 aspect-1 object-cover duration-300 ease-in-out "
-        src={`https://images.unsplash.com/photo-1712876473384-f34af7084a71?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
-        alt="Mountains Background Image"
+      <div className={clsx("absolute inset-0 z-10", childrenCSS)}>
+        {children}
+      </div>
+      <PrismicNextImage
+        className="absolute left-0 right-0 aspect-1 object-cover"
+        field={backgroundImage}
         fill
       />
     </section>
