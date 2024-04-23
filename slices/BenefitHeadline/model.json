@@ -1,0 +1,40 @@
+{
+  "id": "benefit_headline",
+  "type": "SharedSlice",
+  "name": "BenefitHeadline",
+  "description": "BenefitHeadline",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "tagline": {
+          "type": "Text",
+          "config": {
+            "label": "Tagline",
+            "placeholder": ""
+          }
+        },
+        "button_label": {
+          "type": "Text",
+          "config": {
+            "label": "Button Label",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -124,6 +124,9 @@ export type BlogpostDocument<Lang extends string = string> =
   >;
 
 type HomepageDocumentDataSlicesSlice =
+  | ColorGridSlice
+  | JourneyEndSlice
+  | BenefitHeadlineSlice
   | PlanInfoSlice
   | FourCardsSectionSlice
   | ServicesSlice
@@ -195,6 +198,8 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ColorGridSlice
+  | BenefitHeadlineSlice
   | PlanInfoSlice
   | FourCardsSectionSlice
   | NewsletterSliceSlice
@@ -270,6 +275,71 @@ export type AllDocumentTypes =
   | PageDocument;
 
 /**
+ * Primary content in *BenefitHeadline → Primary*
+ */
+export interface BenefitHeadlineSliceDefaultPrimary {
+  /**
+   * Title field in *BenefitHeadline → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: benefit_headline.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Tagline field in *BenefitHeadline → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: benefit_headline.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tagline: prismic.KeyTextField;
+
+  /**
+   * Button Label field in *BenefitHeadline → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: benefit_headline.primary.button_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_label: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for BenefitHeadline Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BenefitHeadlineSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BenefitHeadlineSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *BenefitHeadline*
+ */
+type BenefitHeadlineSliceVariation = BenefitHeadlineSliceDefault;
+
+/**
+ * BenefitHeadline Shared Slice
+ *
+ * - **API ID**: `benefit_headline`
+ * - **Description**: BenefitHeadline
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BenefitHeadlineSlice = prismic.SharedSlice<
+  "benefit_headline",
+  BenefitHeadlineSliceVariation
+>;
+
+/**
  * Default variation for BlogIndex Slice
  *
  * - **API ID**: `default`
@@ -297,6 +367,36 @@ type BlogIndexSliceVariation = BlogIndexSliceDefault;
 export type BlogIndexSlice = prismic.SharedSlice<
   "blog_index",
   BlogIndexSliceVariation
+>;
+
+/**
+ * Default variation for ColorGrid Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ColorGridSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *ColorGrid*
+ */
+type ColorGridSliceVariation = ColorGridSliceDefault;
+
+/**
+ * ColorGrid Shared Slice
+ *
+ * - **API ID**: `color_grid`
+ * - **Description**: ColorGrid
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ColorGridSlice = prismic.SharedSlice<
+  "color_grid",
+  ColorGridSliceVariation
 >;
 
 /**
@@ -500,6 +600,36 @@ type HeroSliceVariation = HeroSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
+
+/**
+ * Default variation for JourneyEnd Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type JourneyEndSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *JourneyEnd*
+ */
+type JourneyEndSliceVariation = JourneyEndSliceDefault;
+
+/**
+ * JourneyEnd Shared Slice
+ *
+ * - **API ID**: `journey_end`
+ * - **Description**: JourneyEnd
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type JourneyEndSlice = prismic.SharedSlice<
+  "journey_end",
+  JourneyEndSliceVariation
+>;
 
 /**
  * Primary content in *NewsletterSlice → Primary*
@@ -723,9 +853,16 @@ declare module "@prismicio/client" {
       PageDocumentData,
       PageDocumentDataSlicesSlice,
       AllDocumentTypes,
+      BenefitHeadlineSlice,
+      BenefitHeadlineSliceDefaultPrimary,
+      BenefitHeadlineSliceVariation,
+      BenefitHeadlineSliceDefault,
       BlogIndexSlice,
       BlogIndexSliceVariation,
       BlogIndexSliceDefault,
+      ColorGridSlice,
+      ColorGridSliceVariation,
+      ColorGridSliceDefault,
       ContactFormSectionSlice,
       ContactFormSectionSliceDefaultPrimary,
       ContactFormSectionSliceVariation,
@@ -741,6 +878,9 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      JourneyEndSlice,
+      JourneyEndSliceVariation,
+      JourneyEndSliceDefault,
       NewsletterSliceSlice,
       NewsletterSliceSliceDefaultPrimary,
       NewsletterSliceSliceVariation,

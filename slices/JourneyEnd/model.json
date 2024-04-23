@@ -1,0 +1,16 @@
+{
+  "id": "journey_end",
+  "type": "SharedSlice",
+  "name": "JourneyEnd",
+  "description": "JourneyEnd",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}

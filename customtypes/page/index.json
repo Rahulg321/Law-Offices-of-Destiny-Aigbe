@@ -17,6 +17,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "color_grid": {
+              "type": "SharedSlice"
+            },
+            "benefit_headline": {
+              "type": "SharedSlice"
+            },
             "plan_info": {
               "type": "SharedSlice"
             },
