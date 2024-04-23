@@ -16,13 +16,13 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     <BackgroundImageText
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="min-h-[80vh]"
-      childrenCSS="big-container grid grid-cols-1 lg:grid-cols-2"
+      className="min-h-[60vh]"
+      childrenCSS="flex items-center justify-center"
       backgroundImage={slice.primary.background_image}
     >
-      <div>
-        <h1>{slice.primary.title}</h1>
-        <span>{slice.primary.tagline}</span>
+      <div className="text-pretty narrow-container text-white">
+        <h1 className="mb-4">{slice.primary.title}</h1>
+        <span className="text-xl">{slice.primary.tagline}</span>
       </div>
     </BackgroundImageText>
   );

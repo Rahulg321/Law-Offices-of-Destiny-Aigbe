@@ -1,0 +1,16 @@
+{
+  "id": "how_we_operate",
+  "type": "SharedSlice",
+  "name": "HowWeOperate",
+  "description": "HowWeOperate",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}

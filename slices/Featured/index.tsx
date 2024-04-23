@@ -15,9 +15,9 @@ const Featured = ({ slice }: FeaturedProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="block-space big-container border-t-4"
+      className="block-space  bg-card border-t-4"
     >
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-3 gap- big-container">
         <div className="col-span-2 text-balance">
           <h1 className="mb-4">
             {slice.primary.heading}

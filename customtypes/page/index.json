@@ -17,6 +17,15 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "left_image_content": {
+              "type": "SharedSlice"
+            },
+            "how_we_operate": {
+              "type": "SharedSlice"
+            },
+            "heading_content": {
+              "type": "SharedSlice"
+            },
             "frequently_asked_questions": {
               "type": "SharedSlice"
             },

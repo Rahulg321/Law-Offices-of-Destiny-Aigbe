@@ -16,7 +16,7 @@ const ThreeSmallCards = ({ slice }: ThreeSmallCardsProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="big-container block-space-mini"
+      className="big-container block-space"
     >
       <div className="text-center mb-4">
         <h1 className="mb-2">{slice.primary.heading}</h1>

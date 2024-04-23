@@ -15,7 +15,7 @@ const JourneyEnd = ({ slice }: JourneyEndProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="big-container block-space-mini"
+      className="big-container block-space"
     >
       <div className="text-center">
         <h1>

@@ -124,6 +124,9 @@ export type BlogpostDocument<Lang extends string = string> =
   >;
 
 type HomepageDocumentDataSlicesSlice =
+  | LeftImageContentSlice
+  | HowWeOperateSlice
+  | HeadingContentSlice
   | FrequentlyAskedQuestionsSlice
   | TestimonialsSlice
   | ThreeSmallCardsSlice
@@ -201,6 +204,9 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | LeftImageContentSlice
+  | HowWeOperateSlice
+  | HeadingContentSlice
   | FrequentlyAskedQuestionsSlice
   | ServicesSlice
   | JourneyEndSlice
@@ -604,6 +610,61 @@ export type FrequentlyAskedQuestionsSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *HeadingContent → Primary*
+ */
+export interface HeadingContentSliceDefaultPrimary {
+  /**
+   * Heading field in *HeadingContent → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: heading_content.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Content field in *HeadingContent → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: heading_content.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Default variation for HeadingContent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeadingContentSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeadingContentSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *HeadingContent*
+ */
+type HeadingContentSliceVariation = HeadingContentSliceDefault;
+
+/**
+ * HeadingContent Shared Slice
+ *
+ * - **API ID**: `heading_content`
+ * - **Description**: HeadingContent
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeadingContentSlice = prismic.SharedSlice<
+  "heading_content",
+  HeadingContentSliceVariation
+>;
+
+/**
  * Primary content in *Hero → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -666,6 +727,36 @@ type HeroSliceVariation = HeroSliceDefault;
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
 /**
+ * Default variation for HowWeOperate Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HowWeOperateSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *HowWeOperate*
+ */
+type HowWeOperateSliceVariation = HowWeOperateSliceDefault;
+
+/**
+ * HowWeOperate Shared Slice
+ *
+ * - **API ID**: `how_we_operate`
+ * - **Description**: HowWeOperate
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HowWeOperateSlice = prismic.SharedSlice<
+  "how_we_operate",
+  HowWeOperateSliceVariation
+>;
+
+/**
  * Default variation for JourneyEnd Slice
  *
  * - **API ID**: `default`
@@ -693,6 +784,93 @@ type JourneyEndSliceVariation = JourneyEndSliceDefault;
 export type JourneyEndSlice = prismic.SharedSlice<
   "journey_end",
   JourneyEndSliceVariation
+>;
+
+/**
+ * Primary content in *LeftImageContent → Primary*
+ */
+export interface LeftImageContentSliceDefaultPrimary {
+  /**
+   * Heading field in *LeftImageContent → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: left_image_content.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Featured Image field in *LeftImageContent → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: left_image_content.primary.featured_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  featured_image: prismic.ImageField<never>;
+
+  /**
+   * Content field in *LeftImageContent → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: left_image_content.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * is card background field in *LeftImageContent → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: left_image_content.primary.is_card_background
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  is_card_background: prismic.BooleanField;
+
+  /**
+   * Image Right field in *LeftImageContent → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: left_image_content.primary.image_right
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  image_right: prismic.BooleanField;
+}
+
+/**
+ * Default variation for LeftImageContent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LeftImageContentSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<LeftImageContentSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *LeftImageContent*
+ */
+type LeftImageContentSliceVariation = LeftImageContentSliceDefault;
+
+/**
+ * LeftImageContent Shared Slice
+ *
+ * - **API ID**: `left_image_content`
+ * - **Description**: LeftImageContent
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LeftImageContentSlice = prismic.SharedSlice<
+  "left_image_content",
+  LeftImageContentSliceVariation
 >;
 
 /**
@@ -1052,13 +1230,24 @@ declare module "@prismicio/client" {
       FrequentlyAskedQuestionsSliceDefaultPrimary,
       FrequentlyAskedQuestionsSliceVariation,
       FrequentlyAskedQuestionsSliceDefault,
+      HeadingContentSlice,
+      HeadingContentSliceDefaultPrimary,
+      HeadingContentSliceVariation,
+      HeadingContentSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      HowWeOperateSlice,
+      HowWeOperateSliceVariation,
+      HowWeOperateSliceDefault,
       JourneyEndSlice,
       JourneyEndSliceVariation,
       JourneyEndSliceDefault,
+      LeftImageContentSlice,
+      LeftImageContentSliceDefaultPrimary,
+      LeftImageContentSliceVariation,
+      LeftImageContentSliceDefault,
       NewsletterSliceSlice,
       NewsletterSliceSliceDefaultPrimary,
       NewsletterSliceSliceVariation,

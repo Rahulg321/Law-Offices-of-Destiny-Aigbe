@@ -12,8 +12,11 @@ export const components = {
   frequently_asked_questions: dynamic(
     () => import("./FrequentlyAskedQuestions"),
   ),
+  heading_content: dynamic(() => import("./HeadingContent")),
   hero: dynamic(() => import("./Hero")),
+  how_we_operate: dynamic(() => import("./HowWeOperate")),
   journey_end: dynamic(() => import("./JourneyEnd")),
+  left_image_content: dynamic(() => import("./LeftImageContent")),
   newsletter_slice: dynamic(() => import("./NewsletterSlice")),
   plan_info: dynamic(() => import("./PlanInfo")),
   services: dynamic(() => import("./Services")),
