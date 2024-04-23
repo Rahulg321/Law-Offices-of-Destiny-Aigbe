@@ -124,6 +124,7 @@ export type BlogpostDocument<Lang extends string = string> =
   >;
 
 type HomepageDocumentDataSlicesSlice =
+  | ThreeNormalCardsSlice
   | LeftImageContentSlice
   | HowWeOperateSlice
   | HeadingContentSlice
@@ -204,6 +205,7 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ThreeNormalCardsSlice
   | LeftImageContentSlice
   | HowWeOperateSlice
   | HeadingContentSlice
@@ -1129,6 +1131,72 @@ export type TextBlockSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *ThreeNormalCards → Primary*
+ */
+export interface ThreeNormalCardsSliceDefaultPrimary {
+  /**
+   * Heading field in *ThreeNormalCards → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: three_normal_cards.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Tagline field in *ThreeNormalCards → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: three_normal_cards.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tagline: prismic.KeyTextField;
+
+  /**
+   * Card Background field in *ThreeNormalCards → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: three_normal_cards.primary.card_background
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  card_background: prismic.BooleanField;
+}
+
+/**
+ * Default variation for ThreeNormalCards Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ThreeNormalCardsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ThreeNormalCardsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ThreeNormalCards*
+ */
+type ThreeNormalCardsSliceVariation = ThreeNormalCardsSliceDefault;
+
+/**
+ * ThreeNormalCards Shared Slice
+ *
+ * - **API ID**: `three_normal_cards`
+ * - **Description**: ThreeNormalCards
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ThreeNormalCardsSlice = prismic.SharedSlice<
+  "three_normal_cards",
+  ThreeNormalCardsSliceVariation
+>;
+
+/**
  * Primary content in *ThreeSmallCards → Primary*
  */
 export interface ThreeSmallCardsSliceDefaultPrimary {
@@ -1268,6 +1336,10 @@ declare module "@prismicio/client" {
       TextBlockSliceDefaultPrimary,
       TextBlockSliceVariation,
       TextBlockSliceDefault,
+      ThreeNormalCardsSlice,
+      ThreeNormalCardsSliceDefaultPrimary,
+      ThreeNormalCardsSliceVariation,
+      ThreeNormalCardsSliceDefault,
       ThreeSmallCardsSlice,
       ThreeSmallCardsSliceDefaultPrimary,
       ThreeSmallCardsSliceVariation,

@@ -22,5 +22,6 @@ export const components = {
   services: dynamic(() => import("./Services")),
   testimonials: dynamic(() => import("./Testimonials")),
   text_block: dynamic(() => import("./TextBlock")),
+  three_normal_cards: dynamic(() => import("./ThreeNormalCards")),
   three_small_cards: dynamic(() => import("./ThreeSmallCards")),
 };

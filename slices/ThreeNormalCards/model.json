@@ -1,0 +1,42 @@
+{
+  "id": "three_normal_cards",
+  "type": "SharedSlice",
+  "name": "ThreeNormalCards",
+  "description": "ThreeNormalCards",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "heading": {
+          "type": "Text",
+          "config": {
+            "label": "Heading",
+            "placeholder": ""
+          }
+        },
+        "tagline": {
+          "type": "Text",
+          "config": {
+            "label": "Tagline",
+            "placeholder": ""
+          }
+        },
+        "card_background": {
+          "type": "Boolean",
+          "config": {
+            "label": "Card Background",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
