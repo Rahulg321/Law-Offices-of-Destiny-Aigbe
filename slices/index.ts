@@ -9,10 +9,15 @@ export const components = {
   contact_form_section: dynamic(() => import("./ContactFormSection")),
   featured: dynamic(() => import("./Featured")),
   four_cards_section: dynamic(() => import("./SalesInfo")),
+  frequently_asked_questions: dynamic(
+    () => import("./FrequentlyAskedQuestions"),
+  ),
   hero: dynamic(() => import("./Hero")),
   journey_end: dynamic(() => import("./JourneyEnd")),
   newsletter_slice: dynamic(() => import("./NewsletterSlice")),
   plan_info: dynamic(() => import("./PlanInfo")),
   services: dynamic(() => import("./Services")),
+  testimonials: dynamic(() => import("./Testimonials")),
   text_block: dynamic(() => import("./TextBlock")),
+  three_small_cards: dynamic(() => import("./ThreeSmallCards")),
 };

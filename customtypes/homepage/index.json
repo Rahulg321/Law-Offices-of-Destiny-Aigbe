@@ -11,6 +11,15 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "frequently_asked_questions": {
+              "type": "SharedSlice"
+            },
+            "testimonials": {
+              "type": "SharedSlice"
+            },
+            "three_small_cards": {
+              "type": "SharedSlice"
+            },
             "color_grid": {
               "type": "SharedSlice"
             },

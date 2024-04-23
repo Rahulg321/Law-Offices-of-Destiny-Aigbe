@@ -124,6 +124,9 @@ export type BlogpostDocument<Lang extends string = string> =
   >;
 
 type HomepageDocumentDataSlicesSlice =
+  | FrequentlyAskedQuestionsSlice
+  | TestimonialsSlice
+  | ThreeSmallCardsSlice
   | ColorGridSlice
   | JourneyEndSlice
   | BenefitHeadlineSlice
@@ -198,6 +201,11 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | FrequentlyAskedQuestionsSlice
+  | ServicesSlice
+  | JourneyEndSlice
+  | TestimonialsSlice
+  | ThreeSmallCardsSlice
   | ColorGridSlice
   | BenefitHeadlineSlice
   | PlanInfoSlice
@@ -540,6 +548,62 @@ export type FourCardsSectionSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *FrequentlyAskedQuestions → Primary*
+ */
+export interface FrequentlyAskedQuestionsSliceDefaultPrimary {
+  /**
+   * Heading field in *FrequentlyAskedQuestions → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: frequently_asked_questions.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Tagline field in *FrequentlyAskedQuestions → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: frequently_asked_questions.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tagline: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for FrequentlyAskedQuestions Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FrequentlyAskedQuestionsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FrequentlyAskedQuestionsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *FrequentlyAskedQuestions*
+ */
+type FrequentlyAskedQuestionsSliceVariation =
+  FrequentlyAskedQuestionsSliceDefault;
+
+/**
+ * FrequentlyAskedQuestions Shared Slice
+ *
+ * - **API ID**: `frequently_asked_questions`
+ * - **Description**: FrequentlyAskedQuestions
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FrequentlyAskedQuestionsSlice = prismic.SharedSlice<
+  "frequently_asked_questions",
+  FrequentlyAskedQuestionsSliceVariation
+>;
+
+/**
  * Primary content in *Hero → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -787,6 +851,61 @@ export type ServicesSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *Testimonials → Primary*
+ */
+export interface TestimonialsSliceDefaultPrimary {
+  /**
+   * Heading field in *Testimonials → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Tagline field in *Testimonials → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: testimonials.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tagline: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Testimonials Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TestimonialsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TestimonialsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Testimonials*
+ */
+type TestimonialsSliceVariation = TestimonialsSliceDefault;
+
+/**
+ * Testimonials Shared Slice
+ *
+ * - **API ID**: `testimonials`
+ * - **Description**: Testimonials
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TestimonialsSlice = prismic.SharedSlice<
+  "testimonials",
+  TestimonialsSliceVariation
+>;
+
+/**
  * Primary content in *TextBlock → Primary*
  */
 export interface TextBlockSliceDefaultPrimary {
@@ -829,6 +948,61 @@ type TextBlockSliceVariation = TextBlockSliceDefault;
 export type TextBlockSlice = prismic.SharedSlice<
   "text_block",
   TextBlockSliceVariation
+>;
+
+/**
+ * Primary content in *ThreeSmallCards → Primary*
+ */
+export interface ThreeSmallCardsSliceDefaultPrimary {
+  /**
+   * Heading field in *ThreeSmallCards → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: three_small_cards.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Tagline field in *ThreeSmallCards → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: three_small_cards.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tagline: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for ThreeSmallCards Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ThreeSmallCardsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ThreeSmallCardsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ThreeSmallCards*
+ */
+type ThreeSmallCardsSliceVariation = ThreeSmallCardsSliceDefault;
+
+/**
+ * ThreeSmallCards Shared Slice
+ *
+ * - **API ID**: `three_small_cards`
+ * - **Description**: ThreeSmallCards
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ThreeSmallCardsSlice = prismic.SharedSlice<
+  "three_small_cards",
+  ThreeSmallCardsSliceVariation
 >;
 
 declare module "@prismicio/client" {
@@ -874,6 +1048,10 @@ declare module "@prismicio/client" {
       FourCardsSectionSlice,
       FourCardsSectionSliceVariation,
       FourCardsSectionSliceDefault,
+      FrequentlyAskedQuestionsSlice,
+      FrequentlyAskedQuestionsSliceDefaultPrimary,
+      FrequentlyAskedQuestionsSliceVariation,
+      FrequentlyAskedQuestionsSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
@@ -893,10 +1071,18 @@ declare module "@prismicio/client" {
       ServicesSliceDefaultPrimary,
       ServicesSliceVariation,
       ServicesSliceDefault,
+      TestimonialsSlice,
+      TestimonialsSliceDefaultPrimary,
+      TestimonialsSliceVariation,
+      TestimonialsSliceDefault,
       TextBlockSlice,
       TextBlockSliceDefaultPrimary,
       TextBlockSliceVariation,
       TextBlockSliceDefault,
+      ThreeSmallCardsSlice,
+      ThreeSmallCardsSliceDefaultPrimary,
+      ThreeSmallCardsSliceVariation,
+      ThreeSmallCardsSliceDefault,
     };
   }
 }
