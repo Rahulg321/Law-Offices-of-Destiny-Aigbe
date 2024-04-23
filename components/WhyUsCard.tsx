@@ -11,7 +11,7 @@ type WhyUsCardProps = {
 const WhyUsCard = ({ heading, tagline, imageField }: WhyUsCardProps) => {
   return (
     <div className="bg-background rounded-xl p-4">
-      <div className="">
+      <div className="mb-4">
         <div className="relative aspect-w-4 aspect-h-3 ">
           <Image
             src={imageField}
@@ -21,7 +21,7 @@ const WhyUsCard = ({ heading, tagline, imageField }: WhyUsCardProps) => {
           />
         </div>
       </div>
-      <div className="my-2">
+      <div className="mb-2">
         <h3>{heading}</h3>
       </div>
       <div>
