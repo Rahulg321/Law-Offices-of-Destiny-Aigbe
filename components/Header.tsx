@@ -13,8 +13,11 @@ type HeaderProps = {
 };
 
 const nav = [
-  { navlink: "/", navlabel: "Home" },
+  { navlink: "/team-members", navlabel: "Team Members" },
   { navlink: "/blogs", navlabel: "Blog" },
+];
+
+const EndNav = [
   { navlink: "/about-destiny-aigbe", navlabel: "About" },
   { navlink: "/contact-destiny-aigbe", navlabel: "Contact" },
 ];
@@ -32,7 +35,7 @@ const Header = ({ classname }: HeaderProps) => {
               <NameLogo />
               <button
                 aria-label="Open menu"
-                className="block text-2xl  text-black dark:text-white md:hidden"
+                className="block text-2xl text-black dark:text-white md:hidden"
                 onClick={() => setIsOpen(true)}
               >
                 <MdMenu />
@@ -94,22 +97,40 @@ function NameLogo({}: {}) {
 function DesktopMenu() {
   const pathname = usePathname();
   return (
-    <div className="hidden gap-4 md:flex">
-      {/* <NavigationMenuHeader /> */}
-      {nav.map((item, index) => {
-        return (
-          <Link
-            href={item.navlink}
-            key={index}
-            className={clsx(
-              "font-semibold",
-              pathname === item.navlink ? "underline" : ""
-            )}
-          >
-            {item.navlabel}
-          </Link>
-        );
-      })}
-    </div>
+    <>
+      <div className="hidden gap-4 md:flex items-center">
+        <NavigationMenuHeader />
+        {nav.map((item, index) => {
+          return (
+            <Link
+              href={item.navlink}
+              key={index}
+              className={clsx(
+                "font-semibold",
+                pathname === item.navlink ? "underline" : ""
+              )}
+            >
+              {item.navlabel}
+            </Link>
+          );
+        })}
+      </div>
+      <div className="hidden gap-4 md:flex">
+        {EndNav.map((item, index) => {
+          return (
+            <Link
+              href={item.navlink}
+              key={index}
+              className={clsx(
+                "font-semibold",
+                pathname === item.navlink ? "underline" : ""
+              )}
+            >
+              {item.navlabel}
+            </Link>
+          );
+        })}
+      </div>
+    </>
   );
 }
