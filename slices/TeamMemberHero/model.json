@@ -1,0 +1,27 @@
+{
+  "id": "team_member_hero",
+  "type": "SharedSlice",
+  "name": "TeamMemberHero",
+  "description": "TeamMemberHero",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "member_image": {
+          "type": "Image",
+          "config": {
+            "label": "Member Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

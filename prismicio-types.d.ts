@@ -205,6 +205,7 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | TeamIndexSlice
   | ThreeNormalCardsSlice
   | LeftImageContentSlice
   | HowWeOperateSlice
@@ -284,11 +285,231 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
+type PracticeAreasDocumentDataSlicesSlice =
+  | HeroSlice
+  | LeftImageContentSlice
+  | ThreeSmallCardsSlice
+  | FourCardsSectionSlice
+  | ServicesSlice
+  | TestimonialsSlice
+  | HowWeOperateSlice
+  | JourneyEndSlice
+  | HeadingContentSlice
+  | ColorGridSlice
+  | FrequentlyAskedQuestionsSlice
+  | FeaturedSlice
+  | ThreeNormalCardsSlice
+  | TextBlockSlice
+  | NewsletterSliceSlice
+  | ContactFormSectionSlice
+  | BenefitHeadlineSlice
+  | BlogIndexSlice;
+
+/**
+ * Content for Practice Areas documents
+ */
+interface PracticeAreasDocumentData {
+  /**
+   * Slice Zone field in *Practice Areas*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: practice_areas.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<PracticeAreasDocumentDataSlicesSlice> /**
+   * Meta Description field in *Practice Areas*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: practice_areas.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Practice Areas*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: practice_areas.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Practice Areas*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: practice_areas.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Practice Areas document from Prismic
+ *
+ * - **API ID**: `practice_areas`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PracticeAreasDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<PracticeAreasDocumentData>,
+    "practice_areas",
+    Lang
+  >;
+
+type TeamMemberDocumentDataSlicesSlice =
+  | TeamMemberHeroSlice
+  | TextBlockSlice
+  | HeadingContentSlice
+  | LeftImageContentSlice;
+
+/**
+ * Content for Team Member documents
+ */
+interface TeamMemberDocumentData {
+  /**
+   * Name field in *Team Member*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_member.name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Contact Number field in *Team Member*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_member.contact_number
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  contact_number: prismic.KeyTextField;
+
+  /**
+   * Designation field in *Team Member*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_member.designation
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  designation: prismic.KeyTextField;
+
+  /**
+   * Email Address field in *Team Member*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_member.email_address
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email_address: prismic.KeyTextField;
+
+  /**
+   * LinkedIn Profile Link field in *Team Member*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_member.linkedin_profile_link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linkedin_profile_link: prismic.LinkField;
+
+  /**
+   * Member Image field in *Team Member*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_member.member_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  member_image: prismic.ImageField<never>;
+
+  /**
+   * Slice Zone field in *Team Member*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_member.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<TeamMemberDocumentDataSlicesSlice> /**
+   * Meta Title field in *Team Member*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: team_member.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Team Member*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: team_member.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Team Member*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_member.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Team Member document from Prismic
+ *
+ * - **API ID**: `team_member`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type TeamMemberDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<TeamMemberDocumentData>,
+    "team_member",
+    Lang
+  >;
+
 export type AllDocumentTypes =
   | BlogPostCategoryDocument
   | BlogpostDocument
   | HomepageDocument
-  | PageDocument;
+  | PageDocument
+  | PracticeAreasDocument
+  | TeamMemberDocument;
 
 /**
  * Primary content in *BenefitHeadline → Primary*
@@ -1031,6 +1252,96 @@ export type ServicesSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *TeamIndex → Primary*
+ */
+export interface TeamIndexSliceDefaultPrimary {
+  /**
+   * Heading field in *TeamIndex → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_index.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for TeamIndex Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TeamIndexSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TeamIndexSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TeamIndex*
+ */
+type TeamIndexSliceVariation = TeamIndexSliceDefault;
+
+/**
+ * TeamIndex Shared Slice
+ *
+ * - **API ID**: `team_index`
+ * - **Description**: TeamIndex
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TeamIndexSlice = prismic.SharedSlice<
+  "team_index",
+  TeamIndexSliceVariation
+>;
+
+/**
+ * Primary content in *TeamMemberHero → Primary*
+ */
+export interface TeamMemberHeroSliceDefaultPrimary {
+  /**
+   * Member Image field in *TeamMemberHero → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_member_hero.primary.member_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  member_image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for TeamMemberHero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TeamMemberHeroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TeamMemberHeroSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TeamMemberHero*
+ */
+type TeamMemberHeroSliceVariation = TeamMemberHeroSliceDefault;
+
+/**
+ * TeamMemberHero Shared Slice
+ *
+ * - **API ID**: `team_member_hero`
+ * - **Description**: TeamMemberHero
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TeamMemberHeroSlice = prismic.SharedSlice<
+  "team_member_hero",
+  TeamMemberHeroSliceVariation
+>;
+
+/**
  * Primary content in *Testimonials → Primary*
  */
 export interface TestimonialsSliceDefaultPrimary {
@@ -1272,6 +1583,12 @@ declare module "@prismicio/client" {
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
+      PracticeAreasDocument,
+      PracticeAreasDocumentData,
+      PracticeAreasDocumentDataSlicesSlice,
+      TeamMemberDocument,
+      TeamMemberDocumentData,
+      TeamMemberDocumentDataSlicesSlice,
       AllDocumentTypes,
       BenefitHeadlineSlice,
       BenefitHeadlineSliceDefaultPrimary,
@@ -1328,6 +1645,14 @@ declare module "@prismicio/client" {
       ServicesSliceDefaultPrimary,
       ServicesSliceVariation,
       ServicesSliceDefault,
+      TeamIndexSlice,
+      TeamIndexSliceDefaultPrimary,
+      TeamIndexSliceVariation,
+      TeamIndexSliceDefault,
+      TeamMemberHeroSlice,
+      TeamMemberHeroSliceDefaultPrimary,
+      TeamMemberHeroSliceVariation,
+      TeamMemberHeroSliceDefault,
       TestimonialsSlice,
       TestimonialsSliceDefaultPrimary,
       TestimonialsSliceVariation,

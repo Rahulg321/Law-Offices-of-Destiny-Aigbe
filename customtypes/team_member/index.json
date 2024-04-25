@@ -1,0 +1,108 @@
+{
+  "format": "page",
+  "id": "team_member",
+  "label": "Team Member",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "name": {
+        "type": "Text",
+        "config": {
+          "label": "Name",
+          "placeholder": ""
+        }
+      },
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "contact_number": {
+        "type": "Text",
+        "config": {
+          "label": "Contact Number",
+          "placeholder": ""
+        }
+      },
+      "designation": {
+        "type": "Text",
+        "config": {
+          "label": "Designation",
+          "placeholder": ""
+        }
+      },
+      "email_address": {
+        "type": "Text",
+        "config": {
+          "label": "Email Address",
+          "placeholder": ""
+        }
+      },
+      "linkedin_profile_link": {
+        "type": "Link",
+        "config": {
+          "label": "LinkedIn Profile Link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "member_image": {
+        "type": "Image",
+        "config": {
+          "label": "Member Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "team_member_hero": {
+              "type": "SharedSlice"
+            },
+            "text_block": {
+              "type": "SharedSlice"
+            },
+            "heading_content": {
+              "type": "SharedSlice"
+            },
+            "left_image_content": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    },
+    "SEO & Metadata": {
+      "meta_title": {
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        },
+        "type": "Text"
+      },
+      "meta_description": {
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "A brief summary of the page"
+        },
+        "type": "Text"
+      },
+      "meta_image": {
+        "config": {
+          "constraint": {
+            "height": 1260,
+            "width": 2400
+          },
+          "label": "Meta Image",
+          "thumbnails": []
+        },
+        "type": "Image"
+      }
+    }
+  }
+}

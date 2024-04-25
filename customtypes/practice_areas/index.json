@@ -1,7 +1,7 @@
 {
   "format": "page",
-  "id": "page",
-  "label": "page",
+  "id": "practice_areas",
+  "label": "Practice Areas",
   "repeatable": true,
   "status": true,
   "json": {
@@ -17,64 +17,58 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "team_index": {
-              "type": "SharedSlice"
-            },
-            "three_normal_cards": {
+            "hero": {
               "type": "SharedSlice"
             },
             "left_image_content": {
               "type": "SharedSlice"
             },
-            "how_we_operate": {
-              "type": "SharedSlice"
-            },
-            "heading_content": {
-              "type": "SharedSlice"
-            },
-            "frequently_asked_questions": {
-              "type": "SharedSlice"
-            },
-            "services": {
-              "type": "SharedSlice"
-            },
-            "journey_end": {
-              "type": "SharedSlice"
-            },
-            "testimonials": {
-              "type": "SharedSlice"
-            },
             "three_small_cards": {
-              "type": "SharedSlice"
-            },
-            "color_grid": {
-              "type": "SharedSlice"
-            },
-            "benefit_headline": {
-              "type": "SharedSlice"
-            },
-            "plan_info": {
               "type": "SharedSlice"
             },
             "four_cards_section": {
               "type": "SharedSlice"
             },
-            "newsletter_slice": {
+            "services": {
+              "type": "SharedSlice"
+            },
+            "testimonials": {
+              "type": "SharedSlice"
+            },
+            "how_we_operate": {
+              "type": "SharedSlice"
+            },
+            "journey_end": {
+              "type": "SharedSlice"
+            },
+            "heading_content": {
+              "type": "SharedSlice"
+            },
+            "color_grid": {
+              "type": "SharedSlice"
+            },
+            "frequently_asked_questions": {
               "type": "SharedSlice"
             },
             "featured": {
               "type": "SharedSlice"
             },
+            "three_normal_cards": {
+              "type": "SharedSlice"
+            },
             "text_block": {
               "type": "SharedSlice"
             },
-            "blog_index": {
+            "newsletter_slice": {
               "type": "SharedSlice"
             },
             "contact_form_section": {
               "type": "SharedSlice"
             },
-            "hero": {
+            "benefit_headline": {
+              "type": "SharedSlice"
+            },
+            "blog_index": {
               "type": "SharedSlice"
             }
           }
@@ -82,13 +76,6 @@
       }
     },
     "SEO & Metadata": {
-      "meta_title": {
-        "config": {
-          "label": "Meta Title",
-          "placeholder": "A title of the page used for social media and search engines"
-        },
-        "type": "Text"
-      },
       "meta_description": {
         "config": {
           "label": "Meta Description",
@@ -106,6 +93,13 @@
           "thumbnails": []
         },
         "type": "Image"
+      },
+      "meta_title": {
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        },
+        "type": "Text"
       }
     }
   }

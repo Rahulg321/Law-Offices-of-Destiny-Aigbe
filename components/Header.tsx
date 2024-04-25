@@ -13,7 +13,7 @@ type HeaderProps = {
 };
 
 const nav = [
-  { navlink: "/team-members", navlabel: "Team Members" },
+  { navlink: "/team-members", navlabel: "Team" },
   { navlink: "/blogs", navlabel: "Blog" },
 ];
 
@@ -87,7 +87,7 @@ function NameLogo({}: {}) {
     <div className="">
       <h3>
         <Link href="/" aria-label="Home page" className="">
-          Destiny Aigbe
+          Aigbe Law
         </Link>
       </h3>
     </div>
@@ -106,7 +106,7 @@ function DesktopMenu() {
               href={item.navlink}
               key={index}
               className={clsx(
-                "font-semibold",
+                "font-semibold last:ml-2",
                 pathname === item.navlink ? "underline" : ""
               )}
             >
