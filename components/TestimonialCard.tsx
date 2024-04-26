@@ -2,20 +2,25 @@ import Image from "next/image";
 import React from "react";
 import Zach from "@/public/zach_buer.jpg";
 import { IoMdStar } from "react-icons/io";
+import clsx from "clsx";
 
 type TestimonialCardProps = {
   name: string;
   designation: string;
   content: string;
+  classname?: string;
 };
 
 const TestimonialCard = ({
   name,
   designation,
   content,
+  classname,
 }: TestimonialCardProps) => {
   return (
-    <div className="bg-card border rounded-xl p-4 md:p-6 lg:p-8">
+    <div
+      className={clsx("bg-card border rounded-xl p-4 md:p-6 lg:p-8", classname)}
+    >
       <div className="flex gap-4">
         <div className="relative h-[100px] w-[100px]">
           <Image
