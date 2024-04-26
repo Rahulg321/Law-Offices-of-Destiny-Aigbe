@@ -20,7 +20,7 @@ const LucoskyHeadingContent = ({
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className={clsx("bg-[#003B6F] block-space text-white", {
+      className={clsx("bg-[#003B6F]   block-space text-white", {
         "big-container": narrowBlue === true,
       })}
     >

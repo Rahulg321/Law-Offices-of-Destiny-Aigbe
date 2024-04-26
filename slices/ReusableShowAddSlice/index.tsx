@@ -18,18 +18,20 @@ const ReusableShowAddSlice = ({
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="block-space"
+      className="block-space bg-white"
     >
-      <div className="narrow-container">
+      <div className="big-container">
         <h1 className="mb-4 md:mb-6 lg:mb-12">{slice.primary.heading}</h1>
-        {slice.items.map((e) => {
-          return (
-            <ShowAddComponent
-              heading={e.show_component}
-              description={e.content}
-            />
-          );
-        })}
+        <div className="bg-card px-16 py-8">
+          {slice.items.map((e) => {
+            return (
+              <ShowAddComponent
+                heading={e.show_component}
+                description={e.content}
+              />
+            );
+          })}
+        </div>
       </div>
     </section>
   );

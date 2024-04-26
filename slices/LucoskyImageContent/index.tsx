@@ -18,6 +18,7 @@ const LucoskyImageContent = ({
 }: LucoskyImageContentProps): JSX.Element => {
   const hasButton = slice.primary.need_button;
   const imageRight = slice.primary.image_right;
+  const blueContentBackground = slice.primary.blue_content_background;
 
   return (
     <section
@@ -30,7 +31,7 @@ const LucoskyImageContent = ({
           "flex-row-reverse": imageRight === true,
         })}
       >
-        <div className="basis-1/2 px-8 py-6 text-pretty">
+        <div className={clsx("basis-1/2 px-8 py-6 text-pretty")}>
           <h1 className="mb-4 text-[#003B6F]">{slice.primary.heading}</h1>
           <div className="prose mb-8 prose-p:text-black">
             <PrismicRichText field={slice.primary.content} />

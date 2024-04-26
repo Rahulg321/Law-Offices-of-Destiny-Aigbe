@@ -1500,6 +1500,17 @@ export interface LucoskyImageContentSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#boolean
    */
   image_right: prismic.BooleanField;
+
+  /**
+   * Blue Content Background field in *LucoskyImageContent → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: lucosky_image_content.primary.blue_content_background
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  blue_content_background: prismic.BooleanField;
 }
 
 /**

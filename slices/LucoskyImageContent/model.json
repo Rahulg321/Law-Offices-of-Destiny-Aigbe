@@ -68,6 +68,15 @@
             "placeholder_true": "true",
             "placeholder_false": "false"
           }
+        },
+        "blue_content_background": {
+          "type": "Boolean",
+          "config": {
+            "label": "Blue Content Background",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
         }
       },
       "items": {}
