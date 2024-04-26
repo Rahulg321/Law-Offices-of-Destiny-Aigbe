@@ -30,10 +30,10 @@ const Services = ({ slice }: ServicesProps): JSX.Element => {
         {
           x: 0,
           opacity: 1,
-          duration: 1.5,
+          duration: 1,
           ease: "back.in",
           paused: true,
-          stagger: { each: 0.3, from: "end" },
+          stagger: { each: 0.2, from: "end" },
           scrollTrigger: {
             trigger: ".service-container",
             toggleActions: "play pause resume reset",

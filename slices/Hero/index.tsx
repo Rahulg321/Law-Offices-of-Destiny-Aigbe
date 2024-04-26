@@ -26,16 +26,28 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
   useGSAP(
     () => {
       // gsap code here...
-      gsap.fromTo(
-        ".heading",
-        { x: -100, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          ease: "power3.inOut",
-          duration: 1,
-        }
-      );
+      gsap
+        .timeline()
+        .fromTo(
+          ".heading",
+          { x: -100, opacity: 0 },
+          {
+            x: 0,
+            opacity: 1,
+            ease: "power4.inOut",
+            duration: 1.2,
+          }
+        )
+        .fromTo(
+          ".tagline",
+          { x: -100, opacity: 0 },
+          {
+            x: 0,
+            opacity: 1,
+            ease: "power3.inOut",
+            duration: 1.2,
+          }
+        );
     },
     { scope: container }
   );
@@ -65,7 +77,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           <span>{renderLetters(slice.primary.title, "title")}</span>
         </h1> */}
         <h1 className="mb-4 heading">{slice.primary.title}</h1>
-        <span className="text-xl">{slice.primary.tagline}</span>
+        <span className="text-xl tagline">{slice.primary.tagline}</span>
       </div>
     </BackgroundImageText>
   );

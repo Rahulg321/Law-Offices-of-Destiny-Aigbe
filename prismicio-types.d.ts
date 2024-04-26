@@ -1215,6 +1215,37 @@ export interface LeftImageContentSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#boolean
    */
   image_right: prismic.BooleanField;
+
+  /**
+   * Button Label field in *LeftImageContent → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: left_image_content.primary.button_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_label: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *LeftImageContent → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: left_image_content.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+
+  /**
+   * Need Button field in *LeftImageContent → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: left_image_content.primary.need_button
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  need_button: prismic.BooleanField;
 }
 
 /**
