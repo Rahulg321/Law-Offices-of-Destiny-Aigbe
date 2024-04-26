@@ -35,7 +35,7 @@ const LeftImageContent = ({ slice }: LeftImageContentProps): JSX.Element => {
           x: 0,
           opacity: 1,
           ease: "power4.inOut",
-          duration: 3,
+          duration: 2,
           transformOrigin: "left top",
           scrollTrigger: {
             trigger: ".image-card",
