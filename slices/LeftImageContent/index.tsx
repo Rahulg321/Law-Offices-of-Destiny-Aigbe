@@ -1,7 +1,15 @@
+"use client";
+
+import { useGSAP } from "@gsap/react";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import clsx from "clsx";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useRef } from "react";
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 /**
  * Props for `LeftImageContent`.
@@ -15,6 +23,30 @@ export type LeftImageContentProps =
 const LeftImageContent = ({ slice }: LeftImageContentProps): JSX.Element => {
   const cardBackground = slice.primary.is_card_background;
   const imageRight = slice.primary.image_right;
+  const container = useRef(null);
+
+  useGSAP(
+    () => {
+      // gsap code here...
+      gsap.fromTo(
+        ".image-card",
+        { x: -100, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          ease: "power4.inOut",
+          duration: 3,
+          transformOrigin: "left top",
+          scrollTrigger: {
+            trigger: ".image-card",
+            toggleActions: "play pause resume reset",
+          },
+        }
+      ); // <-- automatically reverted
+    },
+    { scope: container }
+  );
+
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -22,11 +54,12 @@ const LeftImageContent = ({ slice }: LeftImageContentProps): JSX.Element => {
       className={clsx("block-space", {
         "bg-card": cardBackground === true,
       })}
+      ref={container}
     >
       <div className="big-container">
         <div
           className={clsx(
-            "flex flex-col lg:flex-row gap-4 md:gap-6 lg:gap-12",
+            "flex flex-col lg:flex-row  gap-4 md:gap-6 lg:gap-12 image-card",
             {
               "lg:flex-row-reverse": imageRight === true,
             }
@@ -41,8 +74,8 @@ const LeftImageContent = ({ slice }: LeftImageContentProps): JSX.Element => {
               />
             </div>
           </div>
-          <div className="basis-1/2">
-            <h1 className="text-center mb-4 md:mb-6 lg:mb-8">
+          <div className="basis-1/2 ">
+            <h1 className="text-center mb-4 md:mb-6 lg:mb-8 text-pretty">
               {" "}
               {slice.primary.heading}
             </h1>

@@ -24,6 +24,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "three_image_card": {
+              "type": "SharedSlice"
+            },
             "reusable_show_add_slice": {
               "type": "SharedSlice"
             },

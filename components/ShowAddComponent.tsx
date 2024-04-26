@@ -14,10 +14,10 @@ type ShowAddComponentProps = {
 const ShowAddComponent = ({ heading, description }: ShowAddComponentProps) => {
   const [showDescription, setShowDescription] = useState(false);
   return (
-    <div className="mt-8 md:mt-10 lg:mt-12">
+    <div className="mt-8 md:mt-10 lg:mt-12 border-b-4 last:border-none">
       <div className="flex justify-between items-center mb-4 md:mb-6 lg:mb-8">
         <div className="p-4">
-          <span className="text-4xl">{heading}</span>
+          <span className="text-4xl font-semibold">{heading}</span>
         </div>
         <div
           className="text-4xl font-bold cursor-pointer"

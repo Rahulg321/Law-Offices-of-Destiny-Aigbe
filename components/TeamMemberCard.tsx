@@ -14,7 +14,7 @@ type TeamMemberCardProps = {
 const TeamMemberCard = ({ member }: TeamMemberCardProps) => {
   return (
     <Card className="bg-card text-balance grid grid-cols-1 dark:text-white">
-      <div className="relative aspect-w-4 aspect-h-3">
+      <div className="relative aspect-w-4 aspect-h-4">
         <PrismicNextImage
           field={member.data.member_image}
           fill

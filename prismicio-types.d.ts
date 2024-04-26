@@ -204,6 +204,87 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
+type OurFirmDocumentDataSlicesSlice =
+  | ThreeImageCardSlice
+  | JourneyEndSlice
+  | HeroSlice
+  | LeftImageContentSlice
+  | HeadingContentSlice;
+
+/**
+ * Content for Our Firm documents
+ */
+interface OurFirmDocumentData {
+  /**
+   * Page Name field in *Our Firm*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_firm.page_name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  page_name: prismic.RichTextField;
+
+  /**
+   * Slice Zone field in *Our Firm*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_firm.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<OurFirmDocumentDataSlicesSlice> /**
+   * Meta Title field in *Our Firm*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: our_firm.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Our Firm*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: our_firm.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Our Firm*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_firm.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Our Firm document from Prismic
+ *
+ * - **API ID**: `our_firm`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type OurFirmDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<OurFirmDocumentData>,
+    "our_firm",
+    Lang
+  >;
+
 type PageDocumentDataSlicesSlice =
   | TeamIndexSlice
   | ThreeNormalCardsSlice
@@ -286,6 +367,7 @@ export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
 type PracticeAreasDocumentDataSlicesSlice =
+  | ThreeImageCardSlice
   | ReusableShowAddSliceSlice
   | HeroSlice
   | LeftImageContentSlice
@@ -519,6 +601,7 @@ export type AllDocumentTypes =
   | BlogPostCategoryDocument
   | BlogpostDocument
   | HomepageDocument
+  | OurFirmDocument
   | PageDocument
   | PracticeAreasDocument
   | TeamMemberDocument;
@@ -1003,6 +1086,51 @@ export type HowWeOperateSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *JourneyEnd → Primary*
+ */
+export interface JourneyEndSliceDefaultPrimary {
+  /**
+   * Heading field in *JourneyEnd → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: journey_end.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Tagline field in *JourneyEnd → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: journey_end.primary.tagline
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  tagline: prismic.KeyTextField;
+
+  /**
+   * Button Label field in *JourneyEnd → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: journey_end.primary.button_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_label: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *JourneyEnd → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: journey_end.primary.button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+}
+
+/**
  * Default variation for JourneyEnd Slice
  *
  * - **API ID**: `default`
@@ -1011,7 +1139,7 @@ export type HowWeOperateSlice = prismic.SharedSlice<
  */
 export type JourneyEndSliceDefault = prismic.SharedSliceVariation<
   "default",
-  Record<string, never>,
+  Simplify<JourneyEndSliceDefaultPrimary>,
   never
 >;
 
@@ -1535,6 +1663,76 @@ export type TextBlockSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *ThreeImageCard → Primary*
+ */
+export interface ThreeImageCardSliceDefaultPrimary {
+  /**
+   * Heading field in *ThreeImageCard → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: three_image_card.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *ThreeImageCard → Items*
+ */
+export interface ThreeImageCardSliceDefaultItem {
+  /**
+   * Card Image field in *ThreeImageCard → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: three_image_card.items[].card_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  card_image: prismic.ImageField<never>;
+
+  /**
+   * Card Heading field in *ThreeImageCard → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: three_image_card.items[].card_heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  card_heading: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for ThreeImageCard Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ThreeImageCardSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ThreeImageCardSliceDefaultPrimary>,
+  Simplify<ThreeImageCardSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *ThreeImageCard*
+ */
+type ThreeImageCardSliceVariation = ThreeImageCardSliceDefault;
+
+/**
+ * ThreeImageCard Shared Slice
+ *
+ * - **API ID**: `three_image_card`
+ * - **Description**: ThreeImageCard
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ThreeImageCardSlice = prismic.SharedSlice<
+  "three_image_card",
+  ThreeImageCardSliceVariation
+>;
+
+/**
  * Primary content in *ThreeNormalCards → Primary*
  */
 export interface ThreeNormalCardsSliceDefaultPrimary {
@@ -1673,6 +1871,9 @@ declare module "@prismicio/client" {
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
+      OurFirmDocument,
+      OurFirmDocumentData,
+      OurFirmDocumentDataSlicesSlice,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
@@ -1720,6 +1921,7 @@ declare module "@prismicio/client" {
       HowWeOperateSliceVariation,
       HowWeOperateSliceDefault,
       JourneyEndSlice,
+      JourneyEndSliceDefaultPrimary,
       JourneyEndSliceVariation,
       JourneyEndSliceDefault,
       LeftImageContentSlice,
@@ -1759,6 +1961,11 @@ declare module "@prismicio/client" {
       TextBlockSliceDefaultPrimary,
       TextBlockSliceVariation,
       TextBlockSliceDefault,
+      ThreeImageCardSlice,
+      ThreeImageCardSliceDefaultPrimary,
+      ThreeImageCardSliceDefaultItem,
+      ThreeImageCardSliceVariation,
+      ThreeImageCardSliceDefault,
       ThreeNormalCardsSlice,
       ThreeNormalCardsSliceDefaultPrimary,
       ThreeNormalCardsSliceVariation,

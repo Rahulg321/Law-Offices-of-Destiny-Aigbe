@@ -5,14 +5,14 @@ export const ourFirmLinks: {
 }[] = [
   {
     title: "Our Offices",
-    href: "/docs/primitives/alert-dialog",
+    href: "/our-firm/our-offices",
     description:
       "A modal dialog that interrupts the user with important content and expects a response.",
   },
 
   {
     title: "Overview",
-    href: "/docs/primitives/alert-dialog",
+    href: "/our-firm/overview",
     description:
       "A modal dialog that interrupts the user with important content and expects a response.",
   },

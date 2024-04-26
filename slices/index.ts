@@ -25,6 +25,7 @@ export const components = {
   team_member_hero: dynamic(() => import("./TeamMemberHero")),
   testimonials: dynamic(() => import("./Testimonials")),
   text_block: dynamic(() => import("./TextBlock")),
+  three_image_card: dynamic(() => import("./ThreeImageCard")),
   three_normal_cards: dynamic(() => import("./ThreeNormalCards")),
   three_small_cards: dynamic(() => import("./ThreeSmallCards")),
 };

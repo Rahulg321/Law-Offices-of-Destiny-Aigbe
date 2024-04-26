@@ -1,8 +1,8 @@
 {
-  "id": "journey_end",
+  "id": "three_image_card",
   "type": "SharedSlice",
-  "name": "JourneyEnd",
-  "description": "JourneyEnd",
+  "name": "ThreeImageCard",
+  "description": "ThreeImageCard",
   "variations": [
     {
       "id": "default",
@@ -18,31 +18,25 @@
             "label": "Heading",
             "placeholder": ""
           }
-        },
-        "tagline": {
-          "type": "Text",
-          "config": {
-            "label": "Tagline",
-            "placeholder": ""
-          }
-        },
-        "button_label": {
-          "type": "Text",
-          "config": {
-            "label": "Button Label",
-            "placeholder": ""
-          }
-        },
-        "button_link": {
-          "type": "Link",
-          "config": {
-            "label": "Button Link",
-            "placeholder": "",
-            "select": null
-          }
         }
       },
-      "items": {}
+      "items": {
+        "card_image": {
+          "type": "Image",
+          "config": {
+            "label": "Card Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "card_heading": {
+          "type": "Text",
+          "config": {
+            "label": "Card Heading",
+            "placeholder": ""
+          }
+        }
+      }
     }
   ]
 }
