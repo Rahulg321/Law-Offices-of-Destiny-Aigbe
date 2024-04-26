@@ -286,6 +286,7 @@ export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
 type PracticeAreasDocumentDataSlicesSlice =
+  | ReusableShowAddSliceSlice
   | HeroSlice
   | LeftImageContentSlice
   | ThreeSmallCardsSlice
@@ -310,6 +311,17 @@ type PracticeAreasDocumentDataSlicesSlice =
  */
 interface PracticeAreasDocumentData {
   /**
+   * Practice Area Name field in *Practice Areas*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: practice_areas.practice_area_name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  practice_area_name: prismic.KeyTextField;
+
+  /**
    * Slice Zone field in *Practice Areas*
    *
    * - **Field Type**: Slice Zone
@@ -319,6 +331,17 @@ interface PracticeAreasDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#slices
    */
   slices: prismic.SliceZone<PracticeAreasDocumentDataSlicesSlice> /**
+   * Meta Title field in *Practice Areas*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: practice_areas.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
    * Meta Description field in *Practice Areas*
    *
    * - **Field Type**: Text
@@ -326,7 +349,7 @@ interface PracticeAreasDocumentData {
    * - **API ID Path**: practice_areas.meta_description
    * - **Tab**: SEO & Metadata
    * - **Documentation**: https://prismic.io/docs/field#key-text
-   */;
+   */
   meta_description: prismic.KeyTextField;
 
   /**
@@ -339,17 +362,6 @@ interface PracticeAreasDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
-
-  /**
-   * Meta Title field in *Practice Areas*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: A title of the page used for social media and search engines
-   * - **API ID Path**: practice_areas.meta_title
-   * - **Tab**: SEO & Metadata
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  meta_title: prismic.KeyTextField;
 }
 
 /**
@@ -855,6 +867,17 @@ export interface HeadingContentSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   content: prismic.RichTextField;
+
+  /**
+   * Card Background field in *HeadingContent → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: true
+   * - **API ID Path**: heading_content.primary.card_background
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  card_background: prismic.BooleanField;
 }
 
 /**
@@ -1194,6 +1217,76 @@ type PlanInfoSliceVariation = PlanInfoSliceDefault;
 export type PlanInfoSlice = prismic.SharedSlice<
   "plan_info",
   PlanInfoSliceVariation
+>;
+
+/**
+ * Primary content in *ReusableShowAddSlice → Primary*
+ */
+export interface ReusableShowAddSliceSliceDefaultPrimary {
+  /**
+   * Heading field in *ReusableShowAddSlice → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reusable_show_add_slice.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *ReusableShowAddSlice → Items*
+ */
+export interface ReusableShowAddSliceSliceDefaultItem {
+  /**
+   * Tagline field in *ReusableShowAddSlice → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reusable_show_add_slice.items[].show_component
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  show_component: prismic.KeyTextField;
+
+  /**
+   * Content field in *ReusableShowAddSlice → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reusable_show_add_slice.items[].content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Default variation for ReusableShowAddSlice Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ReusableShowAddSliceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ReusableShowAddSliceSliceDefaultPrimary>,
+  Simplify<ReusableShowAddSliceSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *ReusableShowAddSlice*
+ */
+type ReusableShowAddSliceSliceVariation = ReusableShowAddSliceSliceDefault;
+
+/**
+ * ReusableShowAddSlice Shared Slice
+ *
+ * - **API ID**: `reusable_show_add_slice`
+ * - **Description**: ReusableShowAddSlice
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ReusableShowAddSliceSlice = prismic.SharedSlice<
+  "reusable_show_add_slice",
+  ReusableShowAddSliceSliceVariation
 >;
 
 /**
@@ -1641,6 +1734,11 @@ declare module "@prismicio/client" {
       PlanInfoSliceDefaultPrimary,
       PlanInfoSliceVariation,
       PlanInfoSliceDefault,
+      ReusableShowAddSliceSlice,
+      ReusableShowAddSliceSliceDefaultPrimary,
+      ReusableShowAddSliceSliceDefaultItem,
+      ReusableShowAddSliceSliceVariation,
+      ReusableShowAddSliceSliceDefault,
       ServicesSlice,
       ServicesSliceDefaultPrimary,
       ServicesSliceVariation,

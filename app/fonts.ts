@@ -6,6 +6,7 @@ export const montserrat = Montserrat({
   weight: ["100", "200", "300", "400", "500", "600", "700"],
   fallback: ["system-ui", "arial"],
 });
+
 export const playfair_display = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair-display",

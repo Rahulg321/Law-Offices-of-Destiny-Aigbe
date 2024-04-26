@@ -4,6 +4,8 @@ import Link from "next/link";
 import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FiArrowRightCircle } from "react-icons/fi";
+import { Card } from "./ui/card";
+import { FaLinkedin } from "react-icons/fa";
 
 type TeamMemberCardProps = {
   member: Content.TeamMemberDocument;
@@ -11,8 +13,8 @@ type TeamMemberCardProps = {
 
 const TeamMemberCard = ({ member }: TeamMemberCardProps) => {
   return (
-    <div className="bg-background dark:bg-secondary text-balance grid grid-cols-1 lg:grid-cols-2 dark:text-white">
-      <div className="relative aspect-w-4 aspect-h-4">
+    <Card className="bg-card text-balance grid grid-cols-1 dark:text-white">
+      <div className="relative aspect-w-4 aspect-h-3">
         <PrismicNextImage
           field={member.data.member_image}
           fill
@@ -27,18 +29,16 @@ const TeamMemberCard = ({ member }: TeamMemberCardProps) => {
         <span className="block font-semibold mb-4 text-xl md:text-2xl">
           {member.data.designation}
         </span>
-
-        <Link
-          className="flex justify-center items-center gap-1 text-xl hover:underline"
-          href={`team-members/${member.uid}`}
-        >
-          <span>View Bio</span>
-          <div>
-            <FaArrowRightLong />
-          </div>
-        </Link>
+        <div>
+          <Link
+            href={`/team-members/${member.uid}`}
+            className="hover:underline transition"
+          >
+            Learn More
+          </Link>
+        </div>
       </div>
-    </div>
+    </Card>
   );
 };
 

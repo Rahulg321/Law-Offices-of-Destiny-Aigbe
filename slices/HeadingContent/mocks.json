@@ -18,6 +18,10 @@
 						}
 					}
 				]
+			},
+			"card_background": {
+				"__TYPE__": "BooleanContent",
+				"value": true
 			}
 		},
 		"items": []

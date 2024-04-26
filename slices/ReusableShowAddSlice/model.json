@@ -1,8 +1,8 @@
 {
-  "id": "heading_content",
+  "id": "reusable_show_add_slice",
   "type": "SharedSlice",
-  "name": "HeadingContent",
-  "description": "HeadingContent",
+  "name": "ReusableShowAddSlice",
+  "description": "ReusableShowAddSlice",
   "variations": [
     {
       "id": "default",
@@ -18,6 +18,15 @@
             "label": "Heading",
             "placeholder": ""
           }
+        }
+      },
+      "items": {
+        "show_component": {
+          "type": "Text",
+          "config": {
+            "label": "Tagline",
+            "placeholder": ""
+          }
         },
         "content": {
           "type": "StructuredText",
@@ -27,18 +36,8 @@
             "allowTargetBlank": true,
             "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
-        },
-        "card_background": {
-          "type": "Boolean",
-          "config": {
-            "label": "Card Background",
-            "placeholder_false": "false",
-            "placeholder_true": "true",
-            "default_value": true
-          }
         }
-      },
-      "items": {}
+      }
     }
   ]
 }

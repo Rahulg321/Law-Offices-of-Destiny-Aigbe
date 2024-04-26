@@ -19,6 +19,7 @@ export const components = {
   left_image_content: dynamic(() => import("./LeftImageContent")),
   newsletter_slice: dynamic(() => import("./NewsletterSlice")),
   plan_info: dynamic(() => import("./PlanInfo")),
+  reusable_show_add_slice: dynamic(() => import("./ReusableShowAddSlice")),
   services: dynamic(() => import("./Services")),
   team_index: dynamic(() => import("./TeamIndex")),
   team_member_hero: dynamic(() => import("./TeamMemberHero")),

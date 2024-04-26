@@ -1,0 +1,42 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "FieldContent",
+				"value": "closer",
+				"type": "Text"
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"show_component",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "else",
+							"type": "Text"
+						}
+					],
+					[
+						"content",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Ex qui aliquip laborum do veniam mollit officia. Est eu tempor proident ut occaecat minim."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
+	}
+]

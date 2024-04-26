@@ -24,10 +24,6 @@ const LeftImageContent = ({ slice }: LeftImageContentProps): JSX.Element => {
       })}
     >
       <div className="big-container">
-        <h1 className="text-center mb-4 md:mb-6 lg:mb-8">
-          {" "}
-          {slice.primary.heading}
-        </h1>
         <div
           className={clsx(
             "flex flex-col lg:flex-row gap-4 md:gap-6 lg:gap-12",
@@ -36,7 +32,7 @@ const LeftImageContent = ({ slice }: LeftImageContentProps): JSX.Element => {
             }
           )}
         >
-          <div className="basis-1/2">
+          <div className="basis-1/3">
             <div className="relative aspect-h-1 aspect-w-1">
               <PrismicNextImage
                 field={slice.primary.featured_image}
@@ -45,8 +41,14 @@ const LeftImageContent = ({ slice }: LeftImageContentProps): JSX.Element => {
               />
             </div>
           </div>
-          <div className="prose md:prose-lg lg:prose-xl prose-zinc w-full max-w-none dark:prose-invert prose-img:rounded-xl prose-headings:underline prose-a:text-blue-600">
-            <PrismicRichText field={slice.primary.content} />
+          <div className="basis-1/2">
+            <h1 className="text-center mb-4 md:mb-6 lg:mb-8">
+              {" "}
+              {slice.primary.heading}
+            </h1>
+            <div className="prose md:prose-lg lg:prose-xl prose-zinc w-full max-w-none dark:prose-invert prose-img:rounded-xl prose-headings:underline prose-a:text-blue-600">
+              <PrismicRichText field={slice.primary.content} />
+            </div>
           </div>
         </div>
       </div>

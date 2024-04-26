@@ -25,73 +25,67 @@ export const components: {
 }[] = [
   {
     title: "Corporate & Securities",
-    href: "/docs/primitives/alert-dialog",
+    href: "/practice-areas/corporate-securities",
     description:
       "A modal dialog that interrupts the user with important content and expects a response.",
   },
   {
-    title: "Mergers and Acquistions",
-    href: "/docs/primitives/hover-card",
+    title: "Mergers and Acquisitions",
+    href: "/practice-areas/mergers-and-acquisitions",
     description:
       "For sighted users to preview content available behind a link.",
   },
   {
     title: "Uplisting",
-    href: "/docs/primitives/progress",
+    href: "/practice-areas/uplisting",
     description:
       "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
   },
   {
     title: "Banking & Finance",
-    href: "/docs/primitives/progress",
+    href: "/practice-areas/banking-finance",
     description:
       "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
   },
   {
     title: "Corporate Tax",
-    href: "/docs/primitives/progress",
+    href: "/practice-areas/corporate-tax",
     description:
       "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
   },
   {
     title: "Public Finance",
-    href: "/docs/primitives/progress",
+    href: "/practice-areas/public-finance",
     description:
       "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
   },
   {
     title: "Real Estate",
-    href: "/docs/primitives/progress",
+    href: "/practice-areas/real-estate",
     description:
       "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
   },
   {
     title: "White Collar Defense",
-    href: "/docs/primitives/progress",
+    href: "/practice-areas/white-collar-defense",
     description:
       "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
   },
   {
     title: "Intellectual Property",
-    href: "/docs/primitives/progress",
+    href: "/practice-areas/intellectual-property",
     description:
       "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
   },
   {
     title: "Foreign Direct Investment",
-    href: "/docs/primitives/progress",
-    description:
-      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
-  },
-  {
-    title: "Isralei Practice Group",
-    href: "/docs/primitives/progress",
+    href: "/practice-areas/foreign-direct-investment",
     description:
       "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
   },
   {
     title: "US Export Controls",
-    href: "/docs/primitives/progress",
+    href: "/practice-areas/us-export-controls",
     description:
       "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
   },
