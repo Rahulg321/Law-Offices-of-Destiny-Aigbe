@@ -61,10 +61,12 @@ const Testimonials = ({ slice }: TestimonialsProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="block-space big-container"
+      className="block-space big-container sect"
     >
       <div className="text-center mb-4 md:mb-6 lg:mb-8">
-        <h1 className="tracking-wider mb-2">{slice.primary.heading}</h1>
+        <h1 className="tracking-wider mb-2">
+          <span>{slice.primary.heading}</span>
+        </h1>
         <p>{slice.primary.tagline}</p>
       </div>
       <div
