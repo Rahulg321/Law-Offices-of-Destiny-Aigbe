@@ -20,6 +20,34 @@
 				]
 			}
 		},
-		"items": []
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"card_heading",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "smaller",
+							"type": "Text"
+						}
+					],
+					[
+						"card_description",
+						{
+							"__TYPE__": "StructuredTextContent",
+							"value": [
+								{
+									"type": "paragraph",
+									"content": {
+										"text": "Tempor et aliquip occaecat dolor ex adipisicing excepteur fugiat deserunt magna eiusmod."
+									}
+								}
+							]
+						}
+					]
+				]
+			}
+		]
 	}
 ]

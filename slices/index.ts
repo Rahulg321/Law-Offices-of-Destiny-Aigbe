@@ -17,6 +17,9 @@ export const components = {
   how_we_operate: dynamic(() => import("./HowWeOperate")),
   journey_end: dynamic(() => import("./JourneyEnd")),
   left_image_content: dynamic(() => import("./LeftImageContent")),
+  lucosky_blue_image_content: dynamic(
+    () => import("./LucoskyBlueImageContent"),
+  ),
   lucosky_featured: dynamic(() => import("./LucoskyFeatured")),
   lucosky_left_heading_content: dynamic(
     () => import("./LucoskyLeftHeadingContent"),

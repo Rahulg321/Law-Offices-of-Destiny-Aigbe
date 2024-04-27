@@ -25,7 +25,7 @@ const ThreeNormalCards = ({ slice }: ThreeNormalCardsProps): JSX.Element => {
     >
       <div className="big-container">
         <div className="text-center mb-6">
-          <h1 className="mb-4 md:mb-6">{slice.primary.heading}</h1>
+          <h1 className="mb-4 md:mb-6 text-mainC">{slice.primary.heading}</h1>
           <p className="">{slice.primary.tagline}</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

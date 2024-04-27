@@ -1,14 +1,21 @@
 import { RichTextField } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
+import clsx from "clsx";
 import React from "react";
 
 type RichTextFieldProps = {
   description: RichTextField;
+  classname?: string;
 };
 
-const TextField = ({ description }: RichTextFieldProps) => {
+const TextField = ({ description, classname }: RichTextFieldProps) => {
   return (
-    <div className="prose md:prose-lg lg:prose-xl w-full max-w-none dark:prose-invert prose-img:rounded-xl prose-headings:underline prose-a:text-blue-600 prose-p:text-black">
+    <div
+      className={clsx(
+        "prose md:prose-lg lg:prose-xl w-full max-w-none dark:prose-invert prose-img:rounded-xl prose-headings:underline prose-a:text-blue-600 prose-p:text-black",
+        classname
+      )}
+    >
       <PrismicRichText field={description} />
     </div>
   );

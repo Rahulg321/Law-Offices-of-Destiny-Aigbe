@@ -124,6 +124,7 @@ export type BlogpostDocument<Lang extends string = string> =
   >;
 
 type HomepageDocumentDataSlicesSlice =
+  | LucoskyBlueImageContentSlice
   | ValuesSlice
   | LucoskyLeftHeadingContentSlice
   | LucoskyFeaturedSlice
@@ -1294,6 +1295,62 @@ export type LeftImageContentSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *LucoskyBlueImageContent → Primary*
+ */
+export interface LucoskyBlueImageContentSliceDefaultPrimary {
+  /**
+   * Main Content field in *LucoskyBlueImageContent → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: lucosky_blue_image_content.primary.main_content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  main_content: prismic.RichTextField;
+
+  /**
+   * Main Image field in *LucoskyBlueImageContent → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: lucosky_blue_image_content.primary.main_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  main_image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for LucoskyBlueImageContent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LucoskyBlueImageContentSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<LucoskyBlueImageContentSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *LucoskyBlueImageContent*
+ */
+type LucoskyBlueImageContentSliceVariation =
+  LucoskyBlueImageContentSliceDefault;
+
+/**
+ * LucoskyBlueImageContent Shared Slice
+ *
+ * - **API ID**: `lucosky_blue_image_content`
+ * - **Description**: LucoskyBlueImageContent
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LucoskyBlueImageContentSlice = prismic.SharedSlice<
+  "lucosky_blue_image_content",
+  LucoskyBlueImageContentSliceVariation
+>;
+
+/**
  * Primary content in *LucoskyFeatured → Primary*
  */
 export interface LucoskyFeaturedSliceDefaultPrimary {
@@ -2077,6 +2134,31 @@ export interface ValuesSliceDefaultPrimary {
 }
 
 /**
+ * Primary content in *Values → Items*
+ */
+export interface ValuesSliceDefaultItem {
+  /**
+   * Card Heading field in *Values → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: values.items[].card_heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  card_heading: prismic.KeyTextField;
+
+  /**
+   * Card Description field in *Values → Items*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: values.items[].card_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  card_description: prismic.RichTextField;
+}
+
+/**
  * Default variation for Values Slice
  *
  * - **API ID**: `default`
@@ -2086,7 +2168,7 @@ export interface ValuesSliceDefaultPrimary {
 export type ValuesSliceDefault = prismic.SharedSliceVariation<
   "default",
   Simplify<ValuesSliceDefaultPrimary>,
-  never
+  Simplify<ValuesSliceDefaultItem>
 >;
 
 /**
@@ -2178,6 +2260,10 @@ declare module "@prismicio/client" {
       LeftImageContentSliceDefaultPrimary,
       LeftImageContentSliceVariation,
       LeftImageContentSliceDefault,
+      LucoskyBlueImageContentSlice,
+      LucoskyBlueImageContentSliceDefaultPrimary,
+      LucoskyBlueImageContentSliceVariation,
+      LucoskyBlueImageContentSliceDefault,
       LucoskyFeaturedSlice,
       LucoskyFeaturedSliceDefaultPrimary,
       LucoskyFeaturedSliceVariation,
@@ -2234,6 +2320,7 @@ declare module "@prismicio/client" {
       ThreeSmallCardsSliceDefault,
       ValuesSlice,
       ValuesSliceDefaultPrimary,
+      ValuesSliceDefaultItem,
       ValuesSliceVariation,
       ValuesSliceDefault,
     };

@@ -22,10 +22,12 @@ const ServiceCard = ({
         classname
       )}
     >
-      <div className="flex items-center justify-center text-5xl">{icon}</div>
+      <div className="flex items-center text-mainC justify-center text-7xl">
+        {icon}
+      </div>
       <div className="col-span-2">
-        <h4>{heading}</h4>
-        <span>{description}</span>
+        <h4 className="text-mainC mb-1">{heading}</h4>
+        <span className="text-black text-lg">{description}</span>
       </div>
     </div>
   );

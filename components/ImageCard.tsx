@@ -14,7 +14,7 @@ const ImageCard = ({ heading, tagline, btnLabel, btnLink }: ImageCardProps) => {
   return (
     <div
       className={clsx(
-        "bg-[#003B6F] px-6 py-4 flex flex-col justify-between gap-2"
+        "bg-[#003B6F] px-6 py-8 flex flex-col justify-between gap-2"
       )}
     >
       <h3 className={clsx("text-white")}>{heading}</h3>

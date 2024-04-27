@@ -51,7 +51,7 @@ const Services = ({ slice }: ServicesProps): JSX.Element => {
       className="big-container block-space"
     >
       <div className="text-balance text-center mb-6 md:mb-8 lg:mb-12">
-        <h2 className="mb-2">{slice.primary.heading}</h2>
+        <h2 className="mb-2 text-mainC">{slice.primary.heading}</h2>
         <p>{slice.primary.tagline}</p>
       </div>
       <div

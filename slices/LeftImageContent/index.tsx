@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { useGSAP } from "@gsap/react";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
@@ -23,6 +24,7 @@ export type LeftImageContentProps =
 const LeftImageContent = ({ slice }: LeftImageContentProps): JSX.Element => {
   const cardBackground = slice.primary.is_card_background;
   const imageRight = slice.primary.image_right;
+  const hasButton = slice.primary.need_button;
   const container = useRef(null);
 
   useGSAP(
@@ -51,21 +53,16 @@ const LeftImageContent = ({ slice }: LeftImageContentProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className={clsx("", {
-        "bg-card": cardBackground === true,
-      })}
+      className={clsx("block-space")}
       ref={container}
     >
       <div className="\">
         <div
-          className={clsx(
-            "flex flex-col lg:flex-row  gap-4 md:gap-6 lg:gap-12 image-card",
-            {
-              "lg:flex-row-reverse": imageRight === true,
-            }
-          )}
+          className={clsx("flex flex-col lg:flex-row image-card", {
+            "lg:flex-row-reverse": imageRight === true,
+          })}
         >
-          <div className="relative basis-1/2 aspect-h-1 aspect-w-3">
+          <div className="relative top-[50px] basis-1/2 aspect-h-1 aspect-w-3">
             <PrismicNextImage
               field={slice.primary.featured_image}
               fill
@@ -73,7 +70,11 @@ const LeftImageContent = ({ slice }: LeftImageContentProps): JSX.Element => {
             />
           </div>
 
-          <div className="basis-1/2 px-8 py-6 text-pretty">
+          <div
+            className={clsx("basis-1/2 p-12 text-pretty text-center", {
+              "bg-card": cardBackground === true,
+            })}
+          >
             <h1 className="text-center text-[#003B6F] mb-4 md:mb-6 lg:mb-8 text-pretty">
               {" "}
               {slice.primary.heading}
@@ -81,6 +82,11 @@ const LeftImageContent = ({ slice }: LeftImageContentProps): JSX.Element => {
             <div className="prose md:prose-lg lg:prose-xl w-full max-w-none dark:prose-invert prose-img:rounded-xl prose-headings:underline prose-a:text-blue-600 prose-p:text-black">
               <PrismicRichText field={slice.primary.content} />
             </div>
+            {hasButton && (
+              <Button className="bg-mainC mt-6 text-xl p-8">
+                {slice.primary.button_label}
+              </Button>
+            )}
           </div>
         </div>
       </div>

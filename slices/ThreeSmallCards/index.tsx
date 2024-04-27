@@ -19,7 +19,7 @@ const ThreeSmallCards = ({ slice }: ThreeSmallCardsProps): JSX.Element => {
       className="big-container block-space"
     >
       <div className="text-center mb-4">
-        <h1 className="mb-2">{slice.primary.heading}</h1>
+        <h1 className="mb-2 text-mainC">{slice.primary.heading}</h1>
         <p>{slice.primary.tagline}</p>
       </div>
 

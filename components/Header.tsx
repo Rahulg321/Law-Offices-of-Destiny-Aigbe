@@ -30,7 +30,7 @@ const Header = ({ classname }: HeaderProps) => {
     <>
       <header
         className={clsx(
-          "px-2 py-1 border-b-4 sticky top-0 z-50 bg-background",
+          "px-2 py-1 border-b-1 border-black sticky top-0 z-50 bg-background",
           classname
         )}
       >

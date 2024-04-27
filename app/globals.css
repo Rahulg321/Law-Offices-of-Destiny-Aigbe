@@ -5,7 +5,7 @@
 @layer base {
   :root {
     --lucosky: #003b6f;
-    --background: 210 13% 94%;
+    --background: 0, 0%, 100%;
     --foreground: 240 10% 3.9%;
 
     --card: 180, 2%, 10%, 5%;
@@ -90,7 +90,7 @@
   }
 
   p {
-    @apply text-xl text-muted-foreground;
+    @apply text-xl text-black;
   }
 
   .lead {

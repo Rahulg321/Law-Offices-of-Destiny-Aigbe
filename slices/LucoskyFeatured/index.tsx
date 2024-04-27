@@ -27,7 +27,7 @@ const LucoskyFeatured = ({ slice }: LucoskyFeaturedProps): JSX.Element => {
 
           <PrismicNextLink
             field={slice.primary.button_link}
-            className="bg-white h-fit font-semibold transition text-center px-4 py-4"
+            className="bg-white h-fit font-semibold transition text-center p-6 text-xl"
           >
             {slice.primary.button_label}
           </PrismicNextLink>
