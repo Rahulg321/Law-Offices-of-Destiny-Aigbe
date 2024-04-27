@@ -36,7 +36,6 @@ const ColorGrid = ({ slice }: ColorGridProps): JSX.Element => {
           scrollTrigger: {
             trigger: ".color-grid-container",
             toggleActions: "play pause resume reset",
-            start: "top center",
           },
         }
       ); // <-- automatically reverted

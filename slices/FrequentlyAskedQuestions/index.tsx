@@ -21,7 +21,7 @@ const FrequentlyAskedQuestions = ({
       className="bg-card block-space"
     >
       <div className="text-center big-container">
-        <h1 className="mb-4">{slice.primary.heading}</h1>
+        <h1 className="mb-4 text-mainC">{slice.primary.heading}</h1>
         <p>{slice.primary.tagline}</p>
         <div className="narrow-container mt-8">
           <FaqAccordian />

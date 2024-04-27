@@ -4,14 +4,18 @@ import Link from "next/link";
 import React from "react";
 import { Card } from "./ui/card";
 import { CgPlayButtonO } from "react-icons/cg";
+import clsx from "clsx";
 
 type TeamMemberCardProps = {
   member: Content.TeamMemberDocument;
+  classname?: string;
 };
 
-const TeamMemberCard = ({ member }: TeamMemberCardProps) => {
+const TeamMemberCard = ({ member, classname }: TeamMemberCardProps) => {
   return (
-    <Card className="bg-[#003B6F] text-balance flex text-white">
+    <Card
+      className={clsx("bg-[#003B6F] text-balance flex text-white", classname)}
+    >
       <div className="relative aspect-w-6 aspect-h-2 basis-1/3">
         <PrismicNextImage
           field={member.data.member_image}

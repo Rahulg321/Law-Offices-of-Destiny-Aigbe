@@ -23,7 +23,7 @@ const TeamIndex = ({ slice }: TeamIndexProps): JSX.Element => {
         <h1 className="text-center mb-4 md:mb-8  lg:mb-12 text-mainC">
           {slice.primary.heading}
         </h1>
-        <Suspense fallback={<div className="">loading blog postsss</div>}>
+        <Suspense fallback={<div className="">Loading team Members</div>}>
           <TeamMembersIndex />
         </Suspense>
       </div>
@@ -36,19 +36,13 @@ export default TeamIndex;
 async function TeamMembersIndex() {
   const client = createClient();
   const teamMembers = await client.getAllByType("team_member");
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 lg:gap-12">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 member-container md:gap-6 lg:gap-12">
       {teamMembers.map((e) => {
-        return <TeamMemberCard key={e.uid} member={e} />;
-      })}
-      {teamMembers.map((e) => {
-        return <TeamMemberCard key={e.uid} member={e} />;
-      })}
-      {teamMembers.map((e) => {
-        return <TeamMemberCard key={e.uid} member={e} />;
-      })}
-      {teamMembers.map((e) => {
-        return <TeamMemberCard key={e.uid} member={e} />;
+        return (
+          <TeamMemberCard key={e.uid} member={e} classname="member-card" />
+        );
       })}
     </div>
   );

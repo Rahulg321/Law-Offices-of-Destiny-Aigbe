@@ -31,7 +31,7 @@ const Services = ({ slice }: ServicesProps): JSX.Element => {
           x: 0,
           opacity: 1,
           duration: 1,
-          ease: "back.in",
+          ease: "power2.inOut",
           paused: true,
           stagger: { each: 0.2, from: "end" },
           scrollTrigger: {
@@ -49,15 +49,13 @@ const Services = ({ slice }: ServicesProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className="big-container block-space"
+      ref={container}
     >
       <div className="text-balance text-center mb-6 md:mb-8 lg:mb-12">
         <h2 className="mb-2 text-mainC">{slice.primary.heading}</h2>
         <p>{slice.primary.tagline}</p>
       </div>
-      <div
-        className="grid grid-cols-1 service-container md:grid-cols-2 gap-6 md:gap-8 lg:gap-12"
-        ref={container}
-      >
+      <div className="grid grid-cols-1 service-container md:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
         <ServiceCard
           icon={<FaPeopleGroup />}
           heading="Going Public"

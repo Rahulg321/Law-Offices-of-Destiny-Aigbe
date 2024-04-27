@@ -12,11 +12,37 @@ export type PlanInfoProps = SliceComponentProps<Content.PlanInfoSlice>;
  * Component for "PlanInfo" Slices.
  */
 const PlanInfo = ({ slice }: PlanInfoProps): JSX.Element => {
+  // const container = useRef<HTMLDivElement | null>(null);
+
+  // useGSAP(
+  //   () => {
+  //     // gsap code here...
+  //     gsap.fromTo(
+  //       ".box",
+  //       { x: -100, opacity: 0 },
+  //       {
+  //         x: 0,
+  //         opacity: 1,
+  //         duration: 1,
+  //         ease: "power2.inOut",
+  //         paused: true,
+  //         stagger: { each: 0.2, from: "end" },
+  //         scrollTrigger: {
+  //           trigger: ".service-container",
+  //           toggleActions: "play pause resume reset",
+  //         },
+  //       }
+  //     ); // <-- automatically reverted
+  //   },
+  //   { scope: container }
+  // );
+
   return (
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className="big-container block-space"
+      // ref={container}
     >
       <h1 className="text-center text-mainC mb-6 md:mb-8 lg:mb-12">
         {slice.primary.heading}
