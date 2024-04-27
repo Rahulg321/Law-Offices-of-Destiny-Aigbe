@@ -20,6 +20,7 @@ const config = {
     },
     extend: {
       colors: {
+        mainC: "var(--lucosky)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

@@ -124,10 +124,10 @@ export type BlogpostDocument<Lang extends string = string> =
   >;
 
 type HomepageDocumentDataSlicesSlice =
+  | ValuesSlice
+  | LucoskyLeftHeadingContentSlice
   | LucoskyFeaturedSlice
   | ThreeImageCardSlice
-  | LucoskyHeadingContentSlice
-  | LucoskyImageContentSlice
   | ThreeNormalCardsSlice
   | LeftImageContentSlice
   | HowWeOperateSlice
@@ -290,8 +290,6 @@ export type OurFirmDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
-  | LucoskyHeadingContentSlice
-  | LucoskyImageContentSlice
   | TeamIndexSlice
   | ThreeNormalCardsSlice
   | LeftImageContentSlice
@@ -967,6 +965,17 @@ export interface HeadingContentSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#boolean
    */
   card_background: prismic.BooleanField;
+
+  /**
+   * Narrow Background field in *HeadingContent → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: heading_content.primary.narrow_background
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  narrow_background: prismic.BooleanField;
 }
 
 /**
@@ -1360,187 +1369,60 @@ export type LucoskyFeaturedSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *LucoskyHeadingContent → Primary*
+ * Primary content in *LucoskyLeftHeadingContent → Primary*
  */
-export interface LucoskyHeadingContentSliceDefaultPrimary {
+export interface LucoskyLeftHeadingContentSliceDefaultPrimary {
   /**
-   * Heading field in *LucoskyHeadingContent → Primary*
+   * Heading field in *LucoskyLeftHeadingContent → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: lucosky_heading_content.primary.heading
+   * - **API ID Path**: lucosky_left_heading_content.primary.heading
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   heading: prismic.KeyTextField;
 
   /**
-   * Content field in *LucoskyHeadingContent → Primary*
+   * Content field in *LucoskyLeftHeadingContent → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: lucosky_heading_content.primary.content
+   * - **API ID Path**: lucosky_left_heading_content.primary.content
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   content: prismic.RichTextField;
-
-  /**
-   * Narrow Blue field in *LucoskyHeadingContent → Primary*
-   *
-   * - **Field Type**: Boolean
-   * - **Placeholder**: *None*
-   * - **Default Value**: false
-   * - **API ID Path**: lucosky_heading_content.primary.narrow_blue
-   * - **Documentation**: https://prismic.io/docs/field#boolean
-   */
-  narrow_blue: prismic.BooleanField;
 }
 
 /**
- * Default variation for LucoskyHeadingContent Slice
+ * Default variation for LucoskyLeftHeadingContent Slice
  *
  * - **API ID**: `default`
  * - **Description**: Default
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type LucoskyHeadingContentSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<LucoskyHeadingContentSliceDefaultPrimary>,
-  never
->;
+export type LucoskyLeftHeadingContentSliceDefault =
+  prismic.SharedSliceVariation<
+    "default",
+    Simplify<LucoskyLeftHeadingContentSliceDefaultPrimary>,
+    never
+  >;
 
 /**
- * Slice variation for *LucoskyHeadingContent*
+ * Slice variation for *LucoskyLeftHeadingContent*
  */
-type LucoskyHeadingContentSliceVariation = LucoskyHeadingContentSliceDefault;
+type LucoskyLeftHeadingContentSliceVariation =
+  LucoskyLeftHeadingContentSliceDefault;
 
 /**
- * LucoskyHeadingContent Shared Slice
+ * LucoskyLeftHeadingContent Shared Slice
  *
- * - **API ID**: `lucosky_heading_content`
- * - **Description**: LucoskyHeadingContent
+ * - **API ID**: `lucosky_left_heading_content`
+ * - **Description**: LucoskyLeftHeadingContent
  * - **Documentation**: https://prismic.io/docs/slice
  */
-export type LucoskyHeadingContentSlice = prismic.SharedSlice<
-  "lucosky_heading_content",
-  LucoskyHeadingContentSliceVariation
->;
-
-/**
- * Primary content in *LucoskyImageContent → Primary*
- */
-export interface LucoskyImageContentSliceDefaultPrimary {
-  /**
-   * Heading field in *LucoskyImageContent → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: lucosky_image_content.primary.heading
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  heading: prismic.KeyTextField;
-
-  /**
-   * Image field in *LucoskyImageContent → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: lucosky_image_content.primary.image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
-
-  /**
-   * Content field in *LucoskyImageContent → Primary*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: lucosky_image_content.primary.content
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  content: prismic.RichTextField;
-
-  /**
-   * Need Button field in *LucoskyImageContent → Primary*
-   *
-   * - **Field Type**: Boolean
-   * - **Placeholder**: *None*
-   * - **Default Value**: true
-   * - **API ID Path**: lucosky_image_content.primary.need_button
-   * - **Documentation**: https://prismic.io/docs/field#boolean
-   */
-  need_button: prismic.BooleanField;
-
-  /**
-   * Button Label field in *LucoskyImageContent → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: lucosky_image_content.primary.button_label
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  button_label: prismic.KeyTextField;
-
-  /**
-   * Button Link field in *LucoskyImageContent → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: lucosky_image_content.primary.button_link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  button_link: prismic.LinkField;
-
-  /**
-   * Image Right field in *LucoskyImageContent → Primary*
-   *
-   * - **Field Type**: Boolean
-   * - **Placeholder**: *None*
-   * - **Default Value**: false
-   * - **API ID Path**: lucosky_image_content.primary.image_right
-   * - **Documentation**: https://prismic.io/docs/field#boolean
-   */
-  image_right: prismic.BooleanField;
-
-  /**
-   * Blue Content Background field in *LucoskyImageContent → Primary*
-   *
-   * - **Field Type**: Boolean
-   * - **Placeholder**: *None*
-   * - **Default Value**: false
-   * - **API ID Path**: lucosky_image_content.primary.blue_content_background
-   * - **Documentation**: https://prismic.io/docs/field#boolean
-   */
-  blue_content_background: prismic.BooleanField;
-}
-
-/**
- * Default variation for LucoskyImageContent Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type LucoskyImageContentSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<LucoskyImageContentSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Slice variation for *LucoskyImageContent*
- */
-type LucoskyImageContentSliceVariation = LucoskyImageContentSliceDefault;
-
-/**
- * LucoskyImageContent Shared Slice
- *
- * - **API ID**: `lucosky_image_content`
- * - **Description**: LucoskyImageContent
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type LucoskyImageContentSlice = prismic.SharedSlice<
-  "lucosky_image_content",
-  LucoskyImageContentSliceVariation
+export type LucoskyLeftHeadingContentSlice = prismic.SharedSlice<
+  "lucosky_left_heading_content",
+  LucoskyLeftHeadingContentSliceVariation
 >;
 
 /**
@@ -2169,6 +2051,58 @@ export type ThreeSmallCardsSlice = prismic.SharedSlice<
   ThreeSmallCardsSliceVariation
 >;
 
+/**
+ * Primary content in *Values → Primary*
+ */
+export interface ValuesSliceDefaultPrimary {
+  /**
+   * Heading field in *Values → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: values.primary.heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Content field in *Values → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: values.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Values Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ValuesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ValuesSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Values*
+ */
+type ValuesSliceVariation = ValuesSliceDefault;
+
+/**
+ * Values Shared Slice
+ *
+ * - **API ID**: `values`
+ * - **Description**: Values
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ValuesSlice = prismic.SharedSlice<"values", ValuesSliceVariation>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -2248,14 +2182,10 @@ declare module "@prismicio/client" {
       LucoskyFeaturedSliceDefaultPrimary,
       LucoskyFeaturedSliceVariation,
       LucoskyFeaturedSliceDefault,
-      LucoskyHeadingContentSlice,
-      LucoskyHeadingContentSliceDefaultPrimary,
-      LucoskyHeadingContentSliceVariation,
-      LucoskyHeadingContentSliceDefault,
-      LucoskyImageContentSlice,
-      LucoskyImageContentSliceDefaultPrimary,
-      LucoskyImageContentSliceVariation,
-      LucoskyImageContentSliceDefault,
+      LucoskyLeftHeadingContentSlice,
+      LucoskyLeftHeadingContentSliceDefaultPrimary,
+      LucoskyLeftHeadingContentSliceVariation,
+      LucoskyLeftHeadingContentSliceDefault,
       NewsletterSliceSlice,
       NewsletterSliceSliceDefaultPrimary,
       NewsletterSliceSliceVariation,
@@ -2302,6 +2232,10 @@ declare module "@prismicio/client" {
       ThreeSmallCardsSliceDefaultPrimary,
       ThreeSmallCardsSliceVariation,
       ThreeSmallCardsSliceDefault,
+      ValuesSlice,
+      ValuesSliceDefaultPrimary,
+      ValuesSliceVariation,
+      ValuesSliceDefault,
     };
   }
 }

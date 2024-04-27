@@ -17,12 +17,6 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "lucosky_heading_content": {
-              "type": "SharedSlice"
-            },
-            "lucosky_image_content": {
-              "type": "SharedSlice"
-            },
             "team_index": {
               "type": "SharedSlice"
             },

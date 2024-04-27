@@ -4,6 +4,7 @@
 
 @layer base {
   :root {
+    --lucosky: #003b6f;
     --background: 210 13% 94%;
     --foreground: 240 10% 3.9%;
 

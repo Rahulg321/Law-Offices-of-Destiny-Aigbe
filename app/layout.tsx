@@ -20,19 +20,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={clsx(montserrat.variable, hind.variable)}>
       <body className={`min-h-screen bg-background font-sans antialiased`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <main className="parent-container">
-            <Header />
-            {children}
-            <Footer />
-          </main>
-          <Toaster />
-        </ThemeProvider>
+        <main className="parent-container">
+          <Header />
+          {children}
+          <Footer />
+        </main>
+        <Toaster />
       </body>
     </html>
   );

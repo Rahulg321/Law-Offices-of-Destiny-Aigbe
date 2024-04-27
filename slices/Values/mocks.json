@@ -5,7 +5,7 @@
 		"primary": {
 			"heading": {
 				"__TYPE__": "FieldContent",
-				"value": "failed",
+				"value": "first",
 				"type": "Text"
 			},
 			"content": {
@@ -14,14 +14,10 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Ex officia ea duis laboris minim esse officia. Tempor cillum dolore cupidatat nisi adipisicing eiusmod amet eu exercitation velit duis voluptate magna officia officia."
+							"text": "Ex officia cupidatat anim consectetur quis consectetur mollit enim et."
 						}
 					}
 				]
-			},
-			"narrow_blue": {
-				"__TYPE__": "BooleanContent",
-				"value": true
 			}
 		},
 		"items": []

@@ -1,8 +1,8 @@
 {
-  "id": "heading_content",
+  "id": "lucosky_left_heading_content",
   "type": "SharedSlice",
-  "name": "HeadingContent",
-  "description": "HeadingContent",
+  "name": "LucoskyLeftHeadingContent",
+  "description": "LucoskyLeftHeadingContent",
   "variations": [
     {
       "id": "default",
@@ -26,24 +26,6 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          }
-        },
-        "card_background": {
-          "type": "Boolean",
-          "config": {
-            "label": "Card Background",
-            "placeholder_false": "false",
-            "placeholder_true": "true",
-            "default_value": true
-          }
-        },
-        "narrow_background": {
-          "type": "Boolean",
-          "config": {
-            "label": "Narrow Background",
-            "default_value": false,
-            "placeholder_true": "true",
-            "placeholder_false": "false"
           }
         }
       },

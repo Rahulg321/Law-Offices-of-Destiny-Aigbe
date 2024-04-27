@@ -5,6 +5,7 @@ import { PrismicRichText, PrismicRichTextProps } from "@prismicio/react";
 import { useState } from "react";
 import { IoMdAdd } from "react-icons/io";
 import { GrSubtractCircle } from "react-icons/gr";
+import TextField from "./TextField";
 
 type ShowAddComponentProps = {
   heading: KeyTextField;
@@ -32,9 +33,7 @@ const ShowAddComponent = ({ heading, description }: ShowAddComponentProps) => {
       </div>
       {showDescription && (
         <div className="p-4 text-pretty">
-          <div className="prose md:prose-lg lg:prose-xl prose-stone w-full max-w-none dark:prose-invert prose-img:rounded-xl prose-headings:underline prose-a:text-blue-600 ">
-            <PrismicRichText field={description} />
-          </div>
+          <TextField description={description} />
         </div>
       )}
     </div>

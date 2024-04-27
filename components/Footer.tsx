@@ -56,11 +56,6 @@ const Footer = () => {
             ))}
           </ul>
         </div>
-
-        <div>
-          <h4 className="mb-2">Preferences</h4>
-          <ThemeToggle />
-        </div>
       </div>
     </footer>
   );

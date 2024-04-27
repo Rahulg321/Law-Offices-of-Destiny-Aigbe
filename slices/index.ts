@@ -18,8 +18,9 @@ export const components = {
   journey_end: dynamic(() => import("./JourneyEnd")),
   left_image_content: dynamic(() => import("./LeftImageContent")),
   lucosky_featured: dynamic(() => import("./LucoskyFeatured")),
-  lucosky_heading_content: dynamic(() => import("./LucoskyHeadingContent")),
-  lucosky_image_content: dynamic(() => import("./LucoskyImageContent")),
+  lucosky_left_heading_content: dynamic(
+    () => import("./LucoskyLeftHeadingContent"),
+  ),
   newsletter_slice: dynamic(() => import("./NewsletterSlice")),
   plan_info: dynamic(() => import("./PlanInfo")),
   reusable_show_add_slice: dynamic(() => import("./ReusableShowAddSlice")),
@@ -31,4 +32,5 @@ export const components = {
   three_image_card: dynamic(() => import("./ThreeImageCard")),
   three_normal_cards: dynamic(() => import("./ThreeNormalCards")),
   three_small_cards: dynamic(() => import("./ThreeSmallCards")),
+  values: dynamic(() => import("./Values")),
 };

@@ -1,8 +1,8 @@
 {
-  "id": "lucosky_heading_content",
+  "id": "values",
   "type": "SharedSlice",
-  "name": "LucoskyHeadingContent",
-  "description": "LucoskyHeadingContent",
+  "name": "Values",
+  "description": "Values",
   "variations": [
     {
       "id": "default",
@@ -26,15 +26,6 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          }
-        },
-        "narrow_blue": {
-          "type": "Boolean",
-          "config": {
-            "label": "Narrow Blue",
-            "default_value": false,
-            "placeholder_true": "true",
-            "placeholder_false": "false"
           }
         }
       },

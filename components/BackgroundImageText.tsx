@@ -24,7 +24,7 @@ const BackgroundImageText = ({
         {children}
       </div>
       <PrismicNextImage
-        className="absolute left-0 right-0 aspect-1 object-cover"
+        className="absolute left-0 right-0 opacity-80 aspect-1 object-cover"
         field={backgroundImage}
         fill
       />

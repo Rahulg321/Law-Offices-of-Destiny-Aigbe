@@ -5,7 +5,7 @@
 		"primary": {
 			"heading": {
 				"__TYPE__": "FieldContent",
-				"value": "facing",
+				"value": "fully",
 				"type": "Text"
 			},
 			"content": {
@@ -14,18 +14,10 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Deserunt voluptate qui officia dolore."
+							"text": "Proident veniam laborum consequat sunt exercitation cupidatat velit adipisicing ad elit labore qui ullamco esse labore. Qui ea nisi quis duis est nisi adipisicing elit ipsum ad laboris. Consequat excepteur magna id sunt occaecat."
 						}
 					}
 				]
-			},
-			"card_background": {
-				"__TYPE__": "BooleanContent",
-				"value": true
-			},
-			"narrow_background": {
-				"__TYPE__": "BooleanContent",
-				"value": false
 			}
 		},
 		"items": []
