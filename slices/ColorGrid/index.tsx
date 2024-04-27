@@ -18,7 +18,7 @@ export type ColorGridProps = SliceComponentProps<Content.ColorGridSlice>;
  * Component for "ColorGrid" Slices.
  */
 const ColorGrid = ({ slice }: ColorGridProps): JSX.Element => {
-  const container = useRef<HTMLDivElement | null>(null);
+  const container = useRef(null);
 
   useGSAP(
     () => {
@@ -49,11 +49,9 @@ const ColorGrid = ({ slice }: ColorGridProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className="block-space big-container"
+      ref={container}
     >
-      <div
-        className="grid grid-cols-5 min-h-[70vh] gap-2 color-grid-container"
-        ref={container}
-      >
+      <div className="grid grid-cols-5 min-h-[70vh] gap-2 color-grid-container">
         <div className="col-span-4 grid-card bg-primary flex flex-col gap-2 items-center justify-center text-background rounded-xl">
           <span className="block text-6xl font-bold">300K+ Users</span>
           <span className="block text-2xl font-semibold">and counting....</span>
