@@ -20,7 +20,9 @@ const TeamIndex = ({ slice }: TeamIndexProps): JSX.Element => {
       className="block-space"
     >
       <div className="big-container">
-        <h1 className="text-center mb-4">{slice.primary.heading}</h1>
+        <h1 className="text-center mb-4 md:mb-8  lg:mb-12 text-mainC">
+          {slice.primary.heading}
+        </h1>
         <Suspense fallback={<div className="">loading blog postsss</div>}>
           <TeamMembersIndex />
         </Suspense>

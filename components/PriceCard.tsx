@@ -20,12 +20,12 @@ const PriceCard = ({ children, heading, description }: PriceCardProps) => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>{heading}</CardTitle>
+        <CardTitle className="text-mainC">{heading}</CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
       <CardContent>{children}</CardContent>
       <CardFooter>
-        <Button className="w-full">Contact Us</Button>
+        <Button className="w-full p-6 text-lg bg-mainC">Contact Us</Button>
       </CardFooter>
     </Card>
   );

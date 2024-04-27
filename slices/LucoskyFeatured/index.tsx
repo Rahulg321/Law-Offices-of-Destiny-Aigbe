@@ -18,7 +18,7 @@ const LucoskyFeatured = ({ slice }: LucoskyFeaturedProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="block-space"
     >
-      <div className="big-container bg-[#003B6F] py-8 px-6 rounded-md">
+      <div className="big-container bg-[#003B6F] py-14 px-10 rounded-md">
         <div className="flex justify-between">
           <div className="text-white">
             <h2 className="mb-4">{slice.primary.heading}</h2>

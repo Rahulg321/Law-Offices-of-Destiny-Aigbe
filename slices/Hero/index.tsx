@@ -60,11 +60,13 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       childrenCSS="flex items-center justify-center"
       backgroundImage={slice.primary.background_image}
     >
-      <div className="text-pretty narrow-container text-white" ref={container}>
+      <div className="text-pretty big-container text-white" ref={container}>
         {/* <h1 className="mb-4">
           <span>{renderLetters(slice.primary.title, "title")}</span>
         </h1> */}
-        <h1 className="mb-4 heading">{slice.primary.title}</h1>
+        <h1 className="mb-4 heading text-6xl md:text-8xl">
+          {slice.primary.title}
+        </h1>
         <span className="text-xl tagline">{slice.primary.tagline}</span>
       </div>
     </BackgroundImageText>

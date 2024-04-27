@@ -61,6 +61,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "reusable_show_add_slice": {
+              "type": "SharedSlice"
+            },
             "team_member_hero": {
               "type": "SharedSlice"
             },

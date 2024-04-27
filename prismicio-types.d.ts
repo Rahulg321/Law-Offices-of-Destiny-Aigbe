@@ -468,6 +468,7 @@ export type PracticeAreasDocument<Lang extends string = string> =
   >;
 
 type TeamMemberDocumentDataSlicesSlice =
+  | ReusableShowAddSliceSlice
   | TeamMemberHeroSlice
   | TextBlockSlice
   | HeadingContentSlice

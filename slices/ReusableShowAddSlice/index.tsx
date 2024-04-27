@@ -22,7 +22,7 @@ const ReusableShowAddSlice = ({
     >
       <div className="big-container">
         <h1 className="mb-4 md:mb-6 lg:mb-12">{slice.primary.heading}</h1>
-        <div className="bg-card px-16 py-8">
+        <div className="bg-card px-4 md:px-12 py-8">
           {slice.items.map((e) => {
             return (
               <ShowAddComponent

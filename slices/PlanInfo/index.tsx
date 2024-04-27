@@ -18,7 +18,7 @@ const PlanInfo = ({ slice }: PlanInfoProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="big-container block-space"
     >
-      <h1 className="text-center mb-6 md:mb-8 lg:mb-12">
+      <h1 className="text-center text-mainC mb-6 md:mb-8 lg:mb-12">
         {slice.primary.heading}
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -69,7 +69,7 @@ export default PlanInfo;
 function PriceCardCheck({ tagline }: { tagline: string }) {
   return (
     <div className="flex items-center gap-2 mb-2">
-      <div className="text-2xl">
+      <div className="text-2xl text-mainC">
         <IoIosCheckmarkCircle />
       </div>
       <span className="text-muted-foreground">{tagline}</span>

@@ -30,17 +30,21 @@ const TeamMemberCard = ({ member }: TeamMemberCardProps) => {
           {member.data.designation}
         </span>
         <div className="text-right">
-          <span className="block mb-2">{member.data.email_address}</span>
-          <span className="block mb-2">{member.data.contact_number}</span>
+          <span className="block mb-2 text-slate-300 text-lg">
+            {member.data.email_address}
+          </span>
+          <span className="block mb-2 text-slate-300 text-lg">
+            {member.data.contact_number}
+          </span>
         </div>
-        <div className="text-right flex items-center justify-end gap-2">
+        <div className="text-right flex items-center  hover:text-yellow-400 cursor-pointer justify-end gap-1">
           <Link
             href={`/team-members/${member.uid}`}
-            className="hover:underline text-lg transition "
+            className="text-lg transition "
           >
             Read Bio{" "}
           </Link>
-          <div className="text-lg">
+          <div className="text-xl">
             <CgPlayButtonO />
           </div>
         </div>
