@@ -12,6 +12,16 @@ type HeaderProps = {
   classname?: string;
 };
 
+const mobileNav = [
+  { navlink: "/", navlabel: "Home" },
+  { navlink: "/practice-areas", navlabel: "Practice Areas" },
+  { navlink: "/our-firm", navlabel: "Our Firm" },
+  { navlink: "/team-members", navlabel: "Team" },
+  { navlink: "/blogs", navlabel: "Blog" },
+  { navlink: "/about-destiny-aigbe", navlabel: "About" },
+  { navlink: "/contact-destiny-aigbe", navlabel: "Contact" },
+];
+
 const nav = [
   { navlink: "/team-members", navlabel: "Team" },
   { navlink: "/blogs", navlabel: "Blog" },
@@ -59,7 +69,7 @@ const Header = ({ classname }: HeaderProps) => {
               >
                 <MdClose />
               </button>
-              {nav.map((item, index) => {
+              {mobileNav.map((item, index) => {
                 return (
                   <Link
                     href={item.navlink}
