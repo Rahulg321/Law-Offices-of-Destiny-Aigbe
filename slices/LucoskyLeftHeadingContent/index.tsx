@@ -19,28 +19,6 @@ const LucoskyLeftHeadingContent = ({
 }: LucoskyLeftHeadingContentProps): JSX.Element => {
   const container = useRef(null);
 
-  useGSAP(
-    () => {
-      // gsap code here...
-      gsap.fromTo(
-        ".image-card",
-        { x: -100, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          ease: "power4.inOut",
-          duration: 2,
-          transformOrigin: "left top",
-          scrollTrigger: {
-            trigger: ".image-card",
-            toggleActions: "play pause resume reset",
-          },
-        }
-      ); // <-- automatically reverted
-    },
-    { scope: container }
-  );
-
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -49,7 +27,7 @@ const LucoskyLeftHeadingContent = ({
       ref={container}
     >
       <div className="flex flex-col md:flex-row image-card">
-        <div className="basis-1/2 bg-mainC md:relative md:top-[-120px] px-8 py-16 flex items-center justify-center text-white">
+        <div className="basis-1/2 bg-mainC lg:relative lg:top-[-120px] px-8 py-16 flex items-center justify-center text-white">
           <h1>{slice.primary.heading}</h1>
         </div>
         <div className="basis-1/2 bg-card px-8 py-12">

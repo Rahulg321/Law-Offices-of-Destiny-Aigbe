@@ -27,8 +27,9 @@ const nav = [
   { navlink: "/blogs", navlabel: "Blog" },
 ];
 
-const EndNav = [
-  { navlink: "/about-destiny-aigbe", navlabel: "About" },
+const desktopNav = [
+  { navlink: "/team-members", navlabel: "Our Professionals" },
+  { navlink: "/blogs", navlabel: "Blogs" },
   { navlink: "/contact-destiny-aigbe", navlabel: "Contact" },
 ];
 
@@ -40,12 +41,12 @@ const Header = ({ classname }: HeaderProps) => {
     <>
       <header
         className={clsx(
-          "px-2 py-1 border-b border-black sticky top-0 z-50 bg-background",
+          " px-2 md:px-4 lg:px-12 py-2 border-b sticky top-0 z-50 bg-background",
           classname
         )}
       >
         <nav aria-label="Main-navigation">
-          <ul className="flex flex-col justify-between md:m-4 md:flex-row md:items-center md:rounded-xl">
+          <ul className="flex flex-col gap-12 md:m-4 md:flex-row md:items-center md:rounded-xl">
             <div className="flex items-center justify-between">
               <NameLogo />
               <button
@@ -100,11 +101,13 @@ export default Header;
 function NameLogo({}: {}) {
   return (
     <div className="">
-      <h3>
-        <Link href="/" aria-label="Home page" className="">
-          Aigbe Law
-        </Link>
-      </h3>
+      <Link
+        href="/"
+        aria-label="Home page"
+        className="text-4xl font-bold text-mainC"
+      >
+        Aigbe Law
+      </Link>
     </div>
   );
 }
@@ -112,40 +115,24 @@ function NameLogo({}: {}) {
 function DesktopMenu() {
   const pathname = usePathname();
   return (
-    <>
-      <div className="hidden gap-4 md:flex items-center">
-        <NavigationMenuHeader />
-        {nav.map((item, index) => {
-          return (
-            <Link
-              href={item.navlink}
-              key={index}
-              className={clsx(
-                "font-semibold last:ml-2",
-                pathname === item.navlink ? "underline" : ""
-              )}
-            >
-              {item.navlabel}
-            </Link>
-          );
-        })}
-      </div>
-      <div className="hidden gap-4 md:flex">
-        {EndNav.map((item, index) => {
-          return (
-            <Link
-              href={item.navlink}
-              key={index}
-              className={clsx(
-                "font-semibold",
-                pathname === item.navlink ? "underline" : ""
-              )}
-            >
-              {item.navlabel}
-            </Link>
-          );
-        })}
-      </div>
-    </>
+    <div className="hidden gap-8 md:flex md:items-center">
+      <NavigationMenuHeader />
+      {desktopNav.map((item, index) => {
+        return (
+          <Link
+            href={item.navlink}
+            key={index}
+            className={clsx(
+              "font-bold text-base",
+              pathname === item.navlink
+                ? "text-mainC underline-offset-8 underline decoration-4"
+                : ""
+            )}
+          >
+            {item.navlabel}
+          </Link>
+        );
+      })}
+    </div>
   );
 }

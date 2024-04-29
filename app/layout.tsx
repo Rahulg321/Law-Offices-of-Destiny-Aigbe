@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { montserrat, hind, playfair_display, lato } from "./fonts";
+import { work_sans, merriweather } from "./fonts";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={clsx(montserrat.variable, hind.variable)}>
+    <html lang="en" className={clsx(work_sans.variable, merriweather.variable)}>
       <body className={`min-h-screen bg-background font-sans antialiased`}>
         <main className="parent-container">
           <Header />

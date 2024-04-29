@@ -28,33 +28,11 @@ const LeftImageContent = ({ slice }: LeftImageContentProps): JSX.Element => {
   const hasButton = slice.primary.need_button;
   const container = useRef(null);
 
-  useGSAP(
-    () => {
-      // gsap code here...
-      gsap.fromTo(
-        ".image-card",
-        { x: -100, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          ease: "power4.inOut",
-          duration: 2,
-          transformOrigin: "left top",
-          scrollTrigger: {
-            trigger: ".image-card",
-            toggleActions: "play pause resume reset",
-          },
-        }
-      ); // <-- automatically reverted
-    },
-    { scope: container }
-  );
-
   return (
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className={clsx("block-space")}
+      className={clsx("")}
       ref={container}
     >
       <div className="\">
@@ -63,7 +41,7 @@ const LeftImageContent = ({ slice }: LeftImageContentProps): JSX.Element => {
             "lg:flex-row-reverse": imageRight === true,
           })}
         >
-          <div className="lg:relative lg:top-[50px] basis-1/2 aspect-h-1 aspect-w-3">
+          <div className="basis-1/2 aspect-w-1 aspect-h-1 lg:aspect-h-1 lg:aspect-w-3">
             <PrismicNextImage
               field={slice.primary.featured_image}
               fill
@@ -82,7 +60,7 @@ const LeftImageContent = ({ slice }: LeftImageContentProps): JSX.Element => {
             </h1>
             <TextField description={slice.primary.content} />
             {hasButton && (
-              <Button className="bg-mainC mt-6 text-xl p-8">
+              <Button className="bg-mainC mt-6 md:text-xl p-4 md:p-8">
                 {slice.primary.button_label}
               </Button>
             )}

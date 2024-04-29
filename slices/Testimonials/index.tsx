@@ -22,41 +22,6 @@ export type TestimonialsProps = SliceComponentProps<Content.TestimonialsSlice>;
 const Testimonials = ({ slice }: TestimonialsProps): JSX.Element => {
   const container = useRef(null);
 
-  const renderLetters = (name: KeyTextField, key: string) => {
-    if (!name) return;
-    return name.split("").map((letter, index) => (
-      <span
-        key={index}
-        className={`name-animation name-animation-${key}-index inline-block opacity-0 `}
-      >
-        {letter}
-      </span>
-    ));
-  };
-
-  useGSAP(
-    () => {
-      // gsap code here...
-      gsap.fromTo(
-        ".test-card",
-        { x: -100, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 1,
-          ease: "back.in",
-          paused: true,
-          stagger: { each: 0.2, from: "end" },
-          scrollTrigger: {
-            trigger: ".testimonial-container",
-            toggleActions: "play pause resume reset",
-          },
-        }
-      ); // <-- automatically reverted
-    },
-    { scope: container }
-  );
-
   return (
     <section
       data-slice-type={slice.slice_type}

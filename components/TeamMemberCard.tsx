@@ -19,7 +19,7 @@ const TeamMemberCard = ({ member, classname }: TeamMemberCardProps) => {
         classname
       )}
     >
-      <div className="relative aspect-w-1 aspect-h-1  lg:aspect-w-5 lg:aspect-h-2 basis-1/2">
+      <div className="relative aspect-w-1 aspect-h-1 lg:aspect-w-6 lg:aspect-h-3 basis-1/2">
         <PrismicNextImage
           field={member.data.member_image}
           fill
@@ -37,10 +37,10 @@ const TeamMemberCard = ({ member, classname }: TeamMemberCardProps) => {
           {member.data.designation}
         </span>
         <div className="text-right">
-          <span className="block mb-2 text-slate-300 text-lg">
+          <span className="block mb-2 text-slate-300 md:text-lg">
             {member.data.email_address}
           </span>
-          <span className="block mb-2 text-slate-300 text-lg">
+          <span className="block mb-2 text-slate-300 md:text-lg">
             {member.data.contact_number}
           </span>
         </div>

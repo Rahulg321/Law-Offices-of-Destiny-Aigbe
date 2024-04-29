@@ -15,7 +15,7 @@ const ValueCard = ({
   cardDescription,
 }: ValueCardProps) => {
   return (
-    <div className={clsx("bg-card px-12 py-8 ", classname)}>
+    <div className={clsx("bg-card p-4 lg:px-12 lg:py-8 ", classname)}>
       <h3 className="text-mainC mb-4">{cardHeading}</h3>
       <TextField description={cardDescription} />
     </div>

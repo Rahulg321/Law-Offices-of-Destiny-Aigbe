@@ -22,29 +22,6 @@ export type ValuesProps = SliceComponentProps<Content.ValuesSlice>;
 const Values = ({ slice }: ValuesProps): JSX.Element => {
   const container = useRef(null);
 
-  useGSAP(
-    () => {
-      // gsap code here...
-      gsap.fromTo(
-        ".value-card",
-        { x: -100, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 1,
-          ease: "back.in",
-          paused: true,
-          stagger: { each: 0.2, from: "end" },
-          scrollTrigger: {
-            trigger: ".value-container",
-            toggleActions: "play pause resume reset",
-          },
-        }
-      ); // <-- automatically reverted
-    },
-    { scope: container }
-  );
-
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -57,10 +34,11 @@ const Values = ({ slice }: ValuesProps): JSX.Element => {
         <TextField description={slice.primary.content} />
       </div>
 
-      <div className="big-container value-container grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {slice.items.map((e) => {
+      <div className="big-container value-container grid grid-cols-1 gap-2 lg:grid-cols-2 md:gap-6">
+        {slice.items.map((e, index) => {
           return (
             <ValueCard
+              key={index}
               cardHeading={e.card_heading}
               cardDescription={e.card_description}
               classname="value-card"

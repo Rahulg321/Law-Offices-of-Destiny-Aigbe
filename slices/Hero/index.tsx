@@ -23,40 +23,11 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 const Hero = ({ slice }: HeroProps): JSX.Element => {
   const container = useRef(null);
 
-  useGSAP(
-    () => {
-      // gsap code here...
-      gsap
-        .timeline()
-        .fromTo(
-          ".heading",
-          { x: -100, opacity: 0 },
-          {
-            x: 0,
-            opacity: 1,
-            ease: "power4.inOut",
-            duration: 1.2,
-          }
-        )
-        .fromTo(
-          ".tagline",
-          { x: -100, opacity: 0 },
-          {
-            x: 0,
-            opacity: 1,
-            ease: "power3.inOut",
-            duration: 1.2,
-          }
-        );
-    },
-    { scope: container }
-  );
-
   return (
     <BackgroundImageText
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="min-h-[70vh]"
+      className="min-h-[80vh]"
       childrenCSS="flex items-center justify-center"
       backgroundImage={slice.primary.background_image}
     >
@@ -64,9 +35,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         {/* <h1 className="mb-4">
           <span>{renderLetters(slice.primary.title, "title")}</span>
         </h1> */}
-        <h1 className="mb-4 heading text-4xl md:text-6xl lg:text-8xl">
-          {slice.primary.title}
-        </h1>
+        <h1 className="">{slice.primary.title}</h1>
         <span className="text-xl tagline">{slice.primary.tagline}</span>
       </div>
     </BackgroundImageText>

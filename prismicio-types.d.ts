@@ -293,6 +293,7 @@ export type OurFirmDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ValuesSlice
   | OurOfficesSlice
   | LucoskyLeftHeadingContentSlice
   | TeamIndexSlice

@@ -25,7 +25,7 @@ const TeamMemberHero = ({ slice }: TeamMemberHeroProps): JSX.Element => {
       className=""
     >
       <div className="flex flex-col-reverse md:flex-row">
-        <div className="basis-1/2 bg-mainC p-12">
+        <div className="basis-1/2 bg-gradient-to-r  from-[#1A202C]  to-[#1F66B1] p-12">
           <div className="border-l-4 border-[#4EADFF] text-white px-12 py-10">
             <div className="mb-8">
               <h1 className="mb-2">Joseph Kentucky</h1>
@@ -33,44 +33,22 @@ const TeamMemberHero = ({ slice }: TeamMemberHeroProps): JSX.Element => {
             </div>
             <div>
               <div className="flex items-center gap-4 mb-4">
-                <div className="text-3xl">
-                  <MdEmail />
-                </div>
-                <span className="text-xl underline text-slate-300">
-                  rg5353070@gmail.com
-                </span>
+                <BioComponent icon={<MdEmail />} text="rg5353070@gmail.com" />
               </div>
               <div className="flex items-center gap-4 mb-4">
-                <div className="text-3xl">
-                  <FaPhoneAlt />
-                </div>
-                <span className="text-xl underline text-slate-300">
-                  (312) 756-1312
-                </span>
+                <BioComponent icon={<FaPhoneAlt />} text="(312) 756-1312" />
               </div>
               <div className="flex items-center gap-4 mb-4">
-                <div className="text-3xl">
-                  <FaLinkedin />
-                </div>
-                <span className="text-xl underline text-slate-300">
-                  Linkedin Profile
-                </span>
+                <BioComponent icon={<FaLinkedin />} text="Linkedin Profile" />
               </div>
               <div className="flex items-center gap-4 mb-4">
-                <div className="text-3xl">
-                  <FaSquareXTwitter />
-                </div>
-                <span className="text-xl underline text-slate-300">
-                  Twitter Profile
-                </span>
+                <BioComponent
+                  icon={<FaSquareXTwitter />}
+                  text="Twitter Profile"
+                />
               </div>
               <div className="flex items-center gap-4 mb-4">
-                <div className="text-3xl">
-                  <IoPerson />
-                </div>
-                <span className="text-xl underline text-slate-300">
-                  Read Bio
-                </span>
+                <BioComponent icon={<IoPerson />} text="Read Bio" />
               </div>
             </div>
           </div>
@@ -88,3 +66,14 @@ const TeamMemberHero = ({ slice }: TeamMemberHeroProps): JSX.Element => {
 };
 
 export default TeamMemberHero;
+
+function BioComponent({ icon, text }: { icon: any; text: string }) {
+  return (
+    <>
+      <div className="text-lg">{icon}</div>
+      <span className="underline hover:no-underline transition cursor-pointer text-lg text-slate-300">
+        {text}
+      </span>
+    </>
+  );
+}

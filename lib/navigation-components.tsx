@@ -4,6 +4,12 @@ export const ourFirmLinks: {
   description: string;
 }[] = [
   {
+    title: "Our Firm",
+    href: "/our-firm",
+    description:
+      "A modal dialog that interrupts the user with important content and expects a response.",
+  },
+  {
     title: "Our Offices",
     href: "/our-firm/our-offices",
     description:
@@ -23,6 +29,12 @@ export const components: {
   href: string;
   description: string;
 }[] = [
+  {
+    title: "Pratice Areas",
+    href: "/practice-areas",
+    description:
+      "A modal dialog that interrupts the user with important content and expects a response.",
+  },
   {
     title: "Corporate & Securities",
     href: "/practice-areas/corporate-securities",

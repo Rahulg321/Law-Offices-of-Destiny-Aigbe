@@ -23,11 +23,11 @@ const ShowAddComponent = ({ heading, description }: ShowAddComponentProps) => {
         }}
       >
         <div className="p-4">
-          <span className="text-4xl font-semibold text-[#003B6F]">
+          <span className="text-xl md:text-4xl font-semibold text-[#003B6F]">
             {heading}
           </span>
         </div>
-        <div className="text-4xl font-bold  text-[#003B6F]">
+        <div className="text-xl md:text-4xl font-bold  text-[#003B6F]">
           {showDescription ? <GrSubtractCircle /> : <IoMdAdd />}
         </div>
       </div>

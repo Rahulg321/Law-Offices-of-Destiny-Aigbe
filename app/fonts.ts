@@ -1,29 +1,22 @@
-import { Montserrat, Hind, Playfair_Display, Lato } from "next/font/google";
+import {
+  Montserrat,
+  Hind,
+  Playfair_Display,
+  Lato,
+  Work_Sans,
+  Merriweather,
+} from "next/font/google";
 
-export const montserrat = Montserrat({
+export const work_sans = Work_Sans({
   subsets: ["latin"],
-  variable: "--font-montserrat",
+  variable: "--font-work-sans",
   weight: ["100", "200", "300", "400", "500", "600", "700"],
   fallback: ["system-ui", "arial"],
 });
 
-export const playfair_display = Playfair_Display({
+export const merriweather = Merriweather({
   subsets: ["latin"],
-  variable: "--font-playfair-display",
-  weight: ["400", "500", "600", "700"],
-  fallback: ["system-ui", "arial"],
-});
-
-export const lato = Lato({
-  subsets: ["latin"],
-  variable: "--font-lato",
-  weight: ["100", "300", "400", "700", "900", "700"],
-  fallback: ["system-ui", "arial"],
-});
-
-export const hind = Hind({
-  subsets: ["latin"],
-  variable: "--font-hind",
-  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-merriweather",
+  weight: ["400", "300", "900", "700"],
   fallback: ["system-ui", "arial"],
 });

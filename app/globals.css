@@ -99,7 +99,7 @@
 }
 
 html {
-  font-family: var(--font-hind);
+  font-family: var(--font-merriweather);
 }
 
 h1,
@@ -108,7 +108,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-montserrat);
+  font-family: var(--font-work-sans);
 }
 
 .big-container {

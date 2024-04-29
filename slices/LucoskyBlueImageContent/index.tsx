@@ -25,29 +25,6 @@ const LucoskyBlueImageContent = ({
 }: LucoskyBlueImageContentProps): JSX.Element => {
   const container = useRef(null);
 
-  useGSAP(
-    () => {
-      // gsap code here...
-      gsap.fromTo(
-        ".image-card",
-        { x: -100, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 1,
-          ease: "power2.inOut",
-          paused: true,
-          stagger: { each: 0.2, from: "end" },
-          scrollTrigger: {
-            trigger: ".image-card",
-            toggleActions: "play pause resume reset",
-          },
-        }
-      ); // <-- automatically reverted
-    },
-    { scope: container }
-  );
-
   return (
     <section
       data-slice-type={slice.slice_type}

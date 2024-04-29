@@ -19,29 +19,6 @@ export type FourCardsSectionProps =
 const FourCardsSection = ({ slice }: FourCardsSectionProps): JSX.Element => {
   const container = useRef(null);
 
-  useGSAP(
-    () => {
-      // gsap code here...
-      gsap.fromTo(
-        ".sale-card",
-        { x: -100, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 1,
-          ease: "power3.inOut",
-          paused: true,
-          stagger: { each: 0.2, from: "end" },
-          scrollTrigger: {
-            trigger: ".sale-card-container",
-            toggleActions: "play pause resume reset",
-          },
-        }
-      ); // <-- automatically reverted
-    },
-    { scope: container }
-  );
-
   return (
     <section
       data-slice-type={slice.slice_type}

@@ -22,27 +22,6 @@ const HeadingContent = ({ slice }: HeadingContentProps): JSX.Element => {
   const container = useRef(null);
   const narrowBackground = slice.primary.narrow_background;
 
-  useGSAP(
-    () => {
-      // gsap code here...
-      gsap.fromTo(
-        ".content",
-        { x: 100, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          ease: "power4.inOut",
-          duration: 1.5,
-          transformOrigin: "left top",
-          scrollTrigger: {
-            trigger: ".content",
-            toggleActions: "play pause resume reset",
-          },
-        }
-      ); // <-- automatically reverted
-    },
-    { scope: container }
-  );
   return (
     <section
       data-slice-type={slice.slice_type}

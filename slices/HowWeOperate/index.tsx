@@ -19,12 +19,7 @@ const HowWeOperate = ({ slice }: HowWeOperateProps): JSX.Element => {
       <div className="big-container">
         <div className="rounded-md bg-background p-4 md:p-6 grid md:grid-cols-3 grid-cols-1 min-h-[60vh]">
           <div>
-            <h1 className="leading-normal">
-              How Does It{" "}
-              <span className="bg-gradient-to-r from-orange-400 via-red-500 to-purple-600 bg-clip-text text-transparent">
-                Work?
-              </span>
-            </h1>
+            <h1 className="leading-normal text-mainC">How Does It Work?</h1>
             <span className="font-semibold">
               Get your personalized color palette in 4 steps
             </span>

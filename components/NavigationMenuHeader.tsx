@@ -17,7 +17,7 @@ const NavigationMenuHeader = () => {
     <NavigationMenu className="z-30">
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="">
+          <NavigationMenuTrigger className="font-bold text-base">
             Practice Areas
           </NavigationMenuTrigger>
           <NavigationMenuContent>
@@ -35,7 +35,9 @@ const NavigationMenuHeader = () => {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Our Firm</NavigationMenuTrigger>
+          <NavigationMenuTrigger className="font-bold text-base">
+            Our Firm
+          </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               {ourFirmLinks.map((component) => (
