@@ -1,11 +1,21 @@
-import { KeyTextField, RichTextField } from "@prismicio/client";
+import {
+  BooleanField,
+  KeyTextField,
+  LinkField,
+  RichTextField,
+} from "@prismicio/client";
 import clsx from "clsx";
 import React from "react";
 import TextField from "./TextField";
+import { Button } from "./ui/button";
+import { PrismicNextLink } from "@prismicio/next";
 
 type ValueCardProps = {
   cardHeading: KeyTextField;
   cardDescription: RichTextField;
+  needButton: BooleanField;
+  btnLabel?: KeyTextField;
+  btnLink?: LinkField;
   classname?: string;
 };
 
@@ -13,11 +23,24 @@ const ValueCard = ({
   classname,
   cardHeading,
   cardDescription,
+  needButton,
+  btnLabel,
+  btnLink,
 }: ValueCardProps) => {
   return (
-    <div className={clsx("bg-card p-4 lg:px-12 lg:py-8 ", classname)}>
+    <div className={clsx("bg-card p-4 lg:px-12 lg:py-8 h-fit", classname)}>
       <h3 className="text-mainC mb-4">{cardHeading}</h3>
       <TextField description={cardDescription} />
+      <div className="mt-6 text-center">
+        {needButton && (
+          <PrismicNextLink
+            field={btnLink}
+            className="bg-mainC text-white md:text-xl px-4 rounded-md py-2 md:px-12 md:py-2"
+          >
+            {btnLabel}
+          </PrismicNextLink>
+        )}
+      </div>
     </div>
   );
 };

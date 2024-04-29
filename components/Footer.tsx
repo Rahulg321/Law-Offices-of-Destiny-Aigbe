@@ -11,13 +11,44 @@ import ThemeToggle from "./theme-button";
 
 const nav = [
   { navlink: "/", navlabel: "Home" },
+  { navlink: "/our-firm", navlabel: "Our Firm" },
+  { navlink: "/practice-areas", navlabel: "Pratice Areas" },
   { navlink: "/blogs", navlabel: "Blog" },
+  { navlink: "/Team", navlabel: "Our Professionals" },
   { navlink: "/about-destiny-aigbe", navlabel: "About" },
   { navlink: "/contact-destiny-aigbe", navlabel: "Contact" },
 ];
 
 const Footer = () => {
-  return <footer className="border-t-4 p-4">My Footer</footer>;
+  return (
+    <footer className="border-t-4 px-4 py-6 md:py-8 flex flex-col md:flex-row md:justify-around items-center">
+      <div className="mb-4 text-center">
+        <Link
+          href="/"
+          aria-label="Home page"
+          className="text-4xl font-bold text-mainC"
+        >
+          Aigbe Law
+        </Link>
+      </div>
+      <div className="flex flex-col">
+        <div className="flex flex-col md:flex-row gap-4 items-center justify-center">
+          {nav.map((e, index) => (
+            <Link
+              href={e.navlink}
+              key={index}
+              className={"font-bold md:text-lg text-base"}
+            >
+              {e.navlabel}
+            </Link>
+          ))}
+        </div>
+        <div className="mt-2 text-sm ml-auto">
+          <span>© 2024 Lucosky Brookman LLP. All Rights Reserved.</span>
+        </div>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;

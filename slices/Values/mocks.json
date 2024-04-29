@@ -45,6 +45,31 @@
 								}
 							]
 						}
+					],
+					[
+						"button_label",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "actual",
+							"type": "Text"
+						}
+					],
+					[
+						"button_link",
+						{
+							"__TYPE__": "LinkContent",
+							"value": {
+								"__TYPE__": "ExternalLink",
+								"url": "http://twitter.com"
+							}
+						}
+					],
+					[
+						"need_button",
+						{
+							"__TYPE__": "BooleanContent",
+							"value": false
+						}
 					]
 				]
 			}

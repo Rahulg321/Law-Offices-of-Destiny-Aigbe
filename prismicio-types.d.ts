@@ -293,6 +293,8 @@ export type OurFirmDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ThreeImageCardSlice
+  | LucoskyFeaturedSlice
   | ValuesSlice
   | OurOfficesSlice
   | LucoskyLeftHeadingContentSlice
@@ -2247,6 +2249,37 @@ export interface ValuesSliceDefaultItem {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   card_description: prismic.RichTextField;
+
+  /**
+   * Button Label field in *Values → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: values.items[].button_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  button_label: prismic.KeyTextField;
+
+  /**
+   * Button Link field in *Values → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: values.items[].button_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  button_link: prismic.LinkField;
+
+  /**
+   * Need Button field in *Values → Items*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: values.items[].need_button
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  need_button: prismic.BooleanField;
 }
 
 /**

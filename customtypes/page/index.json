@@ -17,6 +17,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "three_image_card": {
+              "type": "SharedSlice"
+            },
+            "lucosky_featured": {
+              "type": "SharedSlice"
+            },
             "values": {
               "type": "SharedSlice"
             },

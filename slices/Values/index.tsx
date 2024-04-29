@@ -42,6 +42,9 @@ const Values = ({ slice }: ValuesProps): JSX.Element => {
               cardHeading={e.card_heading}
               cardDescription={e.card_description}
               classname="value-card"
+              btnLabel={e.button_label}
+              btnLink={e.button_link}
+              needButton={e.need_button}
             />
           );
         })}
