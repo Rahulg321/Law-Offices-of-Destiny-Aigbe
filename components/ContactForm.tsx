@@ -66,9 +66,13 @@ const ContactForm = () => {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Name</FormLabel>
+              <FormLabel className="text-mainC text-lg">Name</FormLabel>
               <FormControl>
-                <Input placeholder="john doe" {...field} />
+                <Input
+                  placeholder="john doe"
+                  {...field}
+                  className="p-6 text-xl"
+                />
               </FormControl>
               <FormDescription>Please enter a valid name.</FormDescription>
               <FormMessage />
@@ -80,9 +84,15 @@ const ContactForm = () => {
           name="contactNumber"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>ContactNumber</FormLabel>
+              <FormLabel className="text-mainC text-lg">
+                ContactNumber
+              </FormLabel>
               <FormControl>
-                <Input placeholder="+(213) 312 3123" {...field} />
+                <Input
+                  placeholder="+(213) 312 3123"
+                  {...field}
+                  className="p-6 text-xl"
+                />
               </FormControl>
               <FormDescription>Enter your mobile number.</FormDescription>
               <FormMessage />
@@ -94,9 +104,16 @@ const ContactForm = () => {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email Address</FormLabel>
+              <FormLabel className="text-mainC text-lg">
+                Email Address
+              </FormLabel>
               <FormControl>
-                <Input placeholder="john@gmail.com" {...field} type="email" />
+                <Input
+                  placeholder="john@gmail.com"
+                  {...field}
+                  type="email"
+                  className="p-6 text-xl"
+                />
               </FormControl>
               <FormDescription>Please enter a valid email.</FormDescription>
               <FormMessage />
@@ -108,11 +125,13 @@ const ContactForm = () => {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Write your message</FormLabel>
+              <FormLabel className="text-mainC text-lg">
+                Write your message
+              </FormLabel>
               <FormControl>
                 <Textarea
                   placeholder="Enter a brief description here"
-                  className="resize-none"
+                  className="resize-none p-6 text-xl"
                   {...field}
                 />
               </FormControl>
@@ -121,7 +140,9 @@ const ContactForm = () => {
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button type="submit" className="p-6 bg-mainC text-white text-lg">
+          Submit
+        </Button>
       </form>
     </Form>
   );

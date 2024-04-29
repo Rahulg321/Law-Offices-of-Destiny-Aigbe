@@ -19,14 +19,14 @@ const ContactFormSection = ({
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className=""
+      className="block-space"
     >
-      <div className="big-container">
-        {slice.primary.heading}
-        {slice.primary.tagline}
-        <div className="grid grid-cols-2">
-          <div></div>
-          <div>
+      <div className="">
+        <div className="flex flex-col md:flex-row">
+          <div className="flex flex-col bg-mainC text-white px-8 py-16 items-center justify-center ">
+            <h1>{slice.primary.tagline}</h1>
+          </div>
+          <div className="basis-1/2 px-8 py-12">
             <ContactForm />
           </div>
         </div>
