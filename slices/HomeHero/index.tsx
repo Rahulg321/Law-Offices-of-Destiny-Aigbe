@@ -16,7 +16,7 @@ const HomeHero = ({ slice }: HomeHeroProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="min-h-screen bg-gray-300 flex items-center justify-center"
+      className="min-h-screen bg-gray-100 flex items-center justify-center"
     >
       <div className="big-container text-center">
         <Image
