@@ -27,7 +27,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     <BackgroundImageText
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="min-h-[80vh]"
+      className="min-h-[60vh]  md:min-h-[80vh]"
       childrenCSS="flex items-center justify-center"
       backgroundImage={slice.primary.background_image}
     >
