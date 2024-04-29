@@ -1,5 +1,6 @@
 "use client";
 
+import TextField from "@/components/TextField";
 import { Button } from "@/components/ui/button";
 import { useGSAP } from "@gsap/react";
 import { Content } from "@prismicio/client";
@@ -62,7 +63,7 @@ const LeftImageContent = ({ slice }: LeftImageContentProps): JSX.Element => {
             "lg:flex-row-reverse": imageRight === true,
           })}
         >
-          <div className="relative top-[50px] basis-1/2 aspect-h-1 aspect-w-3">
+          <div className="lg:relative lg:top-[50px] basis-1/2 aspect-h-1 aspect-w-3">
             <PrismicNextImage
               field={slice.primary.featured_image}
               fill
@@ -71,7 +72,7 @@ const LeftImageContent = ({ slice }: LeftImageContentProps): JSX.Element => {
           </div>
 
           <div
-            className={clsx("basis-1/2 p-12 text-pretty text-center", {
+            className={clsx("basis-1/2 p-4 md:p-10 lg:p-12 text-pretty", {
               "bg-card": cardBackground === true,
             })}
           >
@@ -79,9 +80,7 @@ const LeftImageContent = ({ slice }: LeftImageContentProps): JSX.Element => {
               {" "}
               {slice.primary.heading}
             </h1>
-            <div className="prose md:prose-lg lg:prose-xl w-full max-w-none dark:prose-invert prose-img:rounded-xl prose-headings:underline prose-a:text-blue-600 prose-p:text-black">
-              <PrismicRichText field={slice.primary.content} />
-            </div>
+            <TextField description={slice.primary.content} />
             {hasButton && (
               <Button className="bg-mainC mt-6 text-xl p-8">
                 {slice.primary.button_label}

@@ -25,6 +25,7 @@ export const components = {
     () => import("./LucoskyLeftHeadingContent"),
   ),
   newsletter_slice: dynamic(() => import("./NewsletterSlice")),
+  our_offices: dynamic(() => import("./OurOffices")),
   plan_info: dynamic(() => import("./PlanInfo")),
   reusable_show_add_slice: dynamic(() => import("./ReusableShowAddSlice")),
   services: dynamic(() => import("./Services")),

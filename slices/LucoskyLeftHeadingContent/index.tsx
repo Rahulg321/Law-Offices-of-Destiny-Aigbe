@@ -49,7 +49,7 @@ const LucoskyLeftHeadingContent = ({
       ref={container}
     >
       <div className="flex flex-col md:flex-row image-card">
-        <div className="basis-1/2 bg-mainC relative top-[-120px] px-8 py-12 flex items-center justify-center text-white">
+        <div className="basis-1/2 bg-mainC md:relative md:top-[-120px] px-8 py-16 flex items-center justify-center text-white">
           <h1>{slice.primary.heading}</h1>
         </div>
         <div className="basis-1/2 bg-card px-8 py-12">

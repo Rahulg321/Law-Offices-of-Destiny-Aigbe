@@ -1,0 +1,54 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": [
+					[
+						"heading",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "zero",
+							"type": "Text"
+						}
+					],
+					[
+						"phone_number",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "bottom",
+							"type": "Text"
+						}
+					],
+					[
+						"email",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "policeman",
+							"type": "Text"
+						}
+					],
+					[
+						"fax_number",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "whom",
+							"type": "Text"
+						}
+					],
+					[
+						"address",
+						{
+							"__TYPE__": "FieldContent",
+							"value": "bridge",
+							"type": "Text"
+						}
+					]
+				]
+			}
+		]
+	}
+]

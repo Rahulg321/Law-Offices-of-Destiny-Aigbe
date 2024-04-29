@@ -210,6 +210,8 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type OurFirmDocumentDataSlicesSlice =
+  | OurOfficesSlice
+  | LucoskyLeftHeadingContentSlice
   | ThreeImageCardSlice
   | JourneyEndSlice
   | HeroSlice
@@ -291,6 +293,8 @@ export type OurFirmDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | OurOfficesSlice
+  | LucoskyLeftHeadingContentSlice
   | TeamIndexSlice
   | ThreeNormalCardsSlice
   | LeftImageContentSlice
@@ -1539,6 +1543,91 @@ export type NewsletterSliceSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *OurOffices → Items*
+ */
+export interface OurOfficesSliceDefaultItem {
+  /**
+   * Heading field in *OurOffices → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_offices.items[].heading
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  heading: prismic.KeyTextField;
+
+  /**
+   * Phone Number field in *OurOffices → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_offices.items[].phone_number
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  phone_number: prismic.KeyTextField;
+
+  /**
+   * Email field in *OurOffices → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_offices.items[].email
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email: prismic.KeyTextField;
+
+  /**
+   * Fax Number field in *OurOffices → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_offices.items[].fax_number
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  fax_number: prismic.KeyTextField;
+
+  /**
+   * Address field in *OurOffices → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_offices.items[].address
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  address: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for OurOffices Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OurOfficesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<OurOfficesSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *OurOffices*
+ */
+type OurOfficesSliceVariation = OurOfficesSliceDefault;
+
+/**
+ * OurOffices Shared Slice
+ *
+ * - **API ID**: `our_offices`
+ * - **Description**: OurOffices
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OurOfficesSlice = prismic.SharedSlice<
+  "our_offices",
+  OurOfficesSliceVariation
+>;
+
+/**
  * Primary content in *PlanInfo → Primary*
  */
 export interface PlanInfoSliceDefaultPrimary {
@@ -2277,6 +2366,10 @@ declare module "@prismicio/client" {
       NewsletterSliceSliceDefaultPrimary,
       NewsletterSliceSliceVariation,
       NewsletterSliceSliceDefault,
+      OurOfficesSlice,
+      OurOfficesSliceDefaultItem,
+      OurOfficesSliceVariation,
+      OurOfficesSliceDefault,
       PlanInfoSlice,
       PlanInfoSliceDefaultPrimary,
       PlanInfoSliceVariation,

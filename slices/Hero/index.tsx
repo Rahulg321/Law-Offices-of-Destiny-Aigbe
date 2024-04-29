@@ -64,7 +64,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
         {/* <h1 className="mb-4">
           <span>{renderLetters(slice.primary.title, "title")}</span>
         </h1> */}
-        <h1 className="mb-4 heading text-6xl md:text-8xl">
+        <h1 className="mb-4 heading text-4xl md:text-6xl lg:text-8xl">
           {slice.primary.title}
         </h1>
         <span className="text-xl tagline">{slice.primary.tagline}</span>

@@ -52,17 +52,17 @@ const LucoskyBlueImageContent = ({
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="block-space"
+      className=""
       ref={container}
     >
-      <div className="flex image-card">
+      <div className="flex image-card flex-col-reverse md:flex-row">
         <div className="basis-1/2 bg-mainC p-12">
           <TextField
             description={slice.primary.main_content}
             classname="prose-p:text-white"
           />
         </div>
-        <div className="basis-1/2 relative aspect-h-1 aspect-w-3 top-[-100px]">
+        <div className="basis-1/2 lg:relative aspect-h-1 aspect-w-3 lg:top-[-100px]">
           <PrismicNextImage
             field={slice.primary.main_image}
             className="object-cover"

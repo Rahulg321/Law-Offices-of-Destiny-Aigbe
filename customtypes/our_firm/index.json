@@ -26,6 +26,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "our_offices": {
+              "type": "SharedSlice"
+            },
+            "lucosky_left_heading_content": {
+              "type": "SharedSlice"
+            },
             "three_image_card": {
               "type": "SharedSlice"
             },
