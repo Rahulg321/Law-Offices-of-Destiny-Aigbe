@@ -14,6 +14,7 @@ export const components = {
   ),
   heading_content: dynamic(() => import("./HeadingContent")),
   hero: dynamic(() => import("./Hero")),
+  home_hero: dynamic(() => import("./HomeHero")),
   how_we_operate: dynamic(() => import("./HowWeOperate")),
   journey_end: dynamic(() => import("./JourneyEnd")),
   left_image_content: dynamic(() => import("./LeftImageContent")),

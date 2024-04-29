@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "home_hero": {
+              "type": "SharedSlice"
+            },
             "lucosky_blue_image_content": {
               "type": "SharedSlice"
             },

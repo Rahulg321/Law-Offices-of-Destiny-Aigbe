@@ -12,6 +12,7 @@ import ThemeToggle from "./theme-button";
 const nav = [
   { navlink: "/", navlabel: "Home" },
   { navlink: "/our-firm", navlabel: "Our Firm" },
+  { navlink: "/transactions", navlabel: "Transactions" },
   { navlink: "/practice-areas", navlabel: "Pratice Areas" },
   { navlink: "/blogs", navlabel: "Blog" },
   { navlink: "/Team", navlabel: "Our Professionals" },

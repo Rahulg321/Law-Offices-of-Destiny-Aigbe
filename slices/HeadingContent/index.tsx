@@ -26,14 +26,14 @@ const HeadingContent = ({ slice }: HeadingContentProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className={clsx("block-space bg-[#003B6F] text-white", {
+      className={clsx("block-space bg-mainC text-white", {
         "big-container": narrowBackground === true,
       })}
       ref={container}
     >
       <div className="narrow-container text-pretty content">
         <h1>{slice.primary.heading}</h1>
-        <div className="mt-4 md:mt-6 lg:mt-8 prose md:prose-lg lg:prose-xl prose-p:text-white prose-ul:text-white w-full max-w-none dark:prose-invert prose-img:rounded-xl prose-headings:underline prose-a:text-blue-600">
+        <div className="mt-4 md:mt-6 lg:mt-8 prose md:prose-lg lg:prose-xl prose-p:text-white prose-ul:text-white w-full max-w-none dark:prose-invert prose-img:rounded-xl prose-headings:underline prose-headings:text-white prose-a:text-blue-600">
           <PrismicRichText field={slice.primary.content} />
         </div>
       </div>

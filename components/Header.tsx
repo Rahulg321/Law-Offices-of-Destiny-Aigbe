@@ -22,14 +22,10 @@ const mobileNav = [
   { navlink: "/contact-destiny-aigbe", navlabel: "Contact" },
 ];
 
-const nav = [
-  { navlink: "/team-members", navlabel: "Team" },
-  { navlink: "/blogs", navlabel: "Blog" },
-];
-
 const desktopNav = [
   { navlink: "/team-members", navlabel: "Our Professionals" },
   { navlink: "/blogs", navlabel: "Blogs" },
+  { navlink: "/transactions", navlabel: "Transactions" },
   { navlink: "/contact-destiny-aigbe", navlabel: "Contact" },
 ];
 

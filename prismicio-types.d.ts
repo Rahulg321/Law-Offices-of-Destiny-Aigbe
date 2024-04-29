@@ -124,6 +124,7 @@ export type BlogpostDocument<Lang extends string = string> =
   >;
 
 type HomepageDocumentDataSlicesSlice =
+  | HomeHeroSlice
   | LucoskyBlueImageContentSlice
   | ValuesSlice
   | LucoskyLeftHeadingContentSlice
@@ -1078,6 +1079,36 @@ type HeroSliceVariation = HeroSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
+
+/**
+ * Default variation for HomeHero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HomeHeroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *HomeHero*
+ */
+type HomeHeroSliceVariation = HomeHeroSliceDefault;
+
+/**
+ * HomeHero Shared Slice
+ *
+ * - **API ID**: `home_hero`
+ * - **Description**: HomeHero
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HomeHeroSlice = prismic.SharedSlice<
+  "home_hero",
+  HomeHeroSliceVariation
+>;
 
 /**
  * Default variation for HowWeOperate Slice
@@ -2373,6 +2404,9 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      HomeHeroSlice,
+      HomeHeroSliceVariation,
+      HomeHeroSliceDefault,
       HowWeOperateSlice,
       HowWeOperateSliceVariation,
       HowWeOperateSliceDefault,

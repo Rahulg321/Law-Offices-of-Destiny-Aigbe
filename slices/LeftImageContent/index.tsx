@@ -4,7 +4,7 @@ import TextField from "@/components/TextField";
 import { Button } from "@/components/ui/button";
 import { useGSAP } from "@gsap/react";
 import { Content } from "@prismicio/client";
-import { PrismicNextImage } from "@prismicio/next";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import clsx from "clsx";
 import gsap from "gsap";
@@ -59,11 +59,16 @@ const LeftImageContent = ({ slice }: LeftImageContentProps): JSX.Element => {
               {slice.primary.heading}
             </h1>
             <TextField description={slice.primary.content} />
-            {hasButton && (
-              <Button className="bg-mainC mt-6 md:text-xl p-4 md:p-8">
-                {slice.primary.button_label}
-              </Button>
-            )}
+            <div className="mt-8 md:mt-12">
+              {hasButton && (
+                <PrismicNextLink
+                  field={slice.primary.button_link}
+                  className="bg-mainC text-white rounded-md mt-6 md:text-xl p-4 md:p-6"
+                >
+                  {slice.primary.button_label}
+                </PrismicNextLink>
+              )}
+            </div>
           </div>
         </div>
       </div>
