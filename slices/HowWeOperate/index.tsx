@@ -17,7 +17,7 @@ const HowWeOperate = ({ slice }: HowWeOperateProps): JSX.Element => {
       className="bg-card block-space"
     >
       <div className="big-container">
-        <div className="rounded-md bg-background p-4 md:p-6 grid grid-cols-3 min-h-[60vh]">
+        <div className="rounded-md bg-background p-4 md:p-6 grid md:grid-cols-3 grid-cols-1 min-h-[60vh]">
           <div>
             <h1 className="leading-normal">
               How Does It{" "}
@@ -29,7 +29,7 @@ const HowWeOperate = ({ slice }: HowWeOperateProps): JSX.Element => {
               Get your personalized color palette in 4 steps
             </span>
           </div>
-          <div className="col-span-2 grid grid-cols-2 gap-4">
+          <div className="col-span-2 grid grid-cols-1  md:grid-cols-2 gap-4">
             <div className="flex gap-2">
               <div className="text-4xl text-accent font-bold">1</div>
               <div className="">
