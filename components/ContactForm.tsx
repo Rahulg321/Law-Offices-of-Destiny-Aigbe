@@ -16,29 +16,13 @@ import {
 import { Input } from "@/components/ui/input";
 import { useToast } from "./ui/use-toast";
 import { Textarea } from "./ui/textarea";
-
-const formSchema = z.object({
-  name: z
-    .string()
-    .min(2, "Name must be at least 2 characters long")
-    .max(50, "Name cannot exceed 50 characters"),
-  email: z.string().email("Please enter a valid email address"),
-  message: z.string().min(10, "Message must be at least 10 characters long"),
-  contactNumber: z
-    .string({
-      required_error: "Contact Number is required",
-    })
-    .trim() // Remove leading/trailing whitespace
-    .refine(
-      (value) => /^\d+(?:[-\+]?\d)*$/.test(value),
-      "Invalid phone number format"
-    ),
-});
+import { formSchema, TcontactFormSchema } from "@/app/zod-schemas";
+import { SubmitContactForm } from "@/app/actions";
 
 const ContactForm = () => {
   const { toast } = useToast();
 
-  const form = useForm<z.infer<typeof formSchema>>({
+  const form = useForm<TcontactFormSchema>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
@@ -48,14 +32,32 @@ const ContactForm = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  const {
+    reset,
+    formState: { isSubmitting, errors },
+  } = form;
+
+  async function onSubmit(values: TcontactFormSchema) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
-    console.log(values);
-    toast({
-      title: "Scheduled: Catch up 🎉",
-      description: "Friday, February 10, 2023 at 5:57 PM",
-    });
+    const response = await SubmitContactForm(values);
+
+    if (response.errors) {
+      toast({
+        title: "Uh oh! Something went wrong!! 🥲",
+        variant: "destructive",
+        description: "There was an error sending you request!!",
+      });
+    }
+
+    if (response.success) {
+      toast({
+        title: "Message Received 🎉",
+        description: "Your inquiry was sent successfully",
+      });
+    }
+
+    reset();
   }
 
   return (
@@ -140,8 +142,13 @@ const ContactForm = () => {
             </FormItem>
           )}
         />
-        <Button type="submit" className="p-6 bg-mainC text-white text-lg">
-          Submit
+        <Button
+          type="submit"
+          className="p-6 bg-mainC text-white text-lg"
+          disabled={isSubmitting}
+          aria-disabled={isSubmitting}
+        >
+          {isSubmitting ? "Submitting" : "Submit"}
         </Button>
       </form>
     </Form>

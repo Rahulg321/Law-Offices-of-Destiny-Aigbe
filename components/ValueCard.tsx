@@ -28,7 +28,6 @@ const ValueCard = ({
   btnLabel,
   btnLink,
 }: ValueCardProps) => {
-  console.log(btnLink);
   return (
     <div className={clsx("bg-card p-4 lg:px-12 lg:py-8 h-fit", classname)}>
       <h3 className="text-mainC mb-4">{cardHeading}</h3>
