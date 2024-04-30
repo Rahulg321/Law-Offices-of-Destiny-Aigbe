@@ -52,6 +52,7 @@ const HomeHero = ({ slice }: HomeHeroProps): JSX.Element => {
           height={200}
           alt="Logo for AIGBE LAW"
           className="mx-auto object-cover"
+          priority
         />
         <span className="text-[clamp(3rem,10vmin,18rem)] hero-animation font-semibold text-mainC">
           Relationship <span className="font-extrabold">Focused</span>.
