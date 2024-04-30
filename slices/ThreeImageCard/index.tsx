@@ -22,6 +22,30 @@ export type ThreeImageCardProps =
 const ThreeImageCard = ({ slice }: ThreeImageCardProps): JSX.Element => {
   const container = useRef(null);
 
+  useGSAP(
+    () => {
+      gsap.fromTo(
+        ".box",
+        // from -100 to 100
+        { x: -100, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          ease: "power3.out",
+          duration: 1,
+          stagger: {
+            each: 0.2,
+          },
+          scrollTrigger: {
+            trigger: ".image-container",
+            toggleActions: "restart pause resume none",
+          },
+        }
+      );
+    },
+    { scope: container }
+  );
+
   return (
     <section
       data-slice-type={slice.slice_type}

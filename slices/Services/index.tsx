@@ -19,7 +19,28 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 export type ServicesProps = SliceComponentProps<Content.ServicesSlice>;
 
 const Services = ({ slice }: ServicesProps): JSX.Element => {
-  const container = useRef<HTMLDivElement | null>(null);
+  const container = useRef(null);
+
+  useGSAP(
+    () => {
+      gsap.fromTo(
+        ".box",
+        // from -100 to 100
+        { x: -100, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          ease: "power3.out",
+
+          scrollTrigger: {
+            scrub: 0.5,
+            trigger: ".service-container",
+          },
+        }
+      );
+    },
+    { scope: container }
+  );
 
   return (
     <section

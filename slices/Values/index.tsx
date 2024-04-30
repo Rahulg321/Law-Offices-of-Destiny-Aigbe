@@ -21,6 +21,30 @@ export type ValuesProps = SliceComponentProps<Content.ValuesSlice>;
  */
 const Values = ({ slice }: ValuesProps): JSX.Element => {
   const container = useRef(null);
+  useGSAP(
+    () => {
+      gsap.fromTo(
+        ".value-card",
+        // from -100 to 100
+        { x: -100, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          ease: "power3.out",
+          duration: 1,
+          stagger: {
+            each: 0.2,
+          },
+
+          scrollTrigger: {
+            trigger: ".value-container",
+            toggleActions: "restart pause resume none",
+          },
+        }
+      );
+    },
+    { scope: container }
+  );
 
   return (
     <section

@@ -16,6 +16,24 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 
 const Hero = ({ slice }: HeroProps): JSX.Element => {
   const container = useRef(null);
+
+  useGSAP(
+    () => {
+      gsap.fromTo(
+        ".main-title",
+        { x: -100, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          ease: "power4.out",
+          duration: 1,
+          transformOrigin: "left top",
+        }
+      );
+    },
+    { scope: container }
+  );
+
   return (
     <BackgroundImageText
       data-slice-type={slice.slice_type}
@@ -25,10 +43,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       backgroundImage={slice.primary.background_image}
     >
       <div className="text-pretty big-container text-white" ref={container}>
-        {/* <h1 className="mb-4">
-          <span>{renderLetters(slice.primary.title, "title")}</span>
-        </h1> */}
-        <h1 className="">{slice.primary.title}</h1>
+        <h1 className="main-title">{slice.primary.title}</h1>
         <span className="text-xl tagline">{slice.primary.tagline}</span>
       </div>
     </BackgroundImageText>
