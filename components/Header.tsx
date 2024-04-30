@@ -100,7 +100,7 @@ function NameLogo({}: {}) {
       <Link
         href="/"
         aria-label="Home page"
-        className="text-4xl font-bold text-mainC"
+        className="text-3xl md:text-4xl font-bold text-mainC"
       >
         Aigbe Law PLLC
       </Link>
