@@ -1,4 +1,5 @@
 import { KeyTextField } from "@prismicio/client";
+import clsx from "clsx";
 import React from "react";
 
 type OfficeCardProps = {
@@ -7,6 +8,7 @@ type OfficeCardProps = {
   fax: KeyTextField;
   contactNumber: KeyTextField;
   address: KeyTextField;
+  classname?: string;
 };
 
 const OfficeCard = ({
@@ -15,9 +17,10 @@ const OfficeCard = ({
   fax,
   contactNumber,
   address,
+  classname,
 }: OfficeCardProps) => {
   return (
-    <div className="bg-card p-4 md:p-6 lg:p-8">
+    <div className={clsx("bg-card p-4 md:p-6 lg:p-8", classname)}>
       <h2 className="mb-4 md:mb-6 text-mainC">{heading}</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>

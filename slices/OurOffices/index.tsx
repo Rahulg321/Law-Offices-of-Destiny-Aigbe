@@ -1,8 +1,10 @@
 "use client";
 
 import OfficeCard from "@/components/OfficeCard";
+import { useGSAP } from "@gsap/react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
+import gsap from "gsap";
 import { useRef } from "react";
 
 /**
@@ -15,6 +17,30 @@ export type OurOfficesProps = SliceComponentProps<Content.OurOfficesSlice>;
  */
 const OurOffices = ({ slice }: OurOfficesProps): JSX.Element => {
   const container = useRef(null);
+
+  useGSAP(
+    () => {
+      gsap.fromTo(
+        ".office-card",
+        // from -100 to 100
+        { x: -100, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          ease: "power3.out",
+          stagger: {
+            each: 0.2,
+          },
+
+          scrollTrigger: {
+            scrub: 0.5,
+            trigger: ".office-card",
+          },
+        }
+      );
+    },
+    { scope: container }
+  );
 
   return (
     <section
@@ -35,6 +61,7 @@ const OurOffices = ({ slice }: OurOfficesProps): JSX.Element => {
               contactNumber={e.phone_number}
               address={e.address}
               fax={e.fax_number}
+              classname="office-card"
             />
           ))}
         </div>
