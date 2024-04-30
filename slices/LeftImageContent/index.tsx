@@ -28,6 +28,26 @@ const LeftImageContent = ({ slice }: LeftImageContentProps): JSX.Element => {
   const hasButton = slice.primary.need_button;
   const container = useRef(null);
 
+  useGSAP(
+    () => {
+      gsap.fromTo(
+        ".image-card",
+        // from -100 to 100
+        { x: -100, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          ease: "power4.out",
+          scrollTrigger: {
+            scrub: 1,
+            trigger: ".image-card",
+          },
+        }
+      );
+    },
+    { scope: container }
+  );
+
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -35,9 +55,9 @@ const LeftImageContent = ({ slice }: LeftImageContentProps): JSX.Element => {
       className={clsx("")}
       ref={container}
     >
-      <div className="\">
+      <div className="image-card">
         <div
-          className={clsx("flex flex-col lg:flex-row image-card", {
+          className={clsx("flex flex-col lg:flex-row ", {
             "lg:flex-row-reverse": imageRight === true,
           })}
         >

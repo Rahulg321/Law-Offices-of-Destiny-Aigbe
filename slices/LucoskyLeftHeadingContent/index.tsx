@@ -19,6 +19,26 @@ const LucoskyLeftHeadingContent = ({
 }: LucoskyLeftHeadingContentProps): JSX.Element => {
   const container = useRef(null);
 
+  useGSAP(
+    () => {
+      gsap.fromTo(
+        ".image-card",
+        // from -100 to 100
+        { x: -100, opacity: 0 },
+        {
+          x: 0,
+          opacity: 1,
+          ease: "power4.out",
+          scrollTrigger: {
+            scrub: 1,
+            trigger: ".image-card",
+          },
+        }
+      );
+    },
+    { scope: container }
+  );
+
   return (
     <section
       data-slice-type={slice.slice_type}
