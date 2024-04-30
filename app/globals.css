@@ -99,9 +99,7 @@
 }
 
 html,
-p,
-ul,
-li {
+p {
   font-family: var(--font-merriweather);
 }
 
