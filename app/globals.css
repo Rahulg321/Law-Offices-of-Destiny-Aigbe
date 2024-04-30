@@ -98,16 +98,10 @@
   }
 }
 
-header {
-  font-family: var(--font-work-sans);
-}
-
-footer {
-  font-family: var(--font-work-sans);
-}
-
 html,
-p {
+p,
+ul,
+li {
   font-family: var(--font-merriweather);
 }
 
@@ -117,6 +111,14 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: var(--font-work-sans);
+}
+
+header {
+  font-family: var(--font-work-sans);
+}
+
+footer {
   font-family: var(--font-work-sans);
 }
 

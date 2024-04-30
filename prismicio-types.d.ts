@@ -124,6 +124,7 @@ export type BlogpostDocument<Lang extends string = string> =
   >;
 
 type HomepageDocumentDataSlicesSlice =
+  | StatefulCardsSlice
   | HomeHeroSlice
   | LucoskyBlueImageContentSlice
   | ValuesSlice
@@ -1832,6 +1833,36 @@ export type ServicesSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Default variation for StatefulCards Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type StatefulCardsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *StatefulCards*
+ */
+type StatefulCardsSliceVariation = StatefulCardsSliceDefault;
+
+/**
+ * StatefulCards Shared Slice
+ *
+ * - **API ID**: `stateful_cards`
+ * - **Description**: StatefulCards
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type StatefulCardsSlice = prismic.SharedSlice<
+  "stateful_cards",
+  StatefulCardsSliceVariation
+>;
+
+/**
  * Primary content in *TeamIndex → Primary*
  */
 export interface TeamIndexSliceDefaultPrimary {
@@ -2451,6 +2482,9 @@ declare module "@prismicio/client" {
       ServicesSliceDefaultPrimary,
       ServicesSliceVariation,
       ServicesSliceDefault,
+      StatefulCardsSlice,
+      StatefulCardsSliceVariation,
+      StatefulCardsSliceDefault,
       TeamIndexSlice,
       TeamIndexSliceDefaultPrimary,
       TeamIndexSliceVariation,

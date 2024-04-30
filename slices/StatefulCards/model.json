@@ -1,0 +1,16 @@
+{
+  "id": "stateful_cards",
+  "type": "SharedSlice",
+  "name": "StatefulCards",
+  "description": "StatefulCards",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}

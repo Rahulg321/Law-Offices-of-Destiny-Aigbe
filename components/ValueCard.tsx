@@ -12,9 +12,10 @@ import { PrismicNextLink } from "@prismicio/next";
 import Link from "next/link";
 
 type ValueCardProps = {
-  cardHeading: KeyTextField;
-  cardDescription: RichTextField;
-  needButton: BooleanField;
+  cardHeading: KeyTextField | string;
+  cardContent?: string;
+  cardDescription?: RichTextField;
+  needButton?: BooleanField | boolean;
   btnLabel?: KeyTextField;
   btnLink?: any;
   classname?: string;
@@ -24,6 +25,7 @@ const ValueCard = ({
   classname,
   cardHeading,
   cardDescription,
+  cardContent,
   needButton,
   btnLabel,
   btnLink,
@@ -31,7 +33,8 @@ const ValueCard = ({
   return (
     <div className={clsx("bg-card p-4 lg:px-12 lg:py-8 h-fit", classname)}>
       <h3 className="text-mainC mb-4">{cardHeading}</h3>
-      <TextField description={cardDescription} />
+      {cardDescription && <TextField description={cardDescription} />}
+      {cardContent && <p>{cardContent}</p>}
       <div className="mt-6 text-center">
         {needButton && (
           <Link

@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import clsx from "clsx";
 import { components, ourFirmLinks } from "@/lib/navigation-components";
+import Link from "next/link";
 
 const NavigationMenuHeader = () => {
   return (
@@ -18,7 +19,7 @@ const NavigationMenuHeader = () => {
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger className="font-bold text-base">
-            Our Firm
+            <Link href={"/our-firm"}>Our Firm</Link>
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
@@ -36,7 +37,7 @@ const NavigationMenuHeader = () => {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger className="font-bold text-base">
-            Practice Areas
+            <Link href={"/practice-areas"}>Practice Areas</Link>
           </NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:grid-cols-3 lg:w-[700px]">
