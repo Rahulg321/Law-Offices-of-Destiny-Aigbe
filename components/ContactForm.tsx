@@ -40,24 +40,30 @@ const ContactForm = () => {
   async function onSubmit(values: TcontactFormSchema) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
-    const response = await SubmitContactForm(values);
+    toast({
+      title: "Uh oh! Something went wrong!! 🥲",
+      variant: "destructive",
+      description: "There was an error sending you request!!",
+    });
 
-    if (response.errors) {
-      toast({
-        title: "Uh oh! Something went wrong!! 🥲",
-        variant: "destructive",
-        description: "There was an error sending you request!!",
-      });
-    }
+    // const response = await SubmitContactForm(values);
 
-    if (response.success) {
-      toast({
-        title: "Message Received 🎉",
-        description: "Your inquiry was sent successfully",
-      });
-    }
+    // if (response.errors) {
+    //   toast({
+    //     title: "Uh oh! Something went wrong!! 🥲",
+    //     variant: "destructive",
+    //     description: "There was an error sending you request!!",
+    //   });
+    // }
 
-    reset();
+    // if (response.success) {
+    //   toast({
+    //     title: "Message Received 🎉",
+    //     description: "Your inquiry was sent successfully",
+    //   });
+    // }
+
+    // reset();
   }
 
   return (
@@ -68,12 +74,12 @@ const ContactForm = () => {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-mainC text-lg">Name</FormLabel>
+              <FormLabel className="text-mainC md:text-lg">Name</FormLabel>
               <FormControl>
                 <Input
                   placeholder="john doe"
                   {...field}
-                  className="p-6 text-xl"
+                  className="p-6 md:text-xl"
                 />
               </FormControl>
               <FormDescription>Please enter a valid name.</FormDescription>
@@ -86,14 +92,14 @@ const ContactForm = () => {
           name="contactNumber"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-mainC text-lg">
+              <FormLabel className="text-mainC md:text-lg">
                 ContactNumber
               </FormLabel>
               <FormControl>
                 <Input
                   placeholder="+(213) 312 3123"
                   {...field}
-                  className="p-6 text-xl"
+                  className="p-6 md:text-xl"
                 />
               </FormControl>
               <FormDescription>Enter your mobile number.</FormDescription>
@@ -106,7 +112,7 @@ const ContactForm = () => {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-mainC text-lg">
+              <FormLabel className="text-mainC md:text-lg">
                 Email Address
               </FormLabel>
               <FormControl>
@@ -114,7 +120,7 @@ const ContactForm = () => {
                   placeholder="john@gmail.com"
                   {...field}
                   type="email"
-                  className="p-6 text-xl"
+                  className="p-6 md:text-xl"
                 />
               </FormControl>
               <FormDescription>Please enter a valid email.</FormDescription>
@@ -127,13 +133,13 @@ const ContactForm = () => {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-mainC text-lg">
+              <FormLabel className="text-mainC md:text-lg">
                 Write your message
               </FormLabel>
               <FormControl>
                 <Textarea
                   placeholder="Enter a brief description here"
-                  className="resize-none p-6 text-xl"
+                  className="resize-none p-6 md:text-xl"
                   {...field}
                 />
               </FormControl>
@@ -144,7 +150,7 @@ const ContactForm = () => {
         />
         <Button
           type="submit"
-          className="p-6 bg-mainC text-white text-lg"
+          className="p-6 bg-mainC text-white md:text-lg"
           disabled={isSubmitting}
           aria-disabled={isSubmitting}
         >

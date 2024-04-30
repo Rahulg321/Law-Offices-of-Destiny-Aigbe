@@ -90,7 +90,7 @@
   }
 
   p {
-    @apply text-xl text-black;
+    @apply md:text-xl text-black;
   }
 
   .lead {
