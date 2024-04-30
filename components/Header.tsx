@@ -119,7 +119,7 @@ function DesktopMenu() {
             href={item.navlink}
             key={index}
             className={clsx(
-              "font-bold hover:underline-offset-8 hover:text-mainC hover:underline  hover:decoration-4 hover:decoration-mainC",
+              "font-bold hover:underline-offset-8 hover:text-mainC hover:underline  hover:decoration-4 hover:decoration-mainC transition",
               pathname === item.navlink
                 ? "text-mainC underline-offset-8 underline decoration-4"
                 : ""

@@ -106,7 +106,8 @@ footer {
   font-family: var(--font-work-sans);
 }
 
-html {
+html,
+p {
   font-family: var(--font-merriweather);
 }
 
