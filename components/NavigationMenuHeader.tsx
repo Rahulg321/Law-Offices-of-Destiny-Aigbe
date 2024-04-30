@@ -18,11 +18,11 @@ const NavigationMenuHeader = () => {
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger className="font-bold text-base">
-            Practice Areas
+            Our Firm
           </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:grid-cols-3 lg:w-[700px]">
-              {components.map((component) => (
+            <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+              {ourFirmLinks.map((component) => (
                 <ListItem
                   key={component.title}
                   title={component.title}
@@ -36,11 +36,11 @@ const NavigationMenuHeader = () => {
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger className="font-bold text-base">
-            Our Firm
+            Practice Areas
           </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              {ourFirmLinks.map((component) => (
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:grid-cols-3 lg:w-[700px]">
+              {components.map((component) => (
                 <ListItem
                   key={component.title}
                   title={component.title}
