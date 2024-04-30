@@ -39,7 +39,10 @@ const ContentList = ({ items }: ContentListProps) => {
   );
 
   return (
-    <div className="grid grid-cols-2 gap-2 md:gap-6 lg:gap-8" ref={container}>
+    <div
+      className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-6 lg:gap-8"
+      ref={container}
+    >
       {items.map((e, index) => {
         return (
           <div key={index}>
