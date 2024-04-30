@@ -29,7 +29,7 @@ const Footer = () => {
           aria-label="Home page"
           className="text-4xl font-bold text-mainC"
         >
-          Aigbe Law
+          Aigbe Law PLLC
         </Link>
       </div>
       <div className="flex flex-col">
@@ -45,7 +45,7 @@ const Footer = () => {
           ))}
         </div>
         <div className="mt-2 text-sm ml-auto">
-          <span>© 2024 Lucosky Brookman LLP. All Rights Reserved.</span>
+          <span>© 2024 Aigbe Law PLLC. All Rights Reserved.</span>
         </div>
       </div>
     </footer>

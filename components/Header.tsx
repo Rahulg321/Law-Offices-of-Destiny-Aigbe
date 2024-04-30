@@ -42,7 +42,7 @@ const Header = ({ classname }: HeaderProps) => {
         )}
       >
         <nav aria-label="Main-navigation">
-          <ul className="flex flex-col gap-12 md:m-4 md:flex-row md:items-center md:rounded-xl">
+          <ul className="flex flex-col  md:m-4 md:flex-row md:items-center justify-between md:rounded-xl">
             <div className="flex items-center justify-between">
               <NameLogo />
               <button
@@ -102,7 +102,7 @@ function NameLogo({}: {}) {
         aria-label="Home page"
         className="text-4xl font-bold text-mainC"
       >
-        Aigbe Law
+        Aigbe Law PLLC
       </Link>
     </div>
   );
