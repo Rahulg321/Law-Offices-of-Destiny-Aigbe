@@ -3,7 +3,7 @@ import { createClient } from "@/prismicio";
 
 export default async function sitemap() {
   const client = createClient();
-  const baseUrl = "https://law-offices-of-destiny-aigbe.vercel.app";
+  const baseUrl = "https://aigbelaw.com";
 
   const blogposts = await client.getAllByType("blogpost");
   const practiceAreas = await client.getAllByType("practice_areas");

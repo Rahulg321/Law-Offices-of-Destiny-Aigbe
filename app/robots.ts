@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/private/",
     },
-    sitemap: "https://law-offices-of-destiny-aigbe.vercel.app/sitemap.xml",
+    sitemap: "https://aigbelaw.com/sitemap.xml",
   };
 }

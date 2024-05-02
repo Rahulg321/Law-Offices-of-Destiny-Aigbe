@@ -7,7 +7,7 @@ import { Toaster } from "@/components/ui/toaster";
 import clsx from "clsx";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://law-offices-of-destiny-aigbe.vercel.app"),
+  metadataBase: new URL("https://aigbelaw.com"),
   title: {
     default: "Aigbe Law Firm",
     template: `%s | Aigbe Law Firm`,
