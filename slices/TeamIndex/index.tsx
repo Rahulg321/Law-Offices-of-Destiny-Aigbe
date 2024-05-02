@@ -1,4 +1,5 @@
 import ContentList from "@/components/ContentList";
+import MemberCardSkeleton from "@/components/skeletons/MemberCardSkeleton";
 import TeamMemberCard from "@/components/TeamMemberCard";
 import { createClient } from "@/prismicio";
 import { Content } from "@prismicio/client";
@@ -24,7 +25,18 @@ const TeamIndex = ({ slice }: TeamIndexProps): JSX.Element => {
         <h1 className="text-center mb-4 md:mb-8  lg:mb-12 text-mainC">
           {slice.primary.heading}
         </h1>
-        <Suspense fallback={<div className="">Loading team Members</div>}>
+        <Suspense
+          fallback={
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <MemberCardSkeleton />
+              <MemberCardSkeleton />
+              <MemberCardSkeleton />
+              <MemberCardSkeleton />
+              <MemberCardSkeleton />
+              <MemberCardSkeleton />
+            </div>
+          }
+        >
           <TeamMembersIndex />
         </Suspense>
       </div>

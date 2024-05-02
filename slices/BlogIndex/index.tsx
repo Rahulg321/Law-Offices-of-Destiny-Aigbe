@@ -7,6 +7,7 @@ import { SliceComponentProps } from "@prismicio/react";
 import { Suspense } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import BlogPostsIndex from "@/components/BlogPostsIndex";
+import BlogCardSkeleton from "@/components/skeletons/BlogCardSkeleton";
 
 /**
  * Props for `BlogIndex`.
@@ -25,8 +26,13 @@ const BlogIndex = ({ slice }: BlogIndexProps): JSX.Element => {
     >
       <Suspense
         fallback={
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
-            loading blog postsss
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
+            <BlogCardSkeleton />
+            <BlogCardSkeleton />
+            <BlogCardSkeleton />
+            <BlogCardSkeleton />
+            <BlogCardSkeleton />
+            <BlogCardSkeleton />
           </div>
         }
       >
