@@ -29,6 +29,9 @@ export async function generateMetadata({
   return {
     title: page.data.meta_title,
     description: page.data.meta_description,
+    alternates: {
+      canonical: `/blogs/${page.uid}`,
+    },
   };
 }
 

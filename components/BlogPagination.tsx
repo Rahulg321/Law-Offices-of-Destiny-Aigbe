@@ -29,9 +29,10 @@ const BlogPagination = ({
 }: BlogPaginationProps) => {
   const router = useRouter();
   const pathname = usePathname();
+
   const searchParams = useSearchParams();
 
-  const elementsArray = Array.from({ length: totalPages }, (_, index) => (
+  const pageElements = Array.from({ length: totalPages }, (_, index) => (
     <PaginationItem
       key={index}
       className={clsx("", {
@@ -68,9 +69,10 @@ const BlogPagination = ({
       const nextpageNumber = String(currentPage - 1);
       router.push(pathname + "?" + createQueryString("page", nextpageNumber));
     } else {
-      console.log("cant update the page because you are already at the start");
+      console.log("do something else first");
     }
   };
+
   const handleNext = () => {
     if (currentPage < totalPages) {
       const nextpageNumber = String(currentPage + 1);
@@ -87,7 +89,7 @@ const BlogPagination = ({
           <PaginationItem>
             <PaginationPrevious onClick={handlePrevious} />
           </PaginationItem>
-          {elementsArray}
+          {pageElements}
           <PaginationItem>
             <PaginationNext onClick={handleNext} />
           </PaginationItem>

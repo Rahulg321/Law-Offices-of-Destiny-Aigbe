@@ -18,15 +18,14 @@ const mobileNav = [
   { navlink: "/our-firm", navlabel: "Our Firm" },
   { navlink: "/team-members", navlabel: "Team" },
   { navlink: "/blogs", navlabel: "Blog" },
-  { navlink: "/about-destiny-aigbe", navlabel: "About" },
-  { navlink: "/contact-destiny-aigbe", navlabel: "Contact" },
+  { navlink: "/contact", navlabel: "Contact" },
 ];
 
 const desktopNav = [
   { navlink: "/team-members", navlabel: "Our Professionals" },
   { navlink: "/blogs", navlabel: "Blogs" },
   { navlink: "/transactions", navlabel: "Transactions" },
-  { navlink: "/contact-destiny-aigbe", navlabel: "Contact" },
+  { navlink: "/contact", navlabel: "Contact" },
 ];
 
 const Header = ({ classname }: HeaderProps) => {
