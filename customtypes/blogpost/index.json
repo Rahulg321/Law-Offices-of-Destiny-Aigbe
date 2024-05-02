@@ -12,19 +12,37 @@
         },
         "type": "UID"
       },
-      "title": {
-        "type": "Text",
+      "featured_image": {
+        "type": "Image",
         "config": {
-          "label": "title",
-          "placeholder": ""
+          "label": "Featured Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Title",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "author": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Author",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
         }
       },
       "category": {
-        "type": "Link",
+        "type": "Text",
         "config": {
           "label": "Category",
-          "select": "document",
-          "customtypes": ["blog_post_category"]
+          "placeholder": ""
         }
       },
       "slices": {

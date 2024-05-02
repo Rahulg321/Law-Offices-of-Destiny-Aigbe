@@ -43,26 +43,48 @@ type BlogpostDocumentDataSlicesSlice = TextBlockSlice;
  */
 interface BlogpostDocumentData {
   /**
-   * title field in *Blogpost*
+   * Featured Image field in *Blogpost*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogpost.featured_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  featured_image: prismic.ImageField<never>;
+
+  /**
+   * Title field in *Blogpost*
+   *
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
    * - **API ID Path**: blogpost.title
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  title: prismic.KeyTextField;
+  title: prismic.RichTextField;
+
+  /**
+   * Author field in *Blogpost*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogpost.author
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  author: prismic.RichTextField;
 
   /**
    * Category field in *Blogpost*
    *
-   * - **Field Type**: Content Relationship
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
    * - **API ID Path**: blogpost.category
    * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  category: prismic.ContentRelationshipField<"blog_post_category">;
+  category: prismic.KeyTextField;
 
   /**
    * Slice Zone field in *Blogpost*
