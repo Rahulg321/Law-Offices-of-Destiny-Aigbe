@@ -79,7 +79,7 @@ export default async function sitemap() {
     },
     ...blogpostsURLS,
     ...teamMembersURLS,
-    ...practiceAreas,
+    ...practiceAreasURLS,
     ...ourFirmURLS,
   ];
 }
