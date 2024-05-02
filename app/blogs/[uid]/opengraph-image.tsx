@@ -30,8 +30,10 @@ export default async function og({ params }: { params: Params }) {
         <div tw="flex flex-col text-neutral-50">
           <div tw="text-7xl font-bold">{page?.data.meta_title}</div>
           <div tw="flex mt-6 flex-wrap items-center text-4xl text-neutral-200">
-            {page.tags.map((e) => (
-              <div tw="w-4 h-4 mx-6 rounded-full bg-neutral-300 ">{e}</div>
+            {page.tags.map((e, index) => (
+              <div tw="w-4 h-4 mx-6 rounded-full bg-neutral-300" key={index}>
+                {e}
+              </div>
             ))}
           </div>
         </div>
