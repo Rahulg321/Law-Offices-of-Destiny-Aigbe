@@ -16,7 +16,7 @@ export default async function BlogPostsIndex({
   const client = createClient();
   const blogposts = await client.getByType("blogpost", {
     page: Number(currentPage),
-    pageSize: 4,
+    pageSize: 10,
   });
 
   return (
