@@ -87,11 +87,14 @@ const BlogPagination = ({
       <Pagination>
         <PaginationContent>
           <PaginationItem>
-            <PaginationPrevious onClick={handlePrevious} />
+            <PaginationPrevious
+              onClick={handlePrevious}
+              className="cursor-pointer"
+            />
           </PaginationItem>
           {pageElements}
           <PaginationItem>
-            <PaginationNext onClick={handleNext} />
+            <PaginationNext onClick={handleNext} className="cursor-pointer" />
           </PaginationItem>
         </PaginationContent>
       </Pagination>
