@@ -9,15 +9,19 @@ type BlogCardProps = {
 
 const BlogCard = ({ post }: BlogCardProps) => {
   return (
-    <article className="p-4 text-balance">
-      <Link href={`/blogs/${post.uid}`}>
-        <span className="text-muted-foreground">{post.data.category}</span>
-        <PrismicRichText field={post.data.title} />
-      </Link>
-      <span className="font-semibold text-muted-foreground">
-        Apr. 17th 2024
-      </span>
-    </article>
+    <Link href={`/blogs/${post.uid}`}>
+      <article className="">
+        <span className="text-muted-foreground font-semibold text-lg">
+          {post.data.category}
+        </span>
+        <div className="prose prose-xl">
+          <PrismicRichText field={post.data.title} />
+        </div>
+        <span className="font-semibold text-lg text-muted-foreground">
+          {post.first_publication_date.match(/\d{4}-\d{2}-\d{2}/)}
+        </span>
+      </article>
+    </Link>
   );
 };
 

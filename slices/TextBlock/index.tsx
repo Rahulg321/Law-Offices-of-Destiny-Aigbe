@@ -16,10 +16,8 @@ const TextBlock = ({ slice }: TextBlockProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className="block-space"
     >
-      <div className="narrow-container">
-        <div className="prose md:prose-lg lg:prose-xl prose-zinc w-full max-w-none dark:prose-invert prose-img:rounded-xl prose-headings:underline prose-a:text-blue-600">
-          <PrismicRichText field={slice.primary.rich_text_content} />
-        </div>
+      <div className="prose md:prose-lg lg:prose-xl prose-zinc w-full max-w-none dark:prose-invert prose-img:rounded-xl prose-headings:underline prose-headings:text-mainC prose-a:text-blue-600">
+        <PrismicRichText field={slice.primary.rich_text_content} />
       </div>
     </section>
   );

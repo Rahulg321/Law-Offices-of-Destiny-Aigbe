@@ -5,6 +5,7 @@ import * as prismic from "@prismicio/client";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import Head from "next/head";
+import { IoMdTime } from "react-icons/io";
 
 type Params = { uid: string };
 
@@ -40,7 +41,16 @@ export default async function Page({ params }: { params: Params }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
       </Head>
-      <SliceZone slices={page.data.slices} components={components} />
+      <div className="block-space narrow-container">
+        <h1 className="text-mainC">{prismic.asText(page.data.title)}</h1>
+        <div className="mt-4">
+          <span className="text font-bold flex items-center text-2xl gap-2">
+            <IoMdTime className="font-bold" />
+            {page.first_publication_date.match(/\d{4}-\d{2}-\d{2}/)}
+          </span>
+        </div>
+        <SliceZone slices={page.data.slices} components={components} />
+      </div>
     </>
   );
 }

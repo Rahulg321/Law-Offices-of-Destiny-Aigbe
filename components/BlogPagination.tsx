@@ -35,7 +35,7 @@ const BlogPagination = ({
   const pageElements = Array.from({ length: totalPages }, (_, index) => (
     <PaginationItem
       key={index}
-      className={clsx("", {
+      className={clsx("cursor-pointer", {
         "bg-neutral-300 rounded-md": currentPage === index + 1,
       })}
     >
