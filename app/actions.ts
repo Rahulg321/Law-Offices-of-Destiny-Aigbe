@@ -27,11 +27,7 @@ export async function sendApplication(
 
   const { data, error } = await resend.emails.send({
     from: `Aigbe Law Firm <info@darkalphacapital.com>`,
-    to: [
-      "rg5353070@gmail.com",
-      "info@darkalphacapital.com",
-      "careers@darkalphacapital.com",
-    ],
+    to: ["rg5353070@gmail.com", "careers@aigbelaw.com", "destiny@aigbelaw.com"],
     subject: "sending resume from Aigbe Law Firm",
     react: React.createElement(CareerApplicationEmail, {
       name,
