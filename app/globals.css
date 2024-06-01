@@ -98,10 +98,6 @@
   }
 }
 
-@view-transition {
-  navigation: auto;
-}
-
 html,
 p {
   font-family: var(--font-merriweather);
@@ -146,4 +142,8 @@ footer {
   display: grid;
   min-height: 100dvh;
   grid-template-rows: auto 1fr auto;
+}
+
+.modal::backdrop {
+  background: rgb(0 0 0 / 0.5);
 }
