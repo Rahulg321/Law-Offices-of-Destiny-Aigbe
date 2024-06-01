@@ -10,7 +10,11 @@ import {
   NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
 import clsx from "clsx";
-import { components, ourFirmLinks } from "@/lib/navigation-components";
+import {
+  components,
+  mediaComponents,
+  ourFirmLinks,
+} from "@/lib/navigation-components";
 import Link from "next/link";
 
 const NavigationMenuHeader = () => {
@@ -42,6 +46,24 @@ const NavigationMenuHeader = () => {
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:grid-cols-3 lg:w-[700px]">
               {components.map((component) => (
+                <ListItem
+                  key={component.title}
+                  title={component.title}
+                  href={component.href}
+                >
+                  {component.description}
+                </ListItem>
+              ))}
+            </ul>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger className="font-bold text-base">
+            <Link href={"/practice-areas"}>Media</Link>
+          </NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:grid-cols-3 lg:w-[700px]">
+              {mediaComponents.map((component) => (
                 <ListItem
                   key={component.title}
                   title={component.title}

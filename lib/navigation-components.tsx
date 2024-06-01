@@ -24,6 +24,32 @@ export const ourFirmLinks: {
   },
 ];
 
+export const mediaComponents: {
+  title: string;
+  href: string;
+  description: string;
+}[] = [
+  {
+    title: "News",
+    href: "/news",
+    description:
+      "A modal dialog that interrupts the user with important content and expects a response.",
+  },
+  {
+    title: "Blogs",
+    href: "/blogs",
+    description:
+      "A modal dialog that interrupts the user with important content and expects a response.",
+  },
+
+  {
+    title: "Videos",
+    href: "/videos",
+    description:
+      "A modal dialog that interrupts the user with important content and expects a response.",
+  },
+];
+
 export const components: {
   title: string;
   href: string;
