@@ -17,6 +17,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "career_index": {
+              "type": "SharedSlice"
+            },
             "three_image_card": {
               "type": "SharedSlice"
             },

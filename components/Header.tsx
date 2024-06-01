@@ -17,14 +17,16 @@ const mobileNav = [
   { navlink: "/practice-areas", navlabel: "Practice Areas" },
   { navlink: "/our-firm", navlabel: "Our Firm" },
   { navlink: "/team-members", navlabel: "Team" },
-  { navlink: "/blogs", navlabel: "Blog" },
+  { navlink: "/media", navlabel: "Media" },
+  { navlink: "/careers", navlabel: "Careers" },
   { navlink: "/contact", navlabel: "Contact" },
 ];
 
 const desktopNav = [
   { navlink: "/team-members", navlabel: "Our Professionals" },
-  { navlink: "/blogs", navlabel: "Blogs" },
+  { navlink: "/media", navlabel: "Media" },
   { navlink: "/transactions", navlabel: "Transactions" },
+  { navlink: "/careers", navlabel: "Careers" },
   { navlink: "/contact", navlabel: "Contact" },
 ];
 

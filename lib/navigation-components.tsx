@@ -36,6 +36,12 @@ export const components: {
       "A modal dialog that interrupts the user with important content and expects a response.",
   },
   {
+    title: "Litigation",
+    href: "/practice-areas/litigation",
+    description:
+      "A modal dialog that interrupts the user with important content and expects a response.",
+  },
+  {
     title: "Corporate & Securities",
     href: "/practice-areas/corporate-securities",
     description:

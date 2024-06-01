@@ -145,6 +145,67 @@ export type BlogpostDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Content for Career documents
+ */
+interface CareerDocumentData {
+  /**
+   * Name field in *Career*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: career.name
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Department field in *Career*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: career.department
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  department: prismic.KeyTextField;
+
+  /**
+   * Description field in *Career*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: career.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Location field in *Career*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: career.location
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  location: prismic.KeyTextField;
+}
+
+/**
+ * Career document from Prismic
+ *
+ * - **API ID**: `career`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type CareerDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<CareerDocumentData>, "career", Lang>;
+
 type HomepageDocumentDataSlicesSlice =
   | StatefulCardsSlice
   | HomeHeroSlice
@@ -317,6 +378,7 @@ export type OurFirmDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | CareerIndexSlice
   | ThreeImageCardSlice
   | LucoskyFeaturedSlice
   | ValuesSlice
@@ -637,6 +699,7 @@ export type TeamMemberDocument<Lang extends string = string> =
 export type AllDocumentTypes =
   | BlogPostCategoryDocument
   | BlogpostDocument
+  | CareerDocument
   | HomepageDocument
   | OurFirmDocument
   | PageDocument
@@ -736,6 +799,36 @@ type BlogIndexSliceVariation = BlogIndexSliceDefault;
 export type BlogIndexSlice = prismic.SharedSlice<
   "blog_index",
   BlogIndexSliceVariation
+>;
+
+/**
+ * Default variation for CareerIndex Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CareerIndexSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *CareerIndex*
+ */
+type CareerIndexSliceVariation = CareerIndexSliceDefault;
+
+/**
+ * CareerIndex Shared Slice
+ *
+ * - **API ID**: `career_index`
+ * - **Description**: CareerIndex
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CareerIndexSlice = prismic.SharedSlice<
+  "career_index",
+  CareerIndexSliceVariation
 >;
 
 /**
@@ -2408,6 +2501,8 @@ declare module "@prismicio/client" {
       BlogpostDocument,
       BlogpostDocumentData,
       BlogpostDocumentDataSlicesSlice,
+      CareerDocument,
+      CareerDocumentData,
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
@@ -2431,6 +2526,9 @@ declare module "@prismicio/client" {
       BlogIndexSlice,
       BlogIndexSliceVariation,
       BlogIndexSliceDefault,
+      CareerIndexSlice,
+      CareerIndexSliceVariation,
+      CareerIndexSliceDefault,
       ColorGridSlice,
       ColorGridSliceVariation,
       ColorGridSliceDefault,
