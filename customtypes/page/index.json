@@ -17,6 +17,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "news_index": {
+              "type": "SharedSlice"
+            },
             "career_index": {
               "type": "SharedSlice"
             },

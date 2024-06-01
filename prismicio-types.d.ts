@@ -294,6 +294,93 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
+type NewsDocumentDataSlicesSlice =
+  | LucoskyLeftHeadingContentSlice
+  | LeftImageContentSlice
+  | HeroSlice
+  | TextBlockSlice;
+
+/**
+ * Content for News documents
+ */
+interface NewsDocumentData {
+  /**
+   * Title field in *News*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Featured Image field in *News*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news.featured_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  featured_image: prismic.ImageField<never>;
+
+  /**
+   * Slice Zone field in *News*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<NewsDocumentDataSlicesSlice> /**
+   * Meta Title field in *News*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: news.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *News*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: news.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *News*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: news.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * News document from Prismic
+ *
+ * - **API ID**: `news`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type NewsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<NewsDocumentData>, "news", Lang>;
+
 type OurFirmDocumentDataSlicesSlice =
   | OurOfficesSlice
   | LucoskyLeftHeadingContentSlice
@@ -378,6 +465,7 @@ export type OurFirmDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | NewsIndexSlice
   | CareerIndexSlice
   | ThreeImageCardSlice
   | LucoskyFeaturedSlice
@@ -701,6 +789,7 @@ export type AllDocumentTypes =
   | BlogpostDocument
   | CareerDocument
   | HomepageDocument
+  | NewsDocument
   | OurFirmDocument
   | PageDocument
   | PracticeAreasDocument
@@ -1638,6 +1727,36 @@ export type LucoskyLeftHeadingContentSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Default variation for NewsIndex Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NewsIndexSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *NewsIndex*
+ */
+type NewsIndexSliceVariation = NewsIndexSliceDefault;
+
+/**
+ * NewsIndex Shared Slice
+ *
+ * - **API ID**: `news_index`
+ * - **Description**: NewsIndex
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type NewsIndexSlice = prismic.SharedSlice<
+  "news_index",
+  NewsIndexSliceVariation
+>;
+
+/**
  * Primary content in *NewsletterSlice → Primary*
  */
 export interface NewsletterSliceSliceDefaultPrimary {
@@ -2506,6 +2625,9 @@ declare module "@prismicio/client" {
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
+      NewsDocument,
+      NewsDocumentData,
+      NewsDocumentDataSlicesSlice,
       OurFirmDocument,
       OurFirmDocumentData,
       OurFirmDocumentDataSlicesSlice,
@@ -2581,6 +2703,9 @@ declare module "@prismicio/client" {
       LucoskyLeftHeadingContentSliceDefaultPrimary,
       LucoskyLeftHeadingContentSliceVariation,
       LucoskyLeftHeadingContentSliceDefault,
+      NewsIndexSlice,
+      NewsIndexSliceVariation,
+      NewsIndexSliceDefault,
       NewsletterSliceSlice,
       NewsletterSliceSliceDefaultPrimary,
       NewsletterSliceSliceVariation,

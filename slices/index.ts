@@ -26,6 +26,7 @@ export const components = {
   lucosky_left_heading_content: dynamic(
     () => import("./LucoskyLeftHeadingContent"),
   ),
+  news_index: dynamic(() => import("./NewsIndex")),
   newsletter_slice: dynamic(() => import("./NewsletterSlice")),
   our_offices: dynamic(() => import("./OurOffices")),
   plan_info: dynamic(() => import("./PlanInfo")),
