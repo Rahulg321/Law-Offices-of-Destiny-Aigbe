@@ -75,7 +75,7 @@ const Services = ({ slice }: ServicesProps): JSX.Element => {
         <ServiceCard
           icon={<AiOutlineGlobal />}
           heading="OTC Markets"
-          description="Anthony L.G., PLLC, is a premium service provider with OTC Markets and is a registered OTCQB and OTCQX sponsor."
+          description="Aigbe Law, is a premium service provider with OTC Markets and is a registered OTCQB and OTCQX sponsor."
           classname="box"
         />
         <ServiceCard

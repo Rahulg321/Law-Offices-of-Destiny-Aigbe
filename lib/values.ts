@@ -9,7 +9,7 @@ export const statefulValues = [
     id: 2,
     heading: "Efficiency & Added Value",
     description:
-      "As a client of Lucosky Brookman, you will have access to our rolodex of relationships at your disposal. The Firm distinguishes itself from many other transactional law firms by virtue of its entrepreneurial spirit and not being afraid to use its rolodex to benefit its clients with introductions to capital, service professionals and/or strategic partners when appropriate. Clients also benefit from the Firms working relationships with the regulatory agencies, including the SEC and FINRA, and listing exchanges such as the NYSE and NASDAQ.    ",
+      "As a client of Aigbe Law Offices, you will have access to our rolodex of relationships at your disposal. The Firm distinguishes itself from many other transactional law firms by virtue of its entrepreneurial spirit and not being afraid to use its rolodex to benefit its clients with introductions to capital, service professionals and/or strategic partners when appropriate. Clients also benefit from the Firms working relationships with the regulatory agencies, including the SEC and FINRA, and listing exchanges such as the NYSE and NASDAQ.    ",
   },
   {
     id: 3,
