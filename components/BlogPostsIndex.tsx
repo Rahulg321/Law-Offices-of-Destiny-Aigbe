@@ -17,12 +17,9 @@ export default async function BlogPostsIndex({
     page: pageNumber,
     pageSize: 20,
   });
-  console.log("blog posts are ", blogposts);
 
   return (
     <div className={clsx("flex flex-col py-6", classname)}>
-      <h1 className="text-mainC text-center">All Posts</h1>
-
       <div className="grid grid-cols-1 mx-auto mt-6 gap-6 md:gap-8 lg:gap-12">
         {blogposts.results.map((post, index) => {
           return (
