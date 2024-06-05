@@ -14,15 +14,15 @@ import BlogCard from "@/components/BlogCard";
 type Params = { uid: string };
 
 export default async function Page({
-  params,
   searchParams,
 }: {
-  params: Params;
-  searchParams?: { [key: string]: string | string[] | undefined };
+  searchParams?: {
+    query?: string;
+    page?: string;
+  };
 }) {
-  const pageNumber = searchParams?.page
-    ? parseInt(searchParams.page as string)
-    : 1;
+  const pageNumber = Number(searchParams?.page) || 1;
+
   const client = createClient();
   const blogposts = await client.getByType("blogpost", {
     page: pageNumber,
