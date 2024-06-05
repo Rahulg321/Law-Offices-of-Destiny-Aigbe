@@ -36,9 +36,7 @@ export default async function Page({
   );
 }
 
-export async function generateMetadata({}: {
-  params: Params;
-}): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Latest Blogs by Aigbe Law Firm",
     description:
