@@ -56,12 +56,3 @@ export async function generateMetadata({
     description: page.data.meta_description,
   };
 }
-
-export async function generateStaticParams() {
-  const client = createClient();
-  const pages = await client.getAllByType("page");
-
-  return pages.map((page) => {
-    return { uid: page.uid };
-  });
-}
