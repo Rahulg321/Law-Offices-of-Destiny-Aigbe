@@ -3,6 +3,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 import BlogCard from "./BlogCard";
 import BlogPagination from "./BlogPagination";
 import clsx from "clsx";
+import { unstable_noStore as noStore } from "next/cache";
 
 export default async function BlogPostsIndex({
   classname,
@@ -11,6 +12,7 @@ export default async function BlogPostsIndex({
   classname?: string;
   pageNumber: number;
 }) {
+  noStore();
   console.log("page number is ", pageNumber);
   const client = createClient();
   const blogposts = await client.getByType("blogpost", {
