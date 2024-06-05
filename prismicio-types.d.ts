@@ -2154,6 +2154,66 @@ export interface TeamMemberHeroSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   member_image: prismic.ImageField<never>;
+
+  /**
+   * Name field in *TeamMemberHero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_member_hero.primary.name
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  name: prismic.KeyTextField;
+
+  /**
+   * Designation field in *TeamMemberHero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_member_hero.primary.designation
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  designation: prismic.KeyTextField;
+
+  /**
+   * Phone Number field in *TeamMemberHero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_member_hero.primary.phone_number
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  phone_number: prismic.KeyTextField;
+
+  /**
+   * Linkedin Profile Link field in *TeamMemberHero → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_member_hero.primary.linkedin_profile_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linkedin_profile_link: prismic.LinkField;
+
+  /**
+   * Twitter Profile Link field in *TeamMemberHero → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_member_hero.primary.twitter_profile_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  twitter_profile_link: prismic.LinkField;
+
+  /**
+   * Email field in *TeamMemberHero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: team_member_hero.primary.email
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email: prismic.KeyTextField;
 }
 
 /**

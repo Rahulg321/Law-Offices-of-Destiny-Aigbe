@@ -5,7 +5,6 @@ import React from "react";
 type OfficeCardProps = {
   heading: KeyTextField;
   emailAddress: KeyTextField;
-  fax: KeyTextField;
   contactNumber: KeyTextField;
   address: KeyTextField;
   classname?: string;
@@ -14,7 +13,6 @@ type OfficeCardProps = {
 const OfficeCard = ({
   heading,
   emailAddress,
-  fax,
   contactNumber,
   address,
   classname,
@@ -31,10 +29,7 @@ const OfficeCard = ({
           <h3 className="text-mainC">Contact Number</h3>
           <p>{contactNumber}</p>
         </div>
-        <div>
-          <h3 className="text-mainC">Fax</h3>
-          <p>{fax}</p>
-        </div>
+
         <div>
           <h3 className="text-mainC">Email Address</h3>
           <p>{emailAddress}</p>

@@ -48,7 +48,11 @@ export default TeamIndex;
 
 async function TeamMembersIndex() {
   const client = createClient();
-  const teamMembers = await client.getAllByType("team_member");
+  const teamMembers = await client.getAllByType("team_member", {
+    orderings: {
+      field: "document.first_publication_date",
+    },
+  });
 
   return <ContentList items={teamMembers} />;
 }

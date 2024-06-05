@@ -19,7 +19,7 @@ const TeamMemberCard = ({ member, classname }: TeamMemberCardProps) => {
         classname
       )}
     >
-      <div className="relative aspect-w-1 aspect-h-1 lg:aspect-w-6 lg:aspect-h-3 basis-1/2">
+      <div className="relative aspect-w-1 aspect-h-1 lg:aspect-w-6 lg:aspect-h-4 basis-1/2">
         <PrismicNextImage
           field={member.data.member_image}
           fill

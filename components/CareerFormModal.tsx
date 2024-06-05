@@ -23,7 +23,8 @@ const CareerFormModal = ({ post }: CareerFormModalProps) => {
   return (
     <>
       <Button
-        className="bg-mainC w-full"
+        className="bg-mainC text-lg w-full"
+        size={"lg"}
         onClick={() => {
           modal.current?.showModal();
         }}

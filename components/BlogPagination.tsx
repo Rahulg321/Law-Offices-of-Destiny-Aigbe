@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Pagination,
   PaginationContent,
@@ -65,6 +67,7 @@ const BlogPagination = ({
   };
 
   const handlePrevious = () => {
+    console.log("previous page clicked");
     if (currentPage > 1) {
       const nextpageNumber = String(currentPage - 1);
       router.push(pathname + "?" + createQueryString("page", nextpageNumber));
@@ -74,6 +77,7 @@ const BlogPagination = ({
   };
 
   const handleNext = () => {
+    console.log("next page clicked");
     if (currentPage < totalPages) {
       const nextpageNumber = String(currentPage + 1);
       router.push(pathname + "?" + createQueryString("page", nextpageNumber));

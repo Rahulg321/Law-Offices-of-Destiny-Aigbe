@@ -1,5 +1,3 @@
-"use client";
-
 import { createClient } from "@/prismicio";
 import { usePathname, useSearchParams } from "next/navigation";
 import BlogCard from "./BlogCard";
@@ -8,14 +6,15 @@ import clsx from "clsx";
 
 export default async function BlogPostsIndex({
   classname,
+  pageNumber,
 }: {
   classname?: string;
+  pageNumber: number;
 }) {
-  const searchParams = useSearchParams();
-  const currentPage = searchParams.get("page") ?? 1;
+  console.log("page number is ", pageNumber);
   const client = createClient();
   const blogposts = await client.getByType("blogpost", {
-    page: Number(currentPage),
+    page: pageNumber,
     pageSize: 20,
   });
 

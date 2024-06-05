@@ -61,7 +61,6 @@ const OurOffices = ({ slice }: OurOfficesProps): JSX.Element => {
               heading={e.heading}
               contactNumber={e.phone_number}
               address={e.address}
-              fax={e.fax_number}
               classname="office-card"
             />
           ))}

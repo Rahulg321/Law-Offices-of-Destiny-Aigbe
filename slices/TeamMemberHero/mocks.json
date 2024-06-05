@@ -4,7 +4,6 @@
 		"variation": "default",
 		"primary": {
 			"member_image": {
-				"__TYPE__": "ImageContent",
 				"origin": {
 					"id": "main",
 					"url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef",
@@ -22,7 +21,44 @@
 					},
 					"background": "transparent"
 				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"name": {
+				"__TYPE__": "FieldContent",
+				"value": "substance",
+				"type": "Text"
+			},
+			"designation": {
+				"__TYPE__": "FieldContent",
+				"value": "each",
+				"type": "Text"
+			},
+			"phone_number": {
+				"__TYPE__": "FieldContent",
+				"value": "mother",
+				"type": "Text"
+			},
+			"twitter_profile_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev"
+				}
+			},
+			"linkedin_profile_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://twitter.com"
+				}
+			},
+			"email": {
+				"__TYPE__": "FieldContent",
+				"value": "whispered",
+				"type": "Text"
 			}
 		},
 		"items": []
