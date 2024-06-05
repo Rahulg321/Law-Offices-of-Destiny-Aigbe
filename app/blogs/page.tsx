@@ -18,9 +18,9 @@ export default async function Page({
   searchParams,
 }: {
   params: Params;
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams?: { [key: string]: string | string[] | undefined };
 }) {
-  const pageNumber = searchParams.page
+  const pageNumber = searchParams?.page
     ? parseInt(searchParams.page as string)
     : 1;
   const client = createClient();
