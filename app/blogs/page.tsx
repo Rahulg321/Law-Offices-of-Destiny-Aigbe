@@ -48,11 +48,9 @@ export async function generateMetadata({
 }: {
   params: Params;
 }): Promise<Metadata> {
-  const client = createClient();
-  const page = await client.getByUID("page", "blogs").catch(() => notFound());
-
   return {
-    title: page.data.meta_title,
-    description: page.data.meta_description,
+    title: "Latest Blogs by Aigbe Law Firm",
+    description:
+      "Explore Destiny Aigbe's insightful blogs on U.S. securities law. Stay updated with the latest trends, regulations, and legal insights from a trusted securities lawyer based in the USA.",
   };
 }
