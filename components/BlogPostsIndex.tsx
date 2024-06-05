@@ -17,6 +17,7 @@ export default async function BlogPostsIndex({
     page: pageNumber,
     pageSize: 20,
   });
+  console.log("blog posts are ", blogposts);
 
   return (
     <div className={clsx("flex flex-col py-6", classname)}>
