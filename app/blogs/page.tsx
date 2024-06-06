@@ -11,26 +11,22 @@ import BlogPagination from "@/components/BlogPagination";
 import clsx from "clsx";
 import BlogCard from "@/components/BlogCard";
 
-type Params = { uid: string };
-
 export default async function Page({
+  params,
   searchParams,
 }: {
-  searchParams?: {
-    query?: string;
-    page?: string;
-  };
-}) {
-  const pageNumber = Number(searchParams?.page) || 1;
-
-  console.log("page number in server component is", pageNumber);
+  params: { slug: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+}): Promise<JSX.Element> {
+  const page = searchParams.page ? parseInt(searchParams.page as string) : 1;
+  console.log("page in search params is", page);
 
   return (
     <div className={clsx("flex flex-col py-6")}>
       <h1 className="text-mainC text-center">All Posts</h1>
 
-      <Suspense key={pageNumber} fallback={"loading blogs...."}>
-        <BlogPostsIndex pageNumber={pageNumber} />
+      <Suspense key={"pageNumber"} fallback={"loading blogs...."}>
+        <BlogPostsIndex pagenumber={page} />
       </Suspense>
     </div>
   );

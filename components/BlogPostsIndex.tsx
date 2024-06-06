@@ -3,25 +3,24 @@ import { usePathname, useSearchParams } from "next/navigation";
 import BlogCard from "./BlogCard";
 import BlogPagination from "./BlogPagination";
 import clsx from "clsx";
-import { unstable_noStore as noStore } from "next/cache";
 
 export default async function BlogPostsIndex({
-  classname,
-  pageNumber,
+  pagenumber,
 }: {
-  classname?: string;
-  pageNumber: number;
+  pagenumber: number;
 }) {
-  noStore();
-  console.log("page number is ", pageNumber);
+  // const params = useSearchParams();
+  // const pageNumber = params.get("page") ?? 1;
+
+  console.log("page number is ", pagenumber);
   const client = createClient();
   const blogposts = await client.getByType("blogpost", {
-    page: pageNumber,
+    page: Number(pagenumber),
     pageSize: 20,
   });
 
   return (
-    <div className={clsx("flex flex-col py-6", classname)}>
+    <div className={clsx("flex flex-col py-6")}>
       <div className="grid grid-cols-1 mx-auto mt-6 gap-6 md:gap-8 lg:gap-12">
         {blogposts.results.map((post, index) => {
           return (
