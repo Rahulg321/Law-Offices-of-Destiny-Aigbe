@@ -14,10 +14,16 @@ export default async function BlogPostsIndex({
 
   console.log("page number is ", pagenumber);
   const client = createClient();
-  const blogposts = await client.getByType("blogpost", {
-    page: Number(pagenumber),
-    pageSize: 20,
-  });
+  const blogposts = await client
+    .getByType("blogpost", {
+      page: Number(pagenumber),
+      pageSize: 20,
+    })
+    .catch((err) => console.log(err));
+
+  if (!blogposts) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className={clsx("flex flex-col py-6")}>
