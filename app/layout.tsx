@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/toaster";
 import clsx from "clsx";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://aigbelaw.com"),
@@ -30,6 +31,7 @@ export default function RootLayout({
         </main>
         <Toaster />
       </body>
+      <GoogleAnalytics gaId="G-SHVZSHZ31J" />
     </html>
   );
 }
