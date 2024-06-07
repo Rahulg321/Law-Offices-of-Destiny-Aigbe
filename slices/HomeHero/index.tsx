@@ -1,5 +1,3 @@
-"use client";
-
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import Logo from "@/public/logoDesign-removebg-preview.png";
@@ -17,48 +15,50 @@ export type HomeHeroProps = SliceComponentProps<Content.HomeHeroSlice>;
  * Component for "HomeHero" Slices.
  */
 const HomeHero = ({ slice }: HomeHeroProps): JSX.Element => {
-  const container = useRef(null);
+  // const container = useRef(null);
 
-  useGSAP(
-    () => {
-      gsap.fromTo(
-        ".hero-animation",
-        // from -100 to 100
-        { x: -100, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          ease: "power4.out",
-          duration: 2,
-          transformOrigin: "left top",
-          stagger: { each: 0.2 },
-        }
-      );
-    },
-    { scope: container }
-  );
+  // useGSAP(
+  //   () => {
+  //     gsap.fromTo(
+  //       ".hero-animation",
+  //       // from -100 to 100
+  //       { x: -100, opacity: 0 },
+  //       {
+  //         x: 0,
+  //         opacity: 1,
+  //         ease: "power4.out",
+  //         duration: 2,
+  //         transformOrigin: "left top",
+  //         stagger: { each: 0.2 },
+  //       }
+  //     );
+  //   },
+  //   { scope: container }
+  // );
 
   return (
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="min-h-screen bg-gray-100 flex items-center justify-center"
-      ref={container}
+      className="min-h-[80dvh] bg-gray-100"
     >
-      <div className="big-container flex flex-col md:flex-row items-center justify-center text-center hero-animation">
-        <Image
-          src={Logo}
-          width={500}
-          height={500}
-          alt="Logo for AIGBE LAW"
-          className="mx-auto object-cover"
-          priority
-        />
-        <span className="text-[clamp(3rem,9vmin,16rem)] hero-animation font-semibold text-mainC">
-          Relationship <span className="font-extrabold">Focused</span>.
-          <br />
-          Results <span className="font-extrabold">Driven</span>.
-        </span>
+      <div className="relative min-h-full content-center overflow-hidden bg-[rgba(0,0,0,0.3)]">
+        <div className="z-[10] absolute inset-0 flex flex-col items-center justify-center">
+          <h2 className="text-white text-center">Relationship Focused</h2>
+          <h2 className="text-white text-center">Results Driven</h2>
+        </div>
+        <video
+          autoPlay
+          loop
+          muted
+          className="absolute inset-0 z-[1] min-h-full min-w-full object-cover"
+        >
+          <source
+            src="https://firebasestorage.googleapis.com/v0/b/athena-pcte.appspot.com/o/London.mp4?alt=media&token=e85f1909-f61b-411a-a506-9db5b442d90a"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
       </div>
     </section>
   );
