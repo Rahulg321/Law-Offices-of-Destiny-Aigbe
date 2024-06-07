@@ -19,7 +19,7 @@ import BlogPagination from "./BlogPagination";
 export async function BlogPostsIndex({ pageNumber }: { pageNumber: number }) {
   const client = createClient();
   const blogPosts = await client.getByType("blogpost", {
-    pageSize: 10,
+    pageSize: 25,
     page: pageNumber,
   });
 
