@@ -6,7 +6,6 @@ import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { Suspense } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
-import BlogPostsIndex from "@/components/BlogPostsIndex";
 import BlogCardSkeleton from "@/components/skeletons/BlogCardSkeleton";
 
 /**
