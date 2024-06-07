@@ -10,7 +10,7 @@ type BlogCardProps = {
 const BlogCard = ({ post }: BlogCardProps) => {
   return (
     <Link href={`/blogs/${post.uid}`}>
-      <article className="">
+      <article className="mb-4">
         <span className="text-muted-foreground font-semibold text-lg">
           {post.data.category}
         </span>
