@@ -103,6 +103,14 @@ p {
   font-family: var(--font-merriweather);
 }
 
+.workFont {
+  font-family: var(--font-work-sans);
+}
+
+.merriFont {
+  font-family: var(--font-merriweather);
+}
+
 h1,
 h2,
 h3,

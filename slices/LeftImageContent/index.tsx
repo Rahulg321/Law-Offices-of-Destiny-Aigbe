@@ -52,7 +52,6 @@ const LeftImageContent = ({ slice }: LeftImageContentProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className={clsx("")}
       ref={container}
     >
       <div className="image-card">
@@ -61,7 +60,7 @@ const LeftImageContent = ({ slice }: LeftImageContentProps): JSX.Element => {
             "lg:flex-row-reverse": imageRight === true,
           })}
         >
-          <div className="basis-1/2 aspect-w-1 aspect-h-1 lg:aspect-h-1 lg:aspect-w-3">
+          <div className="basis-3/5 aspect-w-1 aspect-h-1 lg:aspect-h-1 lg:aspect-w-3">
             <PrismicNextImage
               field={slice.primary.featured_image}
               fill
@@ -70,7 +69,7 @@ const LeftImageContent = ({ slice }: LeftImageContentProps): JSX.Element => {
           </div>
 
           <div
-            className={clsx("basis-1/2 p-4 md:p-10 lg:p-12 text-pretty", {
+            className={clsx("basis-2/5 p-4 md:p-10 lg:p-12 text-pretty", {
               "bg-card": cardBackground === true,
             })}
           >
@@ -83,7 +82,7 @@ const LeftImageContent = ({ slice }: LeftImageContentProps): JSX.Element => {
               {hasButton && (
                 <PrismicNextLink
                   field={slice.primary.button_link}
-                  className="bg-mainC text-white rounded-md mt-6 md:text-xl p-4 md:p-6"
+                  className="bg-mainC text-white merriFont rounded-md mt-6 md:text-xl p-4 md:p-6"
                 >
                   {slice.primary.button_label}
                 </PrismicNextLink>

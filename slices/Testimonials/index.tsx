@@ -4,7 +4,8 @@ import TestimonialCard from "@/components/TestimonialCard";
 import { useGSAP } from "@gsap/react";
 import { KeyTextField } from "@prismicio/client";
 import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { PrismicNextImage } from "@prismicio/next";
+import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
@@ -26,36 +27,17 @@ const Testimonials = ({ slice }: TestimonialsProps): JSX.Element => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="block-space big-container sect"
+      className="block-space"
     >
-      <div className="text-center mb-4 md:mb-6 lg:mb-8">
-        <h1 className="tracking-wider mb-2">
-          <span>{slice.primary.heading}</span>
-        </h1>
-        <p>{slice.primary.tagline}</p>
-      </div>
-      <div
-        className="grid grid-cols-1 .testimonial-container lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8"
-        ref={container}
-      >
-        <TestimonialCard
-          name="Cool User"
-          designation="Product Designer"
-          content="Wow! I love this site. Realtime Colors is all websites at the same time."
-          classname="test-card"
-        />
-        <TestimonialCard
-          name="Creative Person"
-          designation="Product Owner"
-          content="Amazing. I found my favorite colors in literally... 2 minutes? Woah! Totally real review."
-          classname="test-card"
-        />
-        <TestimonialCard
-          name="Real Reviewer"
-          designation="Developer"
-          content="Astonished. This product is so cool. You should try it and upgrade to Enterprise plan. No kidding."
-          classname="test-card"
-        />
+      <div className="flex flex-col md:flex-row">
+        <div className="basis-3/5 bg-mainC lg:relative  px-12 py-16 flex items-center justify-center text-white">
+          <div className="prose md:prose-xl prose-p:text-white prose-ul:text-white w-full max-w-none dark:prose-invert prose-img:rounded-xl  prose-headings:text-white prose-a:text-blue-600">
+            <PrismicRichText field={slice.primary.content} />
+          </div>
+        </div>
+        <div className="basis-2/5 lg:relative lg:top-[-150px]">
+          <PrismicNextImage field={slice.primary.pic} />
+        </div>
       </div>
     </section>
   );

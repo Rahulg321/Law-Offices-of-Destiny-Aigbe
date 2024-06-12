@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "featured_news": {
+              "type": "SharedSlice"
+            },
             "stateful_cards": {
               "type": "SharedSlice"
             },

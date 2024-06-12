@@ -3,15 +3,37 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"heading": {
-				"__TYPE__": "FieldContent",
-				"value": "garden",
-				"type": "Text"
+			"content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Voluptate amet duis quis duis anim consequat exercitation voluptate reprehenderit enim id elit veniam aliqua. Eu culpa adipisicing nostrud duis enim magna aute proident nostrud dolore deserunt nulla."
+						}
+					}
+				]
 			},
-			"tagline": {
-				"__TYPE__": "FieldContent",
-				"value": "good",
-				"type": "Text"
+			"pic": {
+				"__TYPE__": "ImageContent",
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8",
+					"width": 3456,
+					"height": 3456
+				},
+				"url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8",
+				"width": 3456,
+				"height": 3456,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"thumbnails": {}
 			}
 		},
 		"items": []

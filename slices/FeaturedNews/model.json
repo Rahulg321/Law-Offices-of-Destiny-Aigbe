@@ -1,0 +1,16 @@
+{
+  "id": "featured_news",
+  "type": "SharedSlice",
+  "name": "FeaturedNews",
+  "description": "FeaturedNews",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": ""
+    }
+  ]
+}

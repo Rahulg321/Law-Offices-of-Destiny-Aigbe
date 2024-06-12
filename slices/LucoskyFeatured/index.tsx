@@ -51,13 +51,12 @@ const LucoskyFeatured = ({ slice }: LucoskyFeaturedProps): JSX.Element => {
       <div className="big-container bg-[#003B6F] featured-container p-4 md:py-14 md:px-10 rounded-md">
         <div className="flex flex-col md:flex-row gap-4 justify-between">
           <div className="text-white">
-            <h2 className="mb-4">{slice.primary.heading}</h2>
-            <p className="text-white">{slice.primary.tagline}</p>
+            <h2 className="text-white">{slice.primary.tagline}</h2>
           </div>
 
           <PrismicNextLink
             field={slice.primary.button_link}
-            className="bg-white h-fit font-semibold transition text-center p-2  md:p-6 md:text-xl"
+            className="bg-white h-fit merriFont font-semibold transition text-center p-2  md:p-6 md:text-xl"
           >
             {slice.primary.button_label}
           </PrismicNextLink>

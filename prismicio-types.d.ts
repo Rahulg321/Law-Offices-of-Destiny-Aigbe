@@ -207,6 +207,7 @@ export type CareerDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<CareerDocumentData>, "career", Lang>;
 
 type HomepageDocumentDataSlicesSlice =
+  | FeaturedNewsSlice
   | StatefulCardsSlice
   | HomeHeroSlice
   | LucoskyBlueImageContentSlice
@@ -1058,6 +1059,36 @@ type FeaturedSliceVariation = FeaturedSliceDefault;
 export type FeaturedSlice = prismic.SharedSlice<
   "featured",
   FeaturedSliceVariation
+>;
+
+/**
+ * Default variation for FeaturedNews Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeaturedNewsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  never
+>;
+
+/**
+ * Slice variation for *FeaturedNews*
+ */
+type FeaturedNewsSliceVariation = FeaturedNewsSliceDefault;
+
+/**
+ * FeaturedNews Shared Slice
+ *
+ * - **API ID**: `featured_news`
+ * - **Description**: FeaturedNews
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FeaturedNewsSlice = prismic.SharedSlice<
+  "featured_news",
+  FeaturedNewsSliceVariation
 >;
 
 /**
@@ -2251,24 +2282,24 @@ export type TeamMemberHeroSlice = prismic.SharedSlice<
  */
 export interface TestimonialsSliceDefaultPrimary {
   /**
-   * Heading field in *Testimonials → Primary*
+   * Content field in *Testimonials → Primary*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: testimonials.primary.heading
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **API ID Path**: testimonials.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
-  heading: prismic.KeyTextField;
+  content: prismic.RichTextField;
 
   /**
-   * Tagline field in *Testimonials → Primary*
+   * pic field in *Testimonials → Primary*
    *
-   * - **Field Type**: Text
+   * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: testimonials.primary.tagline
-   * - **Documentation**: https://prismic.io/docs/field#key-text
+   * - **API ID Path**: testimonials.primary.pic
+   * - **Documentation**: https://prismic.io/docs/field#image
    */
-  tagline: prismic.KeyTextField;
+  pic: prismic.ImageField<never>;
 }
 
 /**
@@ -2722,6 +2753,9 @@ declare module "@prismicio/client" {
       FeaturedSliceDefaultPrimary,
       FeaturedSliceVariation,
       FeaturedSliceDefault,
+      FeaturedNewsSlice,
+      FeaturedNewsSliceVariation,
+      FeaturedNewsSliceDefault,
       FourCardsSectionSlice,
       FourCardsSectionSliceVariation,
       FourCardsSectionSliceDefault,

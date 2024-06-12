@@ -9,6 +9,7 @@ export const components = {
   color_grid: dynamic(() => import("./ColorGrid")),
   contact_form_section: dynamic(() => import("./ContactFormSection")),
   featured: dynamic(() => import("./Featured")),
+  featured_news: dynamic(() => import("./FeaturedNews")),
   four_cards_section: dynamic(() => import("./SalesInfo")),
   frequently_asked_questions: dynamic(
     () => import("./FrequentlyAskedQuestions"),
