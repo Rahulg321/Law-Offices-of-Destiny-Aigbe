@@ -53,7 +53,7 @@ const HeadingContent = ({ slice }: HeadingContentProps): JSX.Element => {
     >
       <div className="narrow-container text-pretty heading-content">
         <h1>{slice.primary.heading}</h1>
-        <div className="mt-4 md:mt-6 lg:mt-8 prose md:prose-lg lg:prose-xl prose-p:text-white prose-ul:text-white w-full max-w-none dark:prose-invert prose-img:rounded-xl prose-headings:underline prose-headings:text-white prose-a:text-blue-600">
+        <div className="mt-4 md:mt-6 lg:mt-8 prose md:prose-lg lg:prose-xl prose-p:text-white prose-ul:text-white w-full max-w-none dark:prose-invert prose-img:rounded-xl prose-headings:underline prose-headings:text-white merriFont prose-a:text-blue-600">
           <PrismicRichText field={slice.primary.content} />
         </div>
       </div>
