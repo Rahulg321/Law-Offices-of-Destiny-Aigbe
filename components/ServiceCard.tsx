@@ -26,8 +26,8 @@ const ServiceCard = ({
         {icon}
       </div>
       <div className="col-span-2">
-        <h4 className="text-mainC mb-1">{heading}</h4>
-        <span className="text-black text-lg">{description}</span>
+        <h4 className="text-mainC mb-1 merriFont">{heading}</h4>
+        <span className="text-black text-lg merriFont">{description}</span>
       </div>
     </div>
   );
