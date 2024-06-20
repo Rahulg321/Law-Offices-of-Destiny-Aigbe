@@ -554,6 +554,8 @@ export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
 type PracticeAreasDocumentDataSlicesSlice =
+  | LucoskyBlueImageContentSlice
+  | LucoskyLeftHeadingContentSlice
   | ThreeImageCardSlice
   | ReusableShowAddSliceSlice
   | HeroSlice

@@ -62,6 +62,18 @@ export const components: {
       "A modal dialog that interrupts the user with important content and expects a response.",
   },
   {
+    title: "Lobbying and Government Relations",
+    href: "/practice-areas/lobbying-and-government-relations",
+    description:
+      "A modal dialog that interrupts the user with important content and expects a response.",
+  },
+  {
+    title: "Administrative Law",
+    href: "/practice-areas/administrative-law",
+    description:
+      "A modal dialog that interrupts the user with important content and expects a response.",
+  },
+  {
     title: "Litigation",
     href: "/practice-areas/litigation",
     description:
