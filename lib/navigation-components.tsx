@@ -110,8 +110,8 @@ export const components: {
       "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
   },
   {
-    title: "White Collar Defense",
-    href: "/practice-areas/white-collar-defense",
+    title: "White Collar Defense and Government Investigations",
+    href: "/practice-areas/white-collar-defense-and-government-investigations",
     description:
       "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
   },

@@ -12,7 +12,7 @@ const TextField = ({ description, classname }: RichTextFieldProps) => {
   return (
     <div
       className={clsx(
-        "prose md:prose-lg lg:prose-xl w-full max-w-none dark:prose-invert prose-img:rounded-xl prose-headings:underline prose-a:text-blue-600 prose-p:text-black",
+        "prose md:prose-lg merriFont lg:prose-xl w-full max-w-none dark:prose-invert prose-img:rounded-xl prose-headings:underline prose-a:text-blue-600 prose-p:text-black",
         classname
       )}
     >
