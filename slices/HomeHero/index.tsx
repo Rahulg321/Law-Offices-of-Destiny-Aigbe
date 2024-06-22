@@ -54,7 +54,7 @@ const HomeHero = ({ slice }: HomeHeroProps): JSX.Element => {
           className="absolute inset-0 z-[1] min-h-full min-w-full object-cover"
         >
           <source
-            src="https://videos.pexels.com/video-files/15749390/15749390-uhd_2560_1440_30fps.mp4"
+            src="https://firebasestorage.googleapis.com/v0/b/athena-pcte.appspot.com/o/bgvideolaw.mp4?alt=media&token=52124f09-c752-469c-b149-e678da6da280"
             type="video/mp4"
           />
           Your browser does not support the video tag.
