@@ -69,7 +69,7 @@ const Services = ({ slice }: ServicesProps): JSX.Element => {
         <ServiceCard
           icon={<FaRecycle />}
           heading="Listing on National Exchange"
-          description="Our exclients time and money with their listing on a national exchange such as Nasdaq, the NYSE or NYSE MKT"
+          description="Our exclients time and money with their listing on a national exchange such as NASDAQ, SBOE, the NYSE or NYSE MKT"
           classname="box"
         />
         <ServiceCard

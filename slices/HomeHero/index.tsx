@@ -44,8 +44,8 @@ const HomeHero = ({ slice }: HomeHeroProps): JSX.Element => {
     >
       <div className="relative min-h-full content-center overflow-hidden bg-[rgba(0,0,0,0.3)]">
         <div className="z-[10] absolute inset-0 flex flex-col items-center justify-center">
-          <h2 className="text-white text-center">Relationship Focused</h2>
-          <h2 className="text-white text-center">Results Driven</h2>
+          <h2 className="text-white text-center">Relationships Built.</h2>
+          <h2 className="text-white text-center">Results Delivered.</h2>
         </div>
         <video
           autoPlay
