@@ -11,6 +11,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "slide_show": {
+              "type": "SharedSlice"
+            },
             "featured_news": {
               "type": "SharedSlice"
             },

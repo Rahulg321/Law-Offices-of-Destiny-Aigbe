@@ -33,6 +33,7 @@ export const components = {
   plan_info: dynamic(() => import("./PlanInfo")),
   reusable_show_add_slice: dynamic(() => import("./ReusableShowAddSlice")),
   services: dynamic(() => import("./Services")),
+  slide_show: dynamic(() => import("./SlideShow")),
   stateful_cards: dynamic(() => import("./StatefulCards")),
   team_index: dynamic(() => import("./TeamIndex")),
   team_member_hero: dynamic(() => import("./TeamMemberHero")),

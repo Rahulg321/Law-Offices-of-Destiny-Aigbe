@@ -207,6 +207,7 @@ export type CareerDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<CareerDocumentData>, "career", Lang>;
 
 type HomepageDocumentDataSlicesSlice =
+  | SlideShowSlice
   | FeaturedNewsSlice
   | StatefulCardsSlice
   | HomeHeroSlice
@@ -2100,6 +2101,61 @@ export type ServicesSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *SlideShow → Items*
+ */
+export interface SlideShowSliceDefaultItem {
+  /**
+   * BackgroundImage field in *SlideShow → Items*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slide_show.items[].backgroundimage
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  backgroundimage: prismic.ImageField<never>;
+
+  /**
+   * SlideShow Text field in *SlideShow → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: slide_show.items[].slideshow_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  slideshow_text: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for SlideShow Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SlideShowSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<SlideShowSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *SlideShow*
+ */
+type SlideShowSliceVariation = SlideShowSliceDefault;
+
+/**
+ * SlideShow Shared Slice
+ *
+ * - **API ID**: `slide_show`
+ * - **Description**: SlideShow
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SlideShowSlice = prismic.SharedSlice<
+  "slide_show",
+  SlideShowSliceVariation
+>;
+
+/**
  * Default variation for StatefulCards Slice
  *
  * - **API ID**: `default`
@@ -2823,6 +2879,10 @@ declare module "@prismicio/client" {
       ServicesSliceDefaultPrimary,
       ServicesSliceVariation,
       ServicesSliceDefault,
+      SlideShowSlice,
+      SlideShowSliceDefaultItem,
+      SlideShowSliceVariation,
+      SlideShowSliceDefault,
       StatefulCardsSlice,
       StatefulCardsSliceVariation,
       StatefulCardsSliceDefault,
