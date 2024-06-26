@@ -17,6 +17,9 @@ const mobileNav = [
   { navlink: "/practice-areas", navlabel: "Practice Areas" },
   { navlink: "/our-firm", navlabel: "Our Firm" },
   { navlink: "/team-members", navlabel: "Team" },
+  { navlink: "/news", navlabel: "News" },
+  { navlink: "/blogs", navlabel: "Blogs" },
+  { navlink: "/videos", navlabel: "Videos" },
   { navlink: "/careers", navlabel: "Careers" },
   { navlink: "/contact", navlabel: "Contact" },
 ];
