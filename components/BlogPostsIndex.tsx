@@ -23,10 +23,6 @@ export async function BlogPostsIndex({ pageNumber }: { pageNumber: number }) {
     page: pageNumber,
   });
 
-  // const response = await fetch("http://localhost:3000/api/blogs");
-  // const data = await response.json();
-  // console.log("data is ", data);
-
   return (
     <div className="narrow-container block-space space-y-6">
       {blogPosts.results.map((post) => (

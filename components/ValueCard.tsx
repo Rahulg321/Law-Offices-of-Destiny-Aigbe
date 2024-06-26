@@ -16,7 +16,6 @@ type ValueCardProps = {
   cardContent?: string;
   cardDescription?: RichTextField;
   needButton?: BooleanField | boolean;
-  btnLabel?: KeyTextField;
   btnLink?: any;
   classname?: string;
 };
@@ -27,7 +26,6 @@ const ValueCard = ({
   cardDescription,
   cardContent,
   needButton,
-  btnLabel,
   btnLink,
 }: ValueCardProps) => {
   return (
@@ -39,9 +37,9 @@ const ValueCard = ({
         {needButton && (
           <Link
             href={`practice-areas/${btnLink?.uid}`}
-            className="bg-mainC text-white md:text-xl px-4 rounded-md py-2 md:px-12 md:py-2"
+            className="bg-mainC text-white md:text-xl merriFont w-full px-4 rounded-md py-2 md:px-12 md:py-2"
           >
-            {btnLabel}
+            View Practice Area
           </Link>
         )}
       </div>
