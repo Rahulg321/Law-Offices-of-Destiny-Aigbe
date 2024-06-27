@@ -21,8 +21,8 @@ const FeaturedNews = ({ slice }: FeaturedNewsProps): JSX.Element => {
       <div className="narrow-container p-6">
         <h1 className="mb-4">Featured News</h1>
         <h2 className="text-mainC">
-          Lucosky Brookman Successfully Represents Chardan Capital Markets LLC
-          in connection with a $527 Millon SPAC transaction by and between
+          Aigbe Law Successfully Represents Chardan Capital Markets LLC in
+          connection with a $527 Millon SPAC transaction by and between
           Caravelle Group Co. Ltd. and Pacifico Acquisition Corp.
         </h2>
 

@@ -6,13 +6,16 @@ import { PrismicNextImage } from "@prismicio/next";
 import Link from "next/link";
 
 const NewsCard = ({ post }: { post: Content.NewsDocument }) => {
+  const date = new Date(post.first_publication_date).toLocaleDateString();
+  //convert the date to this format 24 December 2022
+
   return (
     <div className="flex flex-col md:flex-row">
       <div className="basis-1/2 relative aspect-w-1 aspect-h-1 md:aspect-h-1 md:aspect-w-4">
         <PrismicNextImage field={post.data.featured_image} className="" fill />
       </div>
       <div className="basis-1/2 content-center p-4 space-y-2">
-        <span>{post.first_publication_date}</span>
+        <span className="font-bold text-mainC text-lg">{date}</span>
         <h3 className="text-mainC">{post.data.title}</h3>
         <Button asChild className="bg-mainC">
           <Link href={`/news/${post.uid}`}>Read More</Link>

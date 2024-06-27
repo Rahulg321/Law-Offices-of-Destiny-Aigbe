@@ -26,6 +26,9 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "home_hero": {
+              "type": "SharedSlice"
+            },
             "our_offices": {
               "type": "SharedSlice"
             },

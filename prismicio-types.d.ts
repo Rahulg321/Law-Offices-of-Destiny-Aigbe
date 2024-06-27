@@ -384,6 +384,7 @@ export type NewsDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<NewsDocumentData>, "news", Lang>;
 
 type OurFirmDocumentDataSlicesSlice =
+  | HomeHeroSlice
   | OurOfficesSlice
   | LucoskyLeftHeadingContentSlice
   | ThreeImageCardSlice
