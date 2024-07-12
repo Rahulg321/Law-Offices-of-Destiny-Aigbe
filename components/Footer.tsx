@@ -8,45 +8,70 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import ThemeToggle from "./theme-button";
+import { Button } from "./ui/button";
 
-const nav = [
+const nav1 = [
   { navlink: "/", navlabel: "Home" },
   { navlink: "/our-firm", navlabel: "Our Firm" },
   { navlink: "/transactions", navlabel: "Transactions" },
-  { navlink: "/practice-areas", navlabel: "Practice Areas" },
   { navlink: "/blogs", navlabel: "Blog" },
   { navlink: "/Team", navlabel: "Our Professionals" },
   { navlink: "/about-destiny-aigbe", navlabel: "About" },
-  { navlink: "/contact-destiny-aigbe", navlabel: "Contact" },
+];
+
+const nav2 = [
+  { navlink: "/practice-areas", navlabel: "Practice Areas" },
+  { navlink: "/news", navlabel: "News & Insights" },
+  { navlink: "/careers", navlabel: "Careers" },
+  { navlink: "/contact", navlabel: "Contact" },
 ];
 
 const Footer = () => {
   return (
-    <footer className="border-t-4 px-4 py-6 md:py-8 flex flex-col md:flex-row md:justify-around items-center">
-      <div className="mb-4 text-center">
+    <footer className="border-t-4 px-4 py-6 md:py-8 grid grid-cols-1 gap-6 lg:grid-cols-4">
+      <div className="mb-4">
         <Link
           href="/"
           aria-label="Home page"
-          className="text-4xl font-bold text-mainC"
+          className="text-2xl md:text-4xl font-bold text-mainC"
         >
           Aigbe Law PLLC
         </Link>
+        <div className="flex gap-4 mt-2 text-center">
+          <div className="font-bold text-2xl">
+            <FaInstagram />
+          </div>
+          <div className="font-bold text-2xl">
+            <FaXTwitter />
+          </div>
+          <div className="font-bold text-2xl">
+            <FaLinkedin />
+          </div>
+        </div>
       </div>
-      <div className="flex flex-col">
-        <div className="flex flex-col md:flex-row gap-4 items-center justify-center">
-          {nav.map((e, index) => (
-            <Link
-              href={e.navlink}
-              key={index}
-              className={"font-bold md:text-lg text-base"}
-            >
+      <div className="space-y-2">
+        {nav1.map((e, index) => {
+          return (
+            <Link href={e.navlink} key={index} className="font-bold block">
               {e.navlabel}
             </Link>
-          ))}
-        </div>
-        <div className="mt-2 text-sm ml-auto">
-          <span>© 2024 Aigbe Law PLLC. All Rights Reserved.</span>
-        </div>
+          );
+        })}
+      </div>
+      <div className="space-y-2">
+        {nav2.map((e, index) => {
+          return (
+            <Link href={e.navlink} key={index} className="font-bold block">
+              {e.navlabel}
+            </Link>
+          );
+        })}
+      </div>
+      <div>
+        <h3>Subscribe to our Newsletter</h3>
+        <Button className="bg-mainC text-white merriFont rounded-md mt-4 p-4 md:p-6 lg:w-full">
+          Subscribe
+        </Button>
       </div>
     </footer>
   );
