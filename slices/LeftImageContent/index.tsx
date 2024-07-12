@@ -73,7 +73,7 @@ const LeftImageContent = ({ slice }: LeftImageContentProps): JSX.Element => {
               "bg-card": cardBackground === true,
             })}
           >
-            <h1 className="text-center text-[#003B6F] mb-4 md:mb-6 lg:mb-8 text-pretty">
+            <h1 className="text-left  md:text-center text-[#003B6F] mb-4 md:mb-6 lg:mb-8 text-pretty">
               {" "}
               {slice.primary.heading}
             </h1>
