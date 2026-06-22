@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Image } from "@unpic/react";
 import React from "react";
 import SVG from "@/public/undraw.svg";
 
@@ -16,8 +16,9 @@ const WhyUsCard = ({ heading, tagline, imageField }: WhyUsCardProps) => {
           <Image
             src={imageField}
             alt="Developer Productivity"
-            fill
-            className="object-cover"
+            width={800}
+            height={600}
+            className="h-full w-full object-cover"
           />
         </div>
       </div>

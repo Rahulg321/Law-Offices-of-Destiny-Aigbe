@@ -2,13 +2,15 @@
 
 import { useGSAP } from "@gsap/react";
 import { Content } from "@prismicio/client";
-import { PrismicNextLink } from "@prismicio/next";
+import { PrismicLink } from "@prismicio/react";
 import { SliceComponentProps } from "@prismicio/react";
 import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(useGSAP, ScrollTrigger);
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 /**
  * Props for `LucoskyFeatured`.
@@ -54,12 +56,12 @@ const LucoskyFeatured = ({ slice }: LucoskyFeaturedProps): JSX.Element => {
             <h2 className="text-white">{slice.primary.tagline}</h2>
           </div>
 
-          <PrismicNextLink
+          <PrismicLink
             field={slice.primary.button_link}
             className="bg-white h-fit merriFont font-semibold transition text-center p-2  md:p-6 md:text-xl"
           >
             {slice.primary.button_label}
-          </PrismicNextLink>
+          </PrismicLink>
         </div>
       </div>
     </section>

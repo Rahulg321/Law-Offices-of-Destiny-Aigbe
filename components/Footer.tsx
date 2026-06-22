@@ -1,6 +1,6 @@
 import React from "react";
 import { FaRegCopyright } from "react-icons/fa";
-import Link from "next/link";
+import { Link } from "@tanstack/react-router";
 import BackgroundImageText from "./BackgroundImageText";
 import { FaLocationDot } from "react-icons/fa6";
 import { MdOutlinePhoneAndroid } from "react-icons/md";
@@ -31,7 +31,7 @@ const Footer = () => {
     <footer className="border-t-4 px-4 py-6 md:py-8 grid grid-cols-1 gap-6 lg:grid-cols-4">
       <div className="mb-4">
         <Link
-          href="/"
+          to="/"
           aria-label="Home page"
           className="text-2xl md:text-4xl font-bold text-mainC"
         >
@@ -52,7 +52,7 @@ const Footer = () => {
       <div className="space-y-2">
         {nav1.map((e, index) => {
           return (
-            <Link href={e.navlink} key={index} className="font-bold block">
+            <Link to={e.navlink} key={index} className="font-bold block">
               {e.navlabel}
             </Link>
           );
@@ -61,7 +61,7 @@ const Footer = () => {
       <div className="space-y-2">
         {nav2.map((e, index) => {
           return (
-            <Link href={e.navlink} key={index} className="font-bold block">
+            <Link to={e.navlink} key={index} className="font-bold block">
               {e.navlabel}
             </Link>
           );

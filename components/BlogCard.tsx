@@ -1,6 +1,6 @@
 import { Content } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
-import Link from "next/link";
+import { Link } from "@tanstack/react-router";
 import React from "react";
 
 type BlogCardProps = {
@@ -9,7 +9,7 @@ type BlogCardProps = {
 
 const BlogCard = ({ post }: BlogCardProps) => {
   return (
-    <Link href={`/blogs/${post.uid}`}>
+    <Link to={`/blogs/${post.uid}`}>
       <article className="mb-4">
         <span className="text-muted-foreground font-semibold text-lg">
           {post.data.category}

@@ -6,7 +6,6 @@ import { RxCross1 } from "react-icons/rx";
 import SubmitButton from "./SubmitButton";
 import { Button } from "./ui/button";
 import { useToast } from "@/components/ui/use-toast";
-import { sendApplication } from "@/app/actions";
 
 type CareerFormModalProps = {
   post: Content.CareerDocument;
@@ -49,12 +48,19 @@ const CareerFormModal = ({ post }: CareerFormModalProps) => {
         <h3 className="mb-1">{post.data.name}</h3>
         <h4 className="mb-6">{post.data.department}</h4>
         <form
-          action={async (formData) => {
-            // await for 3 seconds
-            // await new Promise((resolve) => setTimeout(resolve, 3000));
+          onSubmit={async (event) => {
+            event.preventDefault();
+            const form = event.currentTarget;
+            const formData = new FormData(form);
+            formData.set("position", String(post.data.name));
 
-            const response = await sendApplication(formData, post.data.name);
-            if (response.error) {
+            const response = await fetch("/api/send-application", {
+              method: "POST",
+              body: formData,
+            });
+            const result = await response.json();
+
+            if (result.error) {
               toast({
                 variant: "destructive",
                 title: "Uh oh! Something went wrong.",
@@ -69,7 +75,6 @@ const CareerFormModal = ({ post }: CareerFormModalProps) => {
             }
           }}
           className="flex flex-col"
-          method="dialog"
         >
           <div className="mb-2 flex flex-col">
             <label htmlFor="name" className="font-semibold">

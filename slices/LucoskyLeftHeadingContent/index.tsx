@@ -9,7 +9,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 import gsap from "gsap";
 
-gsap.registerPlugin(useGSAP, ScrollTrigger);
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export type LucoskyLeftHeadingContentProps =
   SliceComponentProps<Content.LucoskyLeftHeadingContentSlice>;

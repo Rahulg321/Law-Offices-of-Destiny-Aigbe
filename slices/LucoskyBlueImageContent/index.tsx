@@ -3,13 +3,15 @@
 import TextField from "@/components/TextField";
 import { useGSAP } from "@gsap/react";
 import { Content } from "@prismicio/client";
-import { PrismicNextImage } from "@prismicio/next";
+import { PrismicImage } from "@prismicio/react";
 import { SliceComponentProps } from "@prismicio/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 
-gsap.registerPlugin(useGSAP, ScrollTrigger);
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 /**
  * Props for `LucoskyBlueImageContent`.
@@ -40,10 +42,10 @@ const LucoskyBlueImageContent = ({
           />
         </div>
         <div className="basis-1/2 lg:relative aspect-h-1 aspect-w-3 lg:top-[-100px]">
-          <PrismicNextImage
+          <PrismicImage
             field={slice.primary.main_image}
             className="object-cover"
-            fill
+           
           />
         </div>
       </div>

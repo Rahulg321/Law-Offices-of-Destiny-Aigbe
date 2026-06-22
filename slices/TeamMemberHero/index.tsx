@@ -1,6 +1,6 @@
 import { createClient } from "@/prismicio";
 import { Content, KeyTextField, LinkField } from "@prismicio/client";
-import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { PrismicImage, PrismicLink } from "@prismicio/react";
 import { SliceComponentProps } from "@prismicio/react";
 import { MdEmail } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
@@ -61,9 +61,9 @@ const TeamMemberHero = ({ slice }: TeamMemberHeroProps): JSX.Element => {
           </div>
         </div>
         <div className="basis-1/2 relative aspect-w-1 aspect-h-1 lg:aspect-w-4 lg:aspect-h-2">
-          <PrismicNextImage
+          <PrismicImage
             field={slice.primary.member_image}
-            fill
+           
             className="object-cover"
           />
         </div>
@@ -84,11 +84,11 @@ function BioComponent({
   link?: LinkField;
 }) {
   return (
-    <PrismicNextLink field={link} className="flex items-center gap-4">
+    <PrismicLink field={link} className="flex items-center gap-4">
       <div className="text-lg">{icon}</div>
       <span className="underline hover:no-underline transition cursor-pointer text-lg text-slate-300">
         {text}
       </span>
-    </PrismicNextLink>
+    </PrismicLink>
   );
 }

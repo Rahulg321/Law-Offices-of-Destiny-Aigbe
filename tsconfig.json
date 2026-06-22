@@ -10,17 +10,25 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
     "paths": {
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "app/**/*.ts",
+    "app/**/*.tsx",
+    "components/**/*.ts",
+    "components/**/*.tsx",
+    "slices/**/*.ts",
+    "slices/**/*.tsx",
+    "lib/**/*.ts",
+    "lib/**/*.tsx",
+    "router.tsx",
+    "prismicio.ts",
+    "prismicio-types.d.ts",
+    "vite-env.d.ts"
+  ],
+  "exclude": ["node_modules", ".output", "vite.config.ts"]
 }

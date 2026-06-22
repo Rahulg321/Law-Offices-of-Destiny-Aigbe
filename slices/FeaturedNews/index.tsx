@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Content } from "@prismicio/client";
-import { PrismicNextLink } from "@prismicio/next";
+import { PrismicLink } from "@prismicio/react";
 import { SliceComponentProps } from "@prismicio/react";
 
 /**

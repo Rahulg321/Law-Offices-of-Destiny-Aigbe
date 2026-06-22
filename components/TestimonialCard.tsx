@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Image } from "@unpic/react";
 import React from "react";
 import Zach from "@/public/zach_buer.jpg";
 import { IoMdStar } from "react-icons/io";
@@ -25,9 +25,10 @@ const TestimonialCard = ({
         <div className="relative h-[100px] w-[100px]">
           <Image
             src={Zach}
-            className="rounded-full object-cover"
+            width={100}
+            height={100}
+            className="h-full w-full rounded-full object-cover"
             alt="face forward pic of zach buer"
-            fill
           />
         </div>
         <div className="flex flex-col items-center justify-center">

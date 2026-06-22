@@ -1,6 +1,6 @@
 import { Content } from "@prismicio/client";
-import { PrismicNextImage } from "@prismicio/next";
-import Link from "next/link";
+import { PrismicImage } from "@prismicio/react";
+import { Link } from "@tanstack/react-router";
 import React from "react";
 import { Card } from "./ui/card";
 import { CgPlayButtonO } from "react-icons/cg";
@@ -20,10 +20,9 @@ const TeamMemberCard = ({ member, classname }: TeamMemberCardProps) => {
       )}
     >
       <div className="relative aspect-w-1 aspect-h-1 lg:aspect-w-6 lg:aspect-h-4 basis-1/2">
-        <PrismicNextImage
+        <PrismicImage
           field={member.data.member_image}
-          fill
-          className="object-cover"
+          className="h-full w-full object-cover"
         />
       </div>
 
@@ -46,7 +45,7 @@ const TeamMemberCard = ({ member, classname }: TeamMemberCardProps) => {
         </div>
         <div className="text-right flex items-center  hover:text-yellow-400 cursor-pointer justify-end gap-1">
           <Link
-            href={`/team-members/${member.uid}`}
+            to={`/team-members/${member.uid}`}
             className="text-lg transition "
           >
             Read Bio{" "}

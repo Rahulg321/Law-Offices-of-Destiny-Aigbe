@@ -16,8 +16,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { useToast } from "./ui/use-toast";
 import { Textarea } from "./ui/textarea";
-import { formSchema, TcontactFormSchema } from "@/app/zod-schemas";
-import { SubmitContactForm } from "@/app/actions";
+import { formSchema, TcontactFormSchema } from "@/app/-zod-schemas";
+import { submitContactForm } from "@/app/-actions";
 
 const ContactForm = () => {
   const { toast } = useToast();

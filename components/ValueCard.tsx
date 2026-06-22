@@ -7,9 +7,7 @@ import {
 import clsx from "clsx";
 import React from "react";
 import TextField from "./TextField";
-import { Button } from "./ui/button";
-import { PrismicNextLink } from "@prismicio/next";
-import Link from "next/link";
+import { Link } from "@tanstack/react-router";
 
 type ValueCardProps = {
   cardHeading: KeyTextField | string;
@@ -36,7 +34,7 @@ const ValueCard = ({
       <div className="mt-6 text-center">
         {needButton && (
           <Link
-            href={`practice-areas/${btnLink?.uid}`}
+            to={`/practice-areas/${btnLink?.uid}`}
             className="bg-mainC text-white md:text-xl merriFont w-full px-4 rounded-md py-2 md:px-12 md:py-2"
           >
             View Practice Area

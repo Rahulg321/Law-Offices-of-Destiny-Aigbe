@@ -10,7 +10,9 @@ import gsap from "gsap";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 
-gsap.registerPlugin(ScrollTrigger);
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 export type HeroProps = SliceComponentProps<Content.HeroSlice>;
 

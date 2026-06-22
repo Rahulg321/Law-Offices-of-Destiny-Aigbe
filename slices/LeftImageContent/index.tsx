@@ -4,14 +4,16 @@ import TextField from "@/components/TextField";
 import { Button } from "@/components/ui/button";
 import { useGSAP } from "@gsap/react";
 import { Content } from "@prismicio/client";
-import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { PrismicImage, PrismicLink } from "@prismicio/react";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import clsx from "clsx";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 
-gsap.registerPlugin(useGSAP, ScrollTrigger);
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 /**
  * Props for `LeftImageContent`.
@@ -61,9 +63,9 @@ const LeftImageContent = ({ slice }: LeftImageContentProps): JSX.Element => {
           })}
         >
           <div className="basis-3/5 aspect-w-1 aspect-h-1 lg:aspect-h-1 lg:aspect-w-3">
-            <PrismicNextImage
+            <PrismicImage
               field={slice.primary.featured_image}
-              fill
+             
               className="object-cover"
             />
           </div>
@@ -80,12 +82,12 @@ const LeftImageContent = ({ slice }: LeftImageContentProps): JSX.Element => {
             <TextField description={slice.primary.content} />
             <div className="mt-8 md:mt-12">
               {hasButton && (
-                <PrismicNextLink
+                <PrismicLink
                   field={slice.primary.button_link}
                   className="bg-mainC text-white merriFont rounded-md mt-6 md:text-xl p-4 md:p-6"
                 >
                   {slice.primary.button_label}
-                </PrismicNextLink>
+                </PrismicLink>
               )}
             </div>
           </div>

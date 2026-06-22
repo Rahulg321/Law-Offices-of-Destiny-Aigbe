@@ -1,5 +1,5 @@
 import { ImageField } from "@prismicio/client";
-import { PrismicNextImage } from "@prismicio/next";
+import { PrismicImage } from "@prismicio/react";
 import clsx from "clsx";
 import React from "react";
 
@@ -21,10 +21,9 @@ const BackgroundImageText = ({
       <div className={clsx("absolute inset-0 z-10", childrenCSS)}>
         {children}
       </div>
-      <PrismicNextImage
-        className="absolute left-0 right-0 object-cover"
+      <PrismicImage
+        className="absolute inset-0 h-full w-full object-cover"
         field={backgroundImage}
-        fill
       />
     </section>
   );

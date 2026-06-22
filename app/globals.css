@@ -1,9 +1,16 @@
+@import "@fontsource/work-sans/400.css";
+@import "@fontsource/work-sans/700.css";
+@import "@fontsource/merriweather/400.css";
+@import "@fontsource/merriweather/700.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
+    --font-work-sans: "Work Sans", sans-serif;
+    --font-merriweather: "Merriweather", serif;
     --lucosky: #003b6f;
     --background: 0, 0%, 100%;
     --foreground: 240 10% 3.9%;

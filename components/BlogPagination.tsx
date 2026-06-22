@@ -3,17 +3,13 @@
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
-import { createClient } from "@/prismicio";
 import clsx from "clsx";
-import { usePathname, useSearchParams } from "next/navigation";
-import { useRouter } from "next/navigation";
-
+import { useRouter, useSearch } from "@tanstack/react-router";
 import React, { useCallback } from "react";
 
 type BlogPaginationProps = {
@@ -25,14 +21,11 @@ type BlogPaginationProps = {
 
 const BlogPagination = ({
   totalPages,
-  itemsPerPage,
   currentPage,
   classname,
 }: BlogPaginationProps) => {
   const router = useRouter();
-  const pathname = usePathname();
-
-  const searchParams = useSearchParams();
+  const search = useSearch({ strict: false }) as { page?: number };
 
   const pageElements = Array.from({ length: totalPages }, (_, index) => (
     <PaginationItem
@@ -51,38 +44,22 @@ const BlogPagination = ({
     </PaginationItem>
   ));
 
-  const createQueryString = useCallback(
-    (name: string, value: string) => {
-      const params = new URLSearchParams(searchParams.toString());
-      params.set(name, value);
-
-      return params.toString();
-    },
-    [searchParams]
-  );
-
   const setPageNumber = (pageNumber: number) => {
-    const selectedPageNumber = String(pageNumber);
-    router.push(pathname + "?" + createQueryString("page", selectedPageNumber));
+    router.navigate({
+      to: "/blogs",
+      search: { page: pageNumber },
+    });
   };
 
   const handlePrevious = () => {
-    console.log("previous page clicked");
     if (currentPage > 1) {
-      const nextpageNumber = String(currentPage - 1);
-      router.push(pathname + "?" + createQueryString("page", nextpageNumber));
-    } else {
-      console.log("do something else first");
+      setPageNumber(currentPage - 1);
     }
   };
 
   const handleNext = () => {
-    console.log("next page clicked");
     if (currentPage < totalPages) {
-      const nextpageNumber = String(currentPage + 1);
-      router.push(pathname + "?" + createQueryString("page", nextpageNumber));
-    } else {
-      console.log("cant update the page because you are already at the end");
+      setPageNumber(currentPage + 1);
     }
   };
 

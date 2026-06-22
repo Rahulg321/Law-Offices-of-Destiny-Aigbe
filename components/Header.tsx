@@ -1,8 +1,7 @@
 "use client";
 
 import clsx from "clsx";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { Link, useLocation } from "@tanstack/react-router";
 import React, { useState } from "react";
 import { MdMenu, MdClose } from "react-icons/md";
 import TopBar from "./TopBar";
@@ -33,7 +32,7 @@ const desktopNav = [
 
 const Header = ({ classname }: HeaderProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
+  const pathname = useLocation().pathname;
 
   return (
     <>
@@ -71,7 +70,7 @@ const Header = ({ classname }: HeaderProps) => {
               {mobileNav.map((item, index) => {
                 return (
                   <Link
-                    href={item.navlink}
+                    to={item.navlink}
                     key={index}
                     onClick={() => {
                       setIsOpen(false);
@@ -100,7 +99,7 @@ function NameLogo({}: {}) {
   return (
     <div className="">
       <Link
-        href="/"
+        to="/"
         aria-label="Home page"
         className="text-3xl md:text-4xl font-bold text-mainC"
       >
@@ -111,14 +110,14 @@ function NameLogo({}: {}) {
 }
 
 function DesktopMenu() {
-  const pathname = usePathname();
+  const pathname = useLocation().pathname;
   return (
     <div className="hidden gap-8 md:flex md:items-center">
       <NavigationMenuHeader />
       {desktopNav.map((item, index) => {
         return (
           <Link
-            href={item.navlink}
+            to={item.navlink}
             key={index}
             className={clsx(
               "font-bold hover:underline-offset-8 hover:text-mainC hover:underline  hover:decoration-4 hover:decoration-mainC transition",

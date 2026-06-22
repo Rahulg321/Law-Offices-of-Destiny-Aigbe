@@ -4,13 +4,15 @@ import TestimonialCard from "@/components/TestimonialCard";
 import { useGSAP } from "@gsap/react";
 import { KeyTextField } from "@prismicio/client";
 import { Content } from "@prismicio/client";
-import { PrismicNextImage } from "@prismicio/next";
+import { PrismicImage } from "@prismicio/react";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useRef } from "react";
 
-gsap.registerPlugin(useGSAP, ScrollTrigger);
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger);
+}
 
 /**
  * Props for `Testimonials`.
@@ -36,7 +38,7 @@ const Testimonials = ({ slice }: TestimonialsProps): JSX.Element => {
           </div>
         </div>
         <div className="basis-2/5 lg:relative lg:top-[-150px]">
-          <PrismicNextImage field={slice.primary.pic} />
+          <PrismicImage field={slice.primary.pic} />
         </div>
       </div>
     </section>

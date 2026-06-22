@@ -1,7 +1,5 @@
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
-import Logo from "@/public/logoDesign-removebg-preview.png";
-import Image from "next/image";
 import gsap from "gsap";
 import { useRef } from "react";
 import { useGSAP } from "@gsap/react";

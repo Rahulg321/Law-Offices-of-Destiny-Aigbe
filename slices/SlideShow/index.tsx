@@ -12,7 +12,7 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import Autoplay from "embla-carousel-autoplay";
 import fade from "embla-carousel-fade";
-import { PrismicNextImage } from "@prismicio/next";
+import { PrismicImage } from "@prismicio/react";
 import Heading from "@/components/Heading";
 
 /**
@@ -56,9 +56,9 @@ const SlideShow = ({ slice }: SlideShowProps): JSX.Element => {
                 </Heading>
               </div>
             </div>
-            <PrismicNextImage
+            <PrismicImage
               field={e.backgroundimage}
-              fill
+             
               className="absolute w-full inset-0 object-cover"
             />
           </CarouselItem>

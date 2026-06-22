@@ -15,7 +15,8 @@
 
 # production
 /build
-
+.output
+.wrangler
 # misc
 .DS_Store
 *.pem
