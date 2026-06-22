@@ -1,10 +1,7 @@
 import { defineConfig } from "vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
-import { nitro } from "nitro/vite";
-import { cloudflare } from '@cloudflare/vite-plugin'
-
-
+import { cloudflare } from "@cloudflare/vite-plugin";
 
 export default defineConfig({
   server: {
@@ -17,7 +14,7 @@ export default defineConfig({
     postcss: "./postcss.config.js",
   },
   plugins: [
-    cloudflare({ viteEnvironment: { name: 'ssr' } }),
+    cloudflare({ viteEnvironment: { name: "ssr" } }),
     tanstackStart({
       srcDirectory: ".",
       router: {
@@ -25,6 +22,5 @@ export default defineConfig({
       },
     }),
     viteReact(),
-    nitro(),
   ],
 });
