@@ -21,10 +21,11 @@ export const createClient = (
   return prismic.createClient(repositoryName, {
     routes,
     accessToken: process.env.PRISMIC_ACCESS_TOKEN,
+    // Avoid Next.js-only cache modes (e.g. force-cache) — unsupported on Cloudflare Workers.
     fetchOptions:
-      process.env.NODE_ENV === "production"
-        ? { cache: "force-cache" }
-        : { cache: "no-store" },
+      process.env.NODE_ENV === "development"
+        ? { cache: "no-store" as RequestCache }
+        : undefined,
     ...options,
   });
 };
